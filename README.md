@@ -12,11 +12,11 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 
 | Name | KSU Email | Role |
 |------|------------|------|
-| **[Aashni Patel](mailto:apate301@students.kennesaw.edu)** | [apate301@students.kennesaw.edu](mailto:apate301@students.kennesaw.edu) | Team Member |
-| **[Kade Rogers](mailto:kroge101@students.kennesaw.edu)** | [kroge101@students.kennesaw.edu](mailto:kroge101@students.kennesaw.edu) | Team Member |
-| **[Nathan Rupp](mailto:nrupp1@kennesaw.view.usg.edu)** | [nrupp1@kennesaw.view.usg.edu](mailto:nrupp1@kennesaw.view.usg.edu) | Team Member |
-| **[Sulaiman Shaikh](mailto:sshaik16@students.kennesaw.edu)** | [sshaik16@students.kennesaw.edu](mailto:sshaik16@students.kennesaw.edu) | Team Member |
-| **[Ben Sollicito](mailto:bsollici@students.kennesaw.edu)** | [bsollici@students.kennesaw.edu](mailto:bsollici@students.kennesaw.edu) | Team Member |
+| **[Aashni Patel](mailto:apate301@students.kennesaw.edu)** | [apate301@students.kennesaw.edu](mailto:apate301@students.kennesaw.edu) | UI/UX Lead |
+| **[Kade Rogers](mailto:kroge101@students.kennesaw.edu)** | [kroge101@students.kennesaw.edu](mailto:kroge101@students.kennesaw.edu) | Technical Lead / Architect |
+| **[Nathan Rupp](mailto:nrupp1@kennesaw.view.usg.edu)** | [nrupp1@kennesaw.view.usg.edu](mailto:nrupp1@kennesaw.view.usg.edu) | Implementation Lead (Full-stack) |
+| **[Sulaiman Shaikh](mailto:sshaik16@students.kennesaw.edu)** | [sshaik16@students.kennesaw.edu](mailto:sshaik16@students.kennesaw.edu) | Project Manager; Requirements & QA Co-Lead; Technical Support / Architect |
+| **[Ben Sollicito](mailto:bsollici@students.kennesaw.edu)** | [bsollici@students.kennesaw.edu](mailto:bsollici@students.kennesaw.edu) | Technical Lead / Architect; Requirements & QA Co-Lead (Business Analyst) |
 
 **Team Repository:** [https://github.com/Krogers48/swe-3313-fall-2025-team-12](https://github.com/Krogers48/swe-3313-fall-2025-team-12)
 
@@ -25,19 +25,19 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 /
 ├── project-plan/
 │   ├── resumes/
-│   │   ├── aashni_patel_resume.md
-│   │   ├── kade_rogers_resume.md
-│   │   ├── nathanial_rupp_resume.md
-│   │   ├── sulaiman_shaikh_resume.md
-│   │   └── ben_sollicito_resume.md
+│   │   ├── aashni-patel-resume.md
+│   │   ├── kade-rogers-resume.md
+│   │   ├── nathanial-rupp-resume.md
+│   │   ├── sulaiman-shaikh-resume.md
+│   │   └── ben-sollicito-resume.md
 │   ├── team-assignments/
 │   │   └── README.md
 │   ├── technology-selection/
 │   │   └── README.md
-│   └── gantt-chart/
-│       ├── ganttproject.gan
-│       ├── gantt-chart.png
-│       └── README.md
+│   ├── gantt-chart/
+│   |	├── ganttproject.gan
+│   |	├── gantt-chart.png
+|   └──README.md
 └── README.md
 ```
 
@@ -48,11 +48,11 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 Each team member’s résumé is stored in the [`project-plan/resumes`](./project-plan/resumes) folder.  
 Click below to view them directly:
 
-- [Aashni Patel](./project-plan/resumes/aashni_patel_resume.md)  
-- [Kade Rogers](./project-plan/resumes/kade_rogers_resume.md)  
-- [Nathanial Rupp](./project-plan/resumes/nathanial_rupp_resume.md)  
-- [Sulaiman Shaikh](./project-plan/resumes/sulaiman_shaikh_resume.md)  
-- [Ben Sollicito](./project-plan/resumes/ben_sollicito_resume.md)  
+- [Aashni Patel](./project-plan/resumes/aashni-patel-resume.md)  
+- [Kade Rogers](./project-plan/resumes/kade-rogers-resume.md)  
+- [Nathanial Rupp](./project-plan/resumes/nathanial-rupp-resume.md)  
+- [Sulaiman Shaikh](./project-plan/resumes/sulaiman-shaikh-resume.md)  
+- [Ben Sollicito](./project-plan/resumes/ben-sollicito-resume.md)  
 
 ---
 
@@ -65,7 +65,7 @@ You can view the current progress [here](./project-plan/team-assignments/README.
 
 ## Technology Selection  
 
-Our technology stack details and justification are in the [`project-plan/technology-selection`](./project-plan/technology-selection) folder.  
+Our technology stack details and justification are in the [`project-plan/technology-selection`](./project-plan/technology-selection/) folder.  
 You can view the writeup [here](./project-plan/technology-selection/README.md).  
 
 ---
