@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="GanttSWE12" company="" webLink="http://" view-date="2025-08-31" view-index="0" gantt-divider-location="371" resource-divider-location="322" version="3.3.3316" locale="en_US">
+    <description><![CDATA[A Gantt Chart for SWE 3313 Team 12]]></description>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd12" name="Cost" width="20" order="0"/>
+        <field id="tpd3" name="Name" width="200" order="1"/>
+        <field id="tpd4" name="Begin date" width="75" order="2"/>
+        <field id="tpd5" name="End date" width="75" order="3"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <timeline><![CDATA[0]]></timeline>
+        <option id="color.recent"><![CDATA[#ff0066]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="221" order="0"/>
+        <field id="1" name="Default role" width="97" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="f34b51e285d84cc7bc3fde6db6448805" name="Project Plan" meeting="false" start="2025-09-23" duration="11" complete="32" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+            <task id="9" uid="afa642241e684c5dbc3e3e82d253c0a8" name="Select Technology" meeting="false" start="2025-09-23" duration="3" complete="0" expand="false">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+                <task id="15" uid="61d7c7fb2f6845c38cf0b91670856e3d" name="Decide Language Used To Build System" meeting="false" start="2025-09-23" duration="1" complete="0" expand="true">
+                    <depend id="16" type="2" difference="0" hardness="Strong"/>
+                    <depend id="73" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="16" uid="5ba9b47e163c497f9251ff7b4abd2c69" name="Decide What Web Framework To Create Screens Wtih" meeting="false" start="2025-09-24" duration="1" complete="0" expand="true">
+                    <depend id="73" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="73" uid="80c23c99539c41bb9b6e16b831948a26" name="Create Markdown Technology Description" meeting="false" start="2025-09-25" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="12" uid="ee501beca7c34f2d93f16e7448a9e7c6" name="Assign Primary Duties to Team" meeting="false" start="2025-09-23" duration="1" complete="100" expand="true">
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+                <task id="34" uid="bc9464846dcf415b95ad2e1374e4a2fa" name="List Primary Duties of Each Team Member and Resume Link" meeting="false" start="2025-09-23" duration="1" complete="100" expand="true"/>
+            </task>
+            <task id="10" uid="836766fdab584248be2d58172bb963bf" name="Create Gantt Project Plan" meeting="false" start="2025-09-23" duration="4" complete="100" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+                <depend id="25" type="2" difference="0" hardness="Strong"/>
+                <task id="17" uid="b8827d8313ec447a8c6ea01598763296" name="Create Milestones" meeting="false" start="2025-09-23" duration="1" complete="100" expand="true">
+                    <depend id="18" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="18" uid="d054d4071633492b9135359efb4edda7" name="Create Epics" meeting="false" start="2025-09-24" duration="2" complete="100" expand="true">
+                    <depend id="19" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="19" uid="689692f6de9b41a8b575e6ab54172a33" name="Create Stories" meeting="false" start="2025-09-26" duration="1" complete="100" expand="true"/>
+            </task>
+            <task id="11" uid="631c4860b80d43cb898841eecee5acc7" name="Create Team Resume" meeting="false" start="2025-09-23" duration="5" complete="100" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+                <depend id="22" type="2" difference="0" hardness="Strong"/>
+                <task id="57" uid="1f9e8f40faf54d16b681079d9b86a6df" name="Gather Team Resumes" meeting="false" start="2025-09-23" duration="4" complete="100" expand="true">
+                    <depend id="58" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="58" uid="6715a6237027468e999079a4072f7c41" name="Compile Team Resumes into one" meeting="false" start="2025-09-29" duration="1" complete="100" expand="true"/>
+            </task>
+            <task id="14" uid="2a3133f2b5604723a1de56ec694f7ce4" name="Write Introduction" meeting="false" start="2025-09-30" duration="3" complete="0" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+                <depend id="35" type="2" difference="0" hardness="Strong"/>
+                <task id="39" uid="261db53aab444cfb82c77d014764f831" name="Create README.md file" meeting="false" start="2025-09-30" duration="1" complete="0" expand="true"/>
+                <task id="21" uid="f3ec65f55f714aa8a00eac9f53d9a0a3" name="Create an Introduction" meeting="false" start="2025-09-30" duration="2" complete="0" expand="true"/>
+                <task id="22" uid="6abe37b6a50c4794a9ec444cbc66df42" name="Create a Meet Our Team" meeting="false" start="2025-09-30" duration="2" complete="0" expand="true"/>
+                <task id="23" uid="0326a2f601b04640ad32e89dd855d72c" name="Create Team Assignments" meeting="false" start="2025-09-30" duration="3" complete="0" expand="true"/>
+                <task id="24" uid="4ea36f37e622475fa138065030aae756" name="Create Technology Selection" meeting="false" start="2025-09-30" duration="3" complete="0" expand="true"/>
+                <task id="25" uid="77f146bd85de49acab2c34b151c6b183" name="Create Project Plan" meeting="false" start="2025-09-30" duration="3" complete="0" expand="true"/>
+            </task>
+            <task id="13" uid="18f4fc291ec242c1a84b79ea9629f528" name="Create Video Presentation" meeting="false" start="2025-10-03" duration="3" complete="0" expand="true">
+                <task id="35" uid="96227d206ab346bd9dcf74bd7caf7bb1" name="Introduce Team" meeting="false" start="2025-10-03" duration="1" complete="0" expand="true"/>
+                <task id="36" uid="a3acdb0b666d4f05ad5961f00c90a9ca" name="Explain Technologies Used and Reasoning" meeting="false" start="2025-10-07" duration="1" complete="0" expand="true"/>
+                <task id="37" uid="3a4338b179d844fb8460d74662f6bcf5" name="Provide Visual Review of Project Plan" meeting="false" start="2025-10-07" duration="1" complete="0" expand="true"/>
+                <task id="38" uid="c91022733c7940139489846041b94f7e" name="Call Out Any Risk" meeting="false" start="2025-10-07" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="1" uid="557747e6870f4433a2759662c434c7e3" name="Requirements" meeting="false" start="2025-10-08" duration="7" complete="0" thirdDate="2025-10-08" thirdDate-constraint="1" expand="true">
+            <depend id="64" type="2" difference="0" hardness="Strong"/>
+            <task id="27" uid="efa5fb7dd9a14953bfe7cb97d0b62059" name="Ananlyze Requirements and Elicitation" meeting="false" start="2025-10-08" duration="3" complete="0" expand="true">
+                <depend id="28" type="2" difference="0" hardness="Strong"/>
+                <task id="60" uid="b3abb8be4c4045dd82499c2ed6b786a2" name="Read Customer Notes" meeting="false" start="2025-10-08" duration="2" complete="0" expand="true">
+                    <depend id="61" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="61" uid="e2ea676b028a4871ad57e67894cde9e7" name="Hold Elicitation Session" meeting="false" start="2025-10-10" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="28" uid="afa7ee300c164800990ddbad6cfbbbb7" name="Write Requirements" meeting="false" start="2025-10-13" duration="3" complete="0" expand="true">
+                <depend id="30" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="29" uid="929d7b19d00842e28b46b624ec01e6d2" name="Use Case Diagram" meeting="false" start="2025-10-08" duration="6" complete="0" expand="true">
+                <task id="68" uid="47f693fa416643409e70f7646841e056" name="Include Actors" meeting="false" start="2025-10-08" duration="1" complete="0" expand="true"/>
+                <task id="69" uid="023a006053764ff39ceb4c11ae59b87f" name="Include Association Lines" meeting="false" start="2025-10-09" duration="1" complete="0" expand="true"/>
+                <task id="70" uid="cea23b41c6f04d15a34c601cb433a6e3" name="Include a Bounding Box" meeting="false" start="2025-10-10" duration="1" complete="0" expand="true"/>
+                <task id="71" uid="a1c5aba1b9b2492b9e52148f86a5c58b" name="Ensure Everything Uses Case Bubbles" meeting="false" start="2025-10-13" duration="3" complete="0" expand="true"/>
+            </task>
+            <task id="30" uid="d7d58e0ffcdd4e34951e499c50a092bd" name="Create Decision Table" meeting="false" start="2025-10-16" duration="1" complete="0" expand="true"/>
+            <task id="31" uid="8a4c9580086f4ae5a0208881f0763249" name="Create Requirements Introduction" meeting="false" start="2025-10-13" duration="2" complete="0" expand="false">
+                <task id="62" uid="dfe883189a3b424c948444b8006e9e68" name="Write Requirements Introduction" meeting="false" start="2025-10-13" duration="1" complete="0" expand="true">
+                    <depend id="63" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="63" uid="d679fe48709049149d7f7e4dbc9a089f" name="Integrate Introuction Into Project Plan" meeting="false" start="2025-10-14" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="32" uid="e73852ee61ca47289b8ac2728344d503" name="Produce Requirements Presentation" meeting="false" start="2025-10-13" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="64" uid="0e019ab40e2e45e4841c67cbb207a6bc" name="User Interface Design" meeting="false" start="2025-10-17" duration="8" complete="0" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <task id="65" uid="129b0b252d7f4e3a919fefc53fc2ef05" name="Create Marvel Design Mockup" meeting="false" start="2025-10-17" duration="5" complete="0" expand="true">
+                <depend id="33" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="33" uid="9ba7d030bb384997854c89f3bf4255f7" name="Check Usability" meeting="false" start="2025-10-24" duration="3" complete="0" expand="true"/>
+        </task>
+        <task id="3" uid="5b48b01579e14737b27763471778b98c" name="Technical Design" meeting="false" start="2025-10-29" duration="15" complete="0" expand="true">
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+            <task id="40" uid="e79ab5f848524384823647226bdb7da5" name="Include Implementation Language" meeting="false" start="2025-10-29" duration="4" complete="0" expand="true">
+                <task id="66" uid="268271f1cc9e4812a3d04142d9f469fc" name="Share Implementation Language" meeting="false" start="2025-10-29" duration="2" complete="0" expand="true">
+                    <depend id="67" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="67" uid="370aee0a7c264cd793fef95aa3f6abcb" name="Explain Choice In Implementation Language" meeting="false" start="2025-10-31" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="42" uid="8a94f1067a1940b2b273fe8ec86edb8b" name="Entity Relationship Diagram, Create Entity/Field Descriptions, and Data Examples" meeting="false" start="2025-10-29" duration="8" complete="0" expand="false">
+                <task id="74" uid="6c7fb1b45dc741bc9fd52b57b8799852" name="Create Entity Relationship Diagram" meeting="false" start="2025-10-29" duration="3" complete="0" expand="true"/>
+                <task id="76" uid="80cf51b087144cb0b50489dcb56cf77c" name="Show Example Data" meeting="false" start="2025-10-29" duration="6" complete="0" expand="true"/>
+                <task id="75" uid="67f00521e5cd49fcb577d9cac9c7888b" name="Create Table of Field Descriptions for each entity" meeting="false" start="2025-10-29" duration="8" complete="0" expand="true"/>
+            </task>
+            <task id="46" uid="885ee470116d43a5a4bf2a63cb25943f" name="Database Seed Data" meeting="false" start="2025-10-29" duration="7" complete="0" expand="true"/>
+            <task id="47" uid="f9723ad9a245469abf4ecbd252627b76" name="Data Storage Plan" meeting="false" start="2025-10-29" duration="7" complete="0" expand="true"/>
+            <task id="41" uid="bd23babb932f4a7bb1d7a80fff656feb" name="Implementation Frameworks" meeting="false" start="2025-10-29" duration="15" complete="0" expand="true"/>
+        </task>
+        <task id="6" uid="116d8ca0c22b44beb01f88447d1c6a3a" name="Final Presentation" color="#8cb6ce" meeting="false" start="2025-12-01" duration="5" complete="0" expand="true"/>
+        <task id="4" uid="5d647f463bd64e98ba96963e291ed73c" name="Implementation" meeting="false" start="2025-11-19" duration="14" complete="0" expand="true">
+            <task id="77" uid="3dbc864690d44b9a824d44617131669f" name="Implement UI Design and Technical Design" meeting="false" start="2025-11-19" duration="8" complete="0" expand="true">
+                <depend id="49" type="2" difference="0" hardness="Strong"/>
+                <depend id="78" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="49" uid="883c865d680b41ec8eca5b1fb55390ba" name="Submit README.md" meeting="false" start="2025-12-01" duration="6" complete="0" expand="true"/>
+            <task id="78" uid="c77e4c9c90834525b6807d87a11ae6e4" name="Submit UI Design and Implementation" meeting="false" start="2025-12-01" duration="6" complete="0" expand="true"/>
+        </task>
+        <task id="8" uid="d87e0f9ce8ad4640a9f4bad8f0792c07" name="Peer Evaluation" color="#8cb6ce" meeting="false" start="2025-11-19" duration="14" complete="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
