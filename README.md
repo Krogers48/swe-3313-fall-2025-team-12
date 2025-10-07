@@ -26,10 +26,10 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 ├── project-plan/
 │   ├── resumes/
 │   │   ├── aashni-patel-resume.md
-│   │   ├── kade-rogers-resume.md
+│   │   ├── kaden-rogers-resume.md
 │   │   ├── nathanial-rupp-resume.md
 │   │   ├── sulaiman-shaikh-resume.md
-│   │   └── ben-sollicito-resume.md
+│   │   └── benjamin-sollicito-resume.md
 │   ├── team-assignments/
 │   │   └── README.md
 │   ├── technology-selection/
@@ -49,10 +49,10 @@ Each team member’s résumé is stored in the [`project-plan/resumes`](./projec
 Click below to view them directly:
 
 - [Aashni Patel](./project-plan/resumes/aashni-patel-resume.md)  
-- [Kade Rogers](./project-plan/resumes/kade-rogers-resume.md)  
+- [Kade Rogers](./project-plan/resumes/kaden-rogers-resume.md)  
 - [Nathanial Rupp](./project-plan/resumes/nathanial-rupp-resume.md)  
 - [Sulaiman Shaikh](./project-plan/resumes/sulaiman-shaikh-resume.md)  
-- [Ben Sollicito](./project-plan/resumes/ben-sollicito-resume.md)  
+- [Ben Sollicito](./project-plan/resumes/benjamin-sollicito-resume.md)  
 
 ---
 
