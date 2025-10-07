@@ -15,7 +15,6 @@ Three years of experience building and maintaining custom PCs, including compone
 
 **Certifications**  
 Completed all available Georgia high school computer science certifications (excluding AP Computer Science due to dual enrollment)
-
 <br><br>
 
 ## Technical Experience
