@@ -1,9 +1,7 @@
 # Nathanial Rupp  
 Kennesaw State University — Software Engineering  
-[Email](mailto:nrupp@students.kennesaw.edu)  
-[GitHub](https://github.com/nrupp1) | [LinkedIn](https://www.linkedin.com/in/nathan-rupp-460b771a8/)  
-
----
+[Email](mailto:nrupp@students.kennesaw.edu) / [GitHub](https://github.com/nrupp1) / [LinkedIn](https://www.linkedin.com/in/nathan-rupp-460b771a8/)  
+<br><br>
 
 ## Technical Skills
 
@@ -19,7 +17,7 @@ Three years of experience building and maintaining custom PCs, including compone
 **Certifications**  
 Completed all available Georgia high school computer science certifications (excluding AP Computer Science due to dual enrollment)
 
----
+<br><br>
 
 ## Technical Experience
 
@@ -30,25 +28,25 @@ Completed all available Georgia high school computer science certifications (exc
 - Collaborated with a graphic designer to integrate **biome-specific environment assets** (e.g., cactus in desert, snowy trees in winter scenes)  
 - Oversaw version control and repository organization using GitHub  
 - [Project repository on GitHub](https://github.com/nrupp1)
+<br><br> 
 
 **AWS Coursework — Amazon-Sponsored Program**  
 *Woodstock High School, 2021–2022*  
 - Completed a year-long program focused on AWS infrastructure, deployment, and cloud computing fundamentals  
 - Worked with hosted systems and explored scalable architecture principles  
+<br><br>
 
 **Computer Building & Maintenance**  
 *Independent Work, 2020–Present*  
 - Built, upgraded, and optimized custom PCs for gaming and software development  
 - Developed practical knowledge of hardware integration and performance benchmarking  
-
----
+<br><br>
 
 ## Recognition & Projects
 
 - Top 6 Finalist — Georgia Governor’s Honors Program (GHP) Pre-Semifinals  
 - Participated in KSU game development and hackathon-style collaborative projects  
-
----
+<br><br>
 
 ## Education
 
