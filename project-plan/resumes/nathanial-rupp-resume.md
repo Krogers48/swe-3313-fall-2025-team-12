@@ -1,7 +1,6 @@
 # Nathanial Rupp  
 Kennesaw State University — Software Engineering  
-[Email](mailto:nrupp@students.kennesaw.edu) / [GitHub](https://github.com/nrupp1) / [LinkedIn](https://www.linkedin.com/in/nathan-rupp-460b771a8/)  
-<br><br>
+[Email](mailto:nrupp@students.kennesaw.edu) / [GitHub](https://github.com/nrupp1) / [LinkedIn](https://www.linkedin.com/in/nathan-rupp-460b771a8/)
 
 ## Technical Skills
 
