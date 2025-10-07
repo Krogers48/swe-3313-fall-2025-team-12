@@ -4,7 +4,7 @@
 _Computer Science undergraduate_  
 Atlanta, GA
 
-[Email](mailto:bsollici@students.kennesaw.edu) / [LinkedIn](www.linkedin.com/in/benjamin-sollicito-a5b6502b7) / [GitHub](https://github.com/Ben-Soll)
+[Email](mailto:bsollici@students.kennesaw.edu) / [LinkedIn](https://www.linkedin.com/in/benjamin-sollicito-a5b6502b7) / [GitHub](https://github.com/Ben-Soll)
 
 ## Work Experience
 
