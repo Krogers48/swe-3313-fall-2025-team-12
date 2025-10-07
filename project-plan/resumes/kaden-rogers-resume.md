@@ -3,7 +3,7 @@
 _Computer Science undergraduate focused on radar-based sensing and multimodal data processing_ <br>
 Kennesaw, GA
 
-[Email](mailto:kroge101@students.kennesaw.edu) / [GitHub](https://github.com/Krogers48) / [LinkedIn](www.linkedin.com/in/kaden-rogers-162a77348)
+[Email](mailto:kroge101@students.kennesaw.edu) / [GitHub](https://github.com/Krogers48) / [LinkedIn](https://www.linkedin.com/in/kaden-rogers-162a77348)
 
 ## Research Experience
 
