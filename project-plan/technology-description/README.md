@@ -2,8 +2,7 @@
  
 ## Language 
  
-We landed on python as the language for building our system.   
-Python is [widely used in industry, highly versatile](https://skillcrush.com/blog/what-is-python-used-for/), and familiar to all of our group members, so it is the language for us. 
+We landed on python as the language for building our system. Python is [widely used in industry, highly versatile](https://skillcrush.com/blog/what-is-python-used-for/), and familiar to all of our group members, so it is the language for us. 
  
 ## Framework 
  
@@ -11,4 +10,8 @@ Python also has a plethora of very useful [open-source libraries](https://skillc
  
 ## Storage Plan 
  
-We will use JSON for storage in our project. 
+We will use JSON for data storage in our project. JSON can be used to send information between [many different systems in many different languages](https://www.oracle.com/database/what-is-json/), and because of this it is [widely used in industry](https://www.oracle.com/database/what-is-json/), making it a good addition to our resumes. It is also very [readable](https://www.json.org/json-en.html), and has similar conventions to languages such as [python and java](https://www.json.org/json-en.html).
+
+## Operating Environment
+
+Our project will need to be compatiable with many operating systems such as Windows, MacOS, and Linux, since it will have to work on all of our machines as well as our client's. Since our language, framework, and storage language are all versitile and flexible, we should be able to support all the machines that need to run our program, as long as they can run Python 3.9 (or later), Flask 3.1, and JSON (which is supported by python), which most modern machines can. 
