@@ -73,7 +73,7 @@ You can view the writeup [here](./project-plan/technology-selection/README.md).
 ## Project Plan  
 
 Our detailed project plan and timeline will be available in the [`project-plan/gantt-chart`](./project-plan/gantt-chart) folder.  
-You can view the [Gantt chart and presentation here](./project-plan/gantt-chart/README.md).  
+You can view the [Gantt chart and presentation here](./project-plan/README.md).  
 
 ---
 
