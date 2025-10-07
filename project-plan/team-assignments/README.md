@@ -44,7 +44,7 @@ This document lists our team roles for the SWE 3313 project and links each membe
 | **Aashni Patel** | UI/UX Lead | Accessibility/Usability Buddy | [Aashni Patel – résumé](../resumes/aashni-patel-resume.md) |
 | **Nathan Rupp** | Implementation Lead (Full-stack) | Data & DevOps Steward | [Nathan Rupp – résumé](../resumes/nathanial-rupp-resume.md) |
 | **Sulaiman Shaikh** | Project Manager; Requirements & QA Co-Lead; Technical Support / Architect | Data & DevOps Steward | [Sulaiman Shaikh – résumé](../resumes/sulaiman-shaikh-resume.md) |
-| **Kade Rogers** | Technical Lead / Architect | — | [Kade Rogers – résumé](../resumes/kade-rogers-resume.md) |
+| **Kade Rogers** | Technical Lead / Architect | — | [Kade Rogers – résumé](../resumes/kaden-rogers-resume.md) |
 | **Ben Sollicito** | Technical Lead / Architect; Requirements & QA Co-Lead (Business Analyst) | Security/Compliance Watcher | [Ben Sollicito – résumé](../resumes/benjamin-sollicito-resume.md) |
 
 > **Notes**
