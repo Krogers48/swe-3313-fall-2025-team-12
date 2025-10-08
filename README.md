@@ -79,7 +79,7 @@ You can view the [Gantt chart and presentation here](./project-plan/README.md).
 
 ## Loom Video
 
-The Loom video introduction and explanation can be found [here](PLACE-LINK-TO-LOOM-VIDEO-HERE)
+The Loom video introduction and explanation can be found [here](https://www.loom.com/share/b4b1a73dbbc742899e32ddf38ad702b6?sid=3f51d675-eb6e-4ffc-8aba-045e07ce6d4e)
 
 ---
 
