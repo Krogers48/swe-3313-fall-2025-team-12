@@ -77,6 +77,12 @@ You can view the [Gantt chart and presentation here](./project-plan/README.md).
 
 ---
 
+## Loom Video
+
+The Loom video introduction and explanation can be found [here](PLACE-LINK-TO-LOOM-VIDEO-HERE)
+
+---
+
 ## Repository Information  
 
 **Repository Name:** [`swe-3313-fall-2025-team-12`](https://github.com/Krogers48/swe-3313-fall-2025-team-12)  
