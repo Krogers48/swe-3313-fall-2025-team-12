@@ -1,38 +1,62 @@
-<h2>Requirements</h2>
+<h1>Requirements</h1>
+<h2>Version 1</h2>
 <ul>
-  <li>Version 1</li>
-    <ul>
-      <li>**T12E-1**: Accounts</li>
+      <li><strong>T12E-1</strong>: User Accounts</li>
         <ul>
-            <li>**T12S-1**: Self-Register</li>
+            <li><strong>T12S-1</strong>: Self-Register</li>
                 <ul>
-                    <li>*Priority*: Must Have</li>
-                    <li>*Effort*: 2 days</li>
-                    <li>*Functional/Non-functional*: Functional</li>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 2 days</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>Users must be able to self-register for an account.</li>
                 </ul>
-            <li>**T12S-2**: Login</li>
+            <li><strong>T12S-2</strong>: Login</li>
                 <ul>
-                    <li>*Priority*: Must Have</li>
-                    <li>*Effort*: 1 day</li>
-                    <li>*Functional/Non-functional*: Functional</li>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>Users must be able to login to their accounts.</li>
-            </ul>
-          <li>**T12S-3**: Admin</li>
+                </ul>
+            <li><strong>T12S-3</strong>: Unique Username and Password</li>
                 <ul>
-                    <li>*Priority*: Must Have</li>
-                    <li>*Effort*: 1 day</li>
-                    <li>*Functional/Non-functional*: Functional</li>
-                    <li>A more power "admin" user type that can login and run sales reports must exist.</li>
-            </ul>
-            <li>**T12S-3**: Admin</li>
-                <ul>
-                    <li>*Priority*: Must Have</li>
-                    <li>*Effort*: 1 day</li>
-                    <li>*Functional/Non-functional*: Functional</li>
-                    <li>A more power "admin" user type that can login and run sales reports must exist.</li>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 2 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>All users must have a unique username and 6-character minimum password.</li>
         </ul>
+    </ul>
+        <li><strong>T12E-2</strong>: Administrators</li>
+        <ul>
+            <li><strong>T12S-1</strong>: Admin Appointment</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 0.5 days</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>An ability to appoint admins from pre-existing users must exist.</li>
+                </ul>
+            <li><strong>T12S-2</strong>: Sales Report</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>Admins must be able to generate a sales report that shows everything purchased and who purchased it.</li>
+            </ul>
+          <li><strong>T12S-3</strong>: Sales Report Export to CSV</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>A method to export the sales report to a CSV must exist.</li>
+            </ul>
+            <li><strong>T12S-4</strong>: Add Inventory</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>Admin users must be able to open a page, enter information, choose a picture, and have information added to the database. </li>
+          </ul>
     </ul>
 </ul>
                     
+
 
