@@ -86,7 +86,7 @@ The Loom video introduction and explanation can be found [here](https://www.loom
 ---
 
 ## Requirements
-Our detailed requirements will be available in the [`project-plan/requirements'](./project-plan/requirements) folder.
+Our detailed requirements will be available in the [`/requirements'](./requirements) folder.
 
 ---
 
