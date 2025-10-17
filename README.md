@@ -38,6 +38,13 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   |	├── ganttproject.gan
 │   |	├── gantt-chart.png
 |   └──README.md
+├──requirements/
+│   ├──use-case.md
+│   ├──decision-table-code-demo.EXT
+│   ├──decision-table-screenshot
+│   ├──decision-table-code-screenshot
+│   ├──decision-table.md
+│   ├──README.md
 └── README.md
 ```
 
@@ -73,7 +80,13 @@ You can view the writeup [here](./project-plan/technology-selection/README.md).
 ## Project Plan  
 
 Our detailed project plan and timeline will be available in the [`project-plan/gantt-chart`](./project-plan/gantt-chart) folder.  
-You can view the [Gantt chart and presentation here](./project-plan/gantt-chart/README.md).  
+You can view the [Gantt chart and presentation here](./project-plan/README.md).  
+The Loom video introduction and explanation can be found [here](https://www.loom.com/share/b4b1a73dbbc742899e32ddf38ad702b6?sid=3f51d675-eb6e-4ffc-8aba-045e07ce6d4e)
+
+---
+
+## Requirements
+Our detailed requirements will be available in the [`project-plan/requirements'](./project-plan/requirements) folder.
 
 ---
 
@@ -84,4 +97,4 @@ You can view the [Gantt chart and presentation here](./project-plan/gantt-chart/
 **Course:** SWE 3313 — Fall 2025  
 **Language:** Python 3.13  
 **Framework:** Flask 3.1  
-**Storage:** JSON  
+**Storage:** JSON
