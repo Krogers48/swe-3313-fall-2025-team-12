@@ -79,9 +79,48 @@
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>Admin users must be able to open a page, enter information, choose a picture, and have information added to the database. </li>
           </ul>
+            <li><strong>T12S-3</strong>: Database Updating Page Text Fields</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>The Database Updating Page must contain three text fields: name (limited to 15 characters), description (limited to 50 characters), and price (will separate any erroneous input from the enumerated price itself when submitted to the database). </li>
+       </ul>  
+      <li><strong>T12S-3</strong>: Database Updating Page Picture Selection</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>The Database Updating page must contain a field to select pictures to add to the submission.</li>               
+       </ul>  
+      <li><strong>T12S-3</strong>: Add Item Button</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>Once all fields are filled, the admin can hit an "Add Item" button.</li>         
+       </ul>  
     </ul>
-    
+      <li><strong>T12E-4</strong>: UI Mockup</li>
+       <ul>
+            <li><strong>T12S-1</strong>: High-fidelity mockup</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>There must be a high-fidelity mockup of all screens and the application flow before coding is started.</li>
+                </ul>
+            <li><strong>T12S-3</strong>: UI Mockup Final Product Translation</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Non-functional</li>
+                    <li>The UI Mockup must fully demonstrate how the requirements will translate to the final product such that the client will fully understand what to expect from the team</li>
+            </ul>
+       </ul>  
 </ul>
+
+
                     
 
     There must be a login page (functional) 
@@ -242,13 +281,7 @@
 
     Database Updating Page 
 
-    The Database Updating Page must contain three text fields: (functional) 
-
-    Name, limited to 15 characters 
-
-    Description, limited to 50 characters 
-
-    Price, which will separate any erroneous input from the enumerated price itself when submitted to the database 
+    
 
     The Database Updating page must contain a field to select pictures to add to the submission (functional) 
 
@@ -257,16 +290,13 @@
     The information must be entered into the database as a new item automatically once the “Add Item” button is pressed. (functional) 
 
     The page must then reload; all fields must be cleared, and the page must be ready for another submission. (functional) 
+    
 
-    UI Mockup 
-
-    There must be a high-fidelity mockup of all screens and the application flow before coding is started. (functional) 
-
-    The UI Mockup must fully demonstrate how the requirements will translate to the final product such that the client will fully understand what to expect from the team (non-functional) 
-
+   
  
 
  
 
  
+
 
