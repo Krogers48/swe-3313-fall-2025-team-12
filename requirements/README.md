@@ -80,8 +80,193 @@
                     <li>Admin users must be able to open a page, enter information, choose a picture, and have information added to the database. </li>
           </ul>
     </ul>
+    
 </ul>
                     
 
+    There must be a login page (functional) 
 
+    The Login page must allow both users and admins to login (functional) 
+
+    The Login page must contain two fields: “Username” and “Password” (functional) 
+
+    The Login page must contain a “Login” button below the first two fields (functional) 
+
+    When “Login” is clicked, the account associated with the entered username must be found (functional) 
+
+    If the username is not associated with any existing account, the user must be kept on the login page, the “username” field must be cleared, and the user must be informed that the username is not associated with any existing account (functional) 
+
+    If the username is associated with an existing account, the entered password must be compared to the one associated with the account. (functional) 
+
+    If the password entered and the password associated with the account do not match, the user must be kept on the login page, the “password” field must be cleared, and the user must be informed that the password is incorrect. (functional) 
+
+    If the password entered and the password associated with the account match, the user must be logged in to the account and then redirected to the “main” page (functional) 
+
+    "Main” screen 
+
+    There must be a main screen (functional) 
+
+    The Main screen must be visible to users after login or registration (functional) 
+
+    The Main screen must list all available inventory (functional) 
+
+    The Main screen must display inventory sorted by price from highest to lowest (functional) 
+
+    The Main screen must not show users any inventory that has already been sold (functional) 
+
+    The Main screen must allow users to add multiple items to the cart (non-functional) 
+
+    The Main screen must allow users to search inventory via a search box that looks for matches in either item name or item description (functional) 
+
+    The Main screen must contain a “checkout” button that the user can click to go to the shopping cart page (functional) 
+
+    The “checkout” button must not work when the cart is empty (functional) 
+
+    Items on the “main” screen 
+
+    Items Must have a short name, brief description, a picture (or pictures), a price, and a button that adds the item to the cart. (functional) 
+
+    The prices of the items must be in U.S. dollars (non-functional) 
+
+    The prices of the items must have “$” before them (non-functional) 
+
+    The prices of the items must be properly formatted with commas and decimal points (eg. $1,450.99). (non-functional) 
+
+    The prices of the items must be stored in a base-10 format, not a floating-point format.  (functional) 
+
+    All monetary values in the entire program must be formatted the same way as these item prices when displayed (non-functional), and should all be stored in a base-10 format instead of a floating-point format (functional) 
+
+    Shopping Cart page 
+
+    There must be a Shopping Cart page (functional) 
+
+    The Shopping Cart page must display a list of every item in the user’s cart (functional) 
+
+    The Shopping Cart page must allow the user to remove any and all items from the list they chose (functional) 
+
+    The Shopping Cart page must send the user back to the “main” page if they remove all items from their cart (functional) 
+
+    The Shopping Cart page must display the subtotal in US dollars, the subtotal is the total price of every item in the user’s cart at checkout (functional) 
+
+    The subtotal must be recalculated as the user makes changes to their cart contents (non-functional) 
+
+    The shopping cart page must contain a “pay now” button that brings up a “Pay Now” screen (functional) 
+
+    The user’s cart must hold all its items as the user navigates the site unless it is modified by the user or if the user completes a purchase (non-functional) 
+
+    “Pay Now” screen 
+
+    There must be a “Pay Now” screen (functional) 
+
+    The Pay Now screen must allow and require the user to enter their shipping address (functional) 
+
+    The Pay Now screen must allow and require the user to enter their credit card number, expiration date MM/YY, and CVV security code (functional) 
+
+    The Pay Now screen must allow and require the user to enter their phone number (functional) 
+
+    The Pay Now screen must allow and require the user to choose the shipping speed  (functional) 
+
+    The shipping speed options and prices must be: (functional) 
+
+    Overnight: $29.00 
+
+    3-Day: $19.00 
+
+    Ground: $0/Free 
+
+    Must have a “confirm order” button that the user must click after completing all fields, this sends the user to the “confirm order” page (functional) 
+
+    “Confirm Order” page: 
+
+    There must be a confirm order page (functional) 
+
+    The Confirm Order page must list the names and prices of what the user is buying (functional) 
+
+    The Confirm Order page must list the subtotal of the user’s order (functional) 
+
+    The Confirm Order page must list the tax as 6% of the user’s subtotal (functional) 
+
+    The Confirm Order page must list the shipping cost associated with the user’s shipping choice (functional) 
+
+    The Confirm Order page must list the grand total of the user’s order; this is the sum of the subtotal, plus the tax, plus the shipping cost.  (functional) 
+
+    The Confirm Order page must have a “Complete Order” button (functional) 
+
+    When the “Complete Order” button is pressed, all purchased items must be removed from the inventory  and the user must be sent to the “Complete Order” page (functional) 
+
+    The Confirm Order page must have a “Return to Checkout” button that returns the user to the “Checkout” page (functional) 
+
+    The Confirm Order page must have a “Continue Shopping” button that returns the user to the “Main” page (functional) 
+
+    The user’s cart must remain the same if they chose not to complete the order (functional) 
+
+    “Complete Order” page 
+
+    There must be a “Complete Order” page (functional) 
+
+    The Complete Order page must display a receipt containing all order information present on the “Confirm Order” page (functional) 
+
+    The receipt must also include the last four digits of the user’s credit card number, and the user’s shipping address (functional) 
+
+    The receipt must be emailed to the user (from my understanding, all this means is that there is a page showing the receipt to the user) (functional) 
+
+    The receipt must be emailed to the user via SendGrid (Non-functional) 
+
+    All items purchased by the user must be added to the sales report (functional) 
+
+    There must be an “ok” button that empties the cart and allows the user to exit the receipt and return to the “main” screen (functional) 
+
+    After “Complete Order” 
+
+    All items purchased by the user must not be visible from the “main” page (functional) 
+
+    All user purchases must be in the sales report (functional) 
+
+    Sales Report 
+
+    The Sales Report must be accessible to admins (functional) 
+
+    The Sales Report must show every purchased item and who purchased the items (functional) 
+
+    The items in the report must be clickable, and must redirect to the receipt associated with their purchase (functional) 
+
+    The Sales Report must have a button that exports the sales report to a CSV file. (functional) 
+
+    Database updating 
+
+    There must be a page for admins to update the database (functional) 
+
+    There must be step-by-step instructions created for the admins on how to manually enter new inventory into the database (functional) 
+
+    The instructions must be understandable to the “not overly technical” admins (non-functional) 
+
+    Database Updating Page 
+
+    The Database Updating Page must contain three text fields: (functional) 
+
+    Name, limited to 15 characters 
+
+    Description, limited to 50 characters 
+
+    Price, which will separate any erroneous input from the enumerated price itself when submitted to the database 
+
+    The Database Updating page must contain a field to select pictures to add to the submission (functional) 
+
+    Once all fields are filled, the admin can hit an “Add Item” button (functional) 
+
+    The information must be entered into the database as a new item automatically once the “Add Item” button is pressed. (functional) 
+
+    The page must then reload; all fields must be cleared, and the page must be ready for another submission. (functional) 
+
+    UI Mockup 
+
+    There must be a high-fidelity mockup of all screens and the application flow before coding is started. (functional) 
+
+    The UI Mockup must fully demonstrate how the requirements will translate to the final product such that the client will fully understand what to expect from the team (non-functional) 
+
+ 
+
+ 
+
+ 
 
