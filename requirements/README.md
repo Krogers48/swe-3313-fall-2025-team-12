@@ -332,7 +332,6 @@
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li> There must be an “ok” button that empties the cart and allows the user to exit the receipt and return to the “main” screen.  </li>
                   </ul>
-            </ul>
             <li><strong>T12S-42</strong>: Credit Card Information Deletion</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
