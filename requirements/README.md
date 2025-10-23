@@ -155,6 +155,7 @@
                           <li><em>Effort</em>: 0.5 day</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li>The prices of items must have "$" before them.</li>
+                      </ul>
                   <li><strong>T12S-1</strong>Price '$'</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
@@ -220,6 +221,7 @@
                           <li><em>Effort</em>: 2 day</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li> The user’s cart must hold all its items as the user navigates the site unless it is modified by the user or if the user completes a purchase. </li>
+                        </ul>
       </ul>   
       <li><strong>T12E-10</strong>: Confirm Order Page</li>
       <li><strong>T12E-11</strong>: Complete Order Page</li>
@@ -350,6 +352,7 @@
             </ul>
        </ul>  
 </ul>
+
 
 
 
