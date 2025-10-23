@@ -178,38 +178,118 @@
                           <li><em>Effort</em>: 0.5 day</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li>The prices of items must have "$" before them.</li>
-                            
+                      </ul>   
       <li><strong>T12E-9</strong>: Shopping Cart Page</li>
-          There must be a Shopping Cart page (functional) 
-
-    The Shopping Cart page must display a list of every item in the user’s cart (functional) 
-
-    The Shopping Cart page must allow the user to remove any and all items from the list they chose (functional) 
-
-    The Shopping Cart page must send the user back to the “main” page if they remove all items from their cart (functional) 
-
-    The Shopping Cart page must display the subtotal in US dollars, the subtotal is the total price of every item in the user’s cart at checkout (functional) 
-
-    The subtotal must be recalculated as the user makes changes to their cart contents (non-functional) 
-
-    The shopping cart page must contain a “pay now” button that brings up a “Pay Now” screen (functional) 
-
-    The user’s cart must hold all its items as the user navigates the site unless it is modified by the user or if the user completes a purchase (non-functional) 
+                  <ul>
+                  <li><strong>T12S-1</strong>Shopping Cart Page</li>
+                        <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 3 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>There must be a Shopping Cart page.</li>
+                      </ul>   
+                  <li><strong>T12S-1</strong>Shopping Cart Display List</li>
+                        <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The Shopping Cart page must display a list of every item in the user’s cart.</li>
+                      </ul>  
+                  <li><strong>T12S-1</strong>Shopping Cart Display List</li>
+                    <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The Shopping Cart page must allow the user to remove any and all items from the list they chose (functional) </li>
+                      </ul>   
+                  <li><strong>T12S-1</strong>Shopping Cart Display List</li>
+                    <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li></li> The Shopping Cart page must send the user back to the “main” page if they remove all items from their cart (functional)  </li>
+                      </ul>   
+                  <li><strong>T12S-1</strong>Shopping Cart Display List</li>
+                    <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li></li> The Shopping Cart page must display the subtotal in US dollars, the subtotal is the total price of every item in the user’s cart at checkout</li>
+                      </ul>   
+                  <li><strong>T12S-1</strong>Shopping Cart Display List</li>
+                    <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Non-functional</li>
+                          <li>The subtotal must be recalculated as the user makes changes to their cart contents.</li>
+                      </ul>
+                  <li><strong>T12S-1</strong>Shopping Cart Display List</li>
+                    <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The shopping cart page must contain a “pay now” button that brings up a “Pay Now” screen.</li>
+                      </ul>   
+                  <li><strong>T12S-1</strong>Shopping Cart Display List</li>
+                        <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Non-functional</li>
+                          <li> The user’s cart must hold all its items as the user navigates the site unless it is modified by the user or if the user completes a purchase. </li>
+      </ul>   
       <li><strong>T12E-10</strong>: Confirm Order Page</li>
       <li><strong>T12E-11</strong>: Complete Order Page</li>
-          There must be a “Complete Order” page (functional) 
-
-    The Complete Order page must display a receipt containing all order information present on the “Confirm Order” page (functional) 
-
-    The receipt must also include the last four digits of the user’s credit card number, and the user’s shipping address (functional) 
-
-    The receipt must be emailed to the user (from my understanding, all this means is that there is a page showing the receipt to the user) (functional) 
-
-    The receipt must be emailed to the user via SendGrid (Non-functional) 
-
-    All items purchased by the user must be added to the sales report (functional) 
-
-    There must be an “ok” button that empties the cart and allows the user to exit the receipt and return to the “main” screen (functional) 
+            <ul>
+                  <li><strong>T12S-1</strong>Complete Order Page</li>
+                  <ul>            
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>  There must be a “Complete Order” page. </li>
+                        </ul>
+                   <li><strong>T12S-1</strong>Complete Order Page</li>
+                        <ul>            
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li> The Complete Order page must display a receipt containing all order information present on the “Confirm Order” page.</li>
+                        </ul>
+                   <li><strong>T12S-1</strong>Complete Order Page</li>
+                        <ul>            
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li> The receipt must also include the last four digits of the user’s credit card number, and the user’s shipping address (functional) </li>
+                        </ul>
+                   <li><strong>T12S-1</strong>Complete Order Page</li>
+                        <ul>            
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li> The receipt must be emailed to the user (from my understanding, all this means is that there is a page showing the receipt to the user) (functional)  </li>
+                        </ul>
+                  <li><strong>T12S-1</strong>Complete Order Page</li>
+                        <ul>            
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Non-functional</li>
+                          <li> The receipt must be emailed to the user via SendGrid (Non-functional) </li>
+                        </ul>
+                  <li><strong>T12S-1</strong>Complete Order Page</li>
+                        <ul>            
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Non-functional</li>
+                          <li>All items purchased by the user must be added to the sales report (functional) </li>
+                        </ul>
+                  <li><strong>T12S-1</strong>Complete Order Page</li>
+                        <ul>            
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Functional/Non-functional</em>:Non-functional</li>
+                          <li> There must be an “ok” button that empties the cart and allows the user to exit the receipt and return to the “main” screen (functional)  </li>
+                  </ul>
+            </ul>
       <li><strong>T12E-12</strong>: Sales Report</li>
             <ui>
             <li><strong>T12S-1</strong>Sales Report Admin Accesibility</li>
@@ -286,4 +366,5 @@
             </ul>
        </ul>  
 </ul>
+
 
