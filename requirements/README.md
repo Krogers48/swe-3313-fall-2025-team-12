@@ -231,9 +231,37 @@
                   <li><strong>T12S-15</strong>: Confirm Order Page</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 1 days</li>
+                          <li><em>Effort</em>: 3 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
-                          <li>The login page must contain two fields: "Username" and "Password". A button labeled "Login" must exist underneath the two fields.</li>
+                          <li>There must be a confirm order page. The page must list the names and prices of what the user is buying, the subtutal of the user's order, the tax as ^% of the user's subtotal, the shipping cost associated with the user's shipping choice, and the grand total of the user's order.</li>
+                      </ul>
+                  <li><strong>T12S-15</strong>: Complete Order Button</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 1 day</li>
+                          <li><em>Functional/Non-functional</em>: Functional</li>
+                          <li>The confirm order page must have a complete order button that, when pressed, all purchased items must be removed from the inventory. The application must then send the user to the "Complete Order" page. </li>
+                      </ul>
+                    <li><strong>T12S-15</strong>: Return to Checkout Button</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 0.5 day</li>
+                          <li><em>Functional/Non-functional</em>: Functional</li>
+                          <li>The Confirm Order page must have a “Return to Checkout” button that returns the user to the “Checkout” page.</li>
+                      </ul>
+                         <li><strong>T12S-15</strong>: Continue Shopping Button</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 0.5 day</li>
+                          <li><em>Functional/Non-functional</em>: Functional</li>
+                          <li>The Confirm Order page must have a “Continue Shopping” button that returns the user to the “Main” page.</li>
+                      </ul>
+                            <li><strong>T12S-15</strong>: Cart Remaining The Same After Not Completing Order</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 0.25 day</li>
+                          <li><em>Functional/Non-functional</em>: Functional</li>
+                          <li>The user’s cart must remain the same if they chose not to complete the order. </li>
                       </ul>
               </ul>
       <li><strong>T12E-11</strong>: Complete Order Page</li>
@@ -259,7 +287,7 @@
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li> A receipt must be sent to the user. The receipt must be emailed to the user via SendGrid (Non-functional) </li>
                         </ul>
-                  <li><strong>T12S-1</strong>Items Purchased to Sales Report</li>
+                  <li><strong>T12S-1</strong>: Items Purchased to Sales Report</li>
                         <ul>            
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 1 day</li>
@@ -277,28 +305,28 @@
       </ul>
       <li><strong>T12E-12</strong>: Sales Report</li>
             <ul>
-            <li><strong>T12S-1</strong>Sales Report Admin Accesibility</li>
+            <li><strong>T12S-1</strong>: Sales Report Admin Accesibility</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 1 day</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The sales report must be accesible to admins.</li>
                       </ul>
-            <li><strong>T12S-1</strong>Sales Report Information Displayed</li>
+            <li><strong>T12S-1</strong>: Sales Report Information Displayed</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 1 day</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The sales report must show every purchased item and who purchased the items.</li>
                       </ul>
-            <li><strong>T12S-1</strong>Sales Report Items Clickability</li>
+            <li><strong>T12S-1</strong>: Sales Report Items Clickability</li>
                       <ul>
                           <li><em>Priority</em>: Would Be Nice To Have</li>
                           <li><em>Effort</em>: 1 day</li>
                           <li><em>Functional/Non-functional</em>Fnctional</li>
                           <li>The items in the report must be clickable, and must redirect to the receipt associated with their purchase</li>
                       </ul>
-            <li><strong>T12S-1</strong>Sales Report CSV Export</li>
+            <li><strong>T12S-1</strong>: Sales Report CSV Export</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 1 day</li>
@@ -356,6 +384,7 @@
             </ul>
        </ul>  
 </ul>
+
 
 
 
