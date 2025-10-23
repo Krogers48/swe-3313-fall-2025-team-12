@@ -1,1 +1,1 @@
-![Use Case Diagram](requirements/use-case.png)
+![Use Case Diagram](/use-case.png)
