@@ -13,7 +13,7 @@
             <li><strong>T12S-2</strong>: Unique Username and Password</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 2 day</li>
+                    <li><em>Effort</em>: 2 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>All users must have a unique username and 6-character minimum password.</li>
         </ul>
@@ -30,7 +30,7 @@
             <li><strong>T12S-4</strong>: Creation Page Fields</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 0.5 day</li>
+                    <li><em>Effort</em>: 0.5 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The user account creation page must contain two fields, "Username" and "Password", and a "Create Account" button below the two fields.</li>
                 </ul>
@@ -41,28 +41,28 @@
             <li><strong>T12S-5</strong>: Admin Appointment</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 1 days</li>
+                    <li><em>Effort</em>: 1 day</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The application must include the ability to appoint admins from pre-existing users.</li>
                 </ul>
             <li><strong>T12S-6</strong>: Sales Report</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 2 day</li>
+                    <li><em>Effort</em>: 2 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>Admins must have the ability to generate a sales report. The report shows all items purchased and who purchased them.</li>
             </ul>
           <li><strong>T12S-7</strong>: Sales Report Export to CSV</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 2 day</li>
+                    <li><em>Effort</em>: 2 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The application must have the ability to export the sales report to a CSV file.</li>
             </ul>
             <li><strong>T12S-8</strong>: Add Inventory</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 3 day</li>
+                    <li><em>Effort</em>: 3 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>Admin users must be able to open a page, enter information, choose a picture, and have information added to the database. </li>
           </ul>
@@ -82,7 +82,7 @@
             <li><strong>T12S-10</strong>: Accessibilty to Admins</li>
                       <ul>
                           <li><em>Priority</em>: Needs to Have</li>
-                          <li><em>Effort</em>: 0.5 day</li>
+                          <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>Admins must have access to the Admin Creation UI after login.</li>
                       </ul>
@@ -135,6 +135,7 @@
                       </ul>
               </ul>
       <li><strong>T12E-7</strong>: Main Screen</li>
+      <ul>
           <li><strong>T12S-16</strong>: Main Screen</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
@@ -152,11 +153,10 @@
             <li><strong>T12S-18</strong>: Add Multiple Items To Cart</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 1 days</li>
+                          <li><em>Effort</em>: 1 day</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li>The main screen must allow users to add multiple items to the cart. 
                       </ul>
-              </ul>
                <li><strong>T12S-15</strong>: Inventory Search Box</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
@@ -167,7 +167,7 @@
                   <li><strong>T12S-19</strong>: Checkout Button</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 1 days</li>
+                          <li><em>Effort</em>: 1 day</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The main screen must contain a checkout button that the user can click to go to the shopping cart page. This button must not work when the cart is empty. 
                       </ul>
@@ -177,21 +177,21 @@
             <li><strong>T12S-20</strong>Main Screen Items Characteristics</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>Items Must have a short name, brief description, a picture (or pictures), a price, and a button that adds the item to the cart.</li>
                       </ul>
             <li><strong>T12S-21</strong>Price Currency</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 0.5 day</li>
+                          <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li>The pieces of the items must be in U.S. dollars.</li>
                       </ul>
             <li><strong>T12S-22</strong>Price Formatting</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 0.5 day</li>
+                          <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li>The prices of items must have "$" before them and be properly formatted with commas and decimal points.</li>
                             <ul>
@@ -204,14 +204,14 @@
                   <li><strong>T12S-23</strong>Shopping Cart Page</li>
                         <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 3 day</li>
+                          <li><em>Effort</em>: 3 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The application must include a shopping cart page.</li>
                       </ul>   
                   <li><strong>T12S-24</strong>Shopping Cart Display List</li>
                         <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The shopping cart page must display a list of every item in the user’s cart.</li>
                       </ul>  
@@ -246,7 +246,7 @@
                   <li><strong>T12S-29</strong>: User Cart</li>
                         <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>: Non-functional</li>
                           <li> The user’s cart must hold all its items as the user navigates the site unless it is modified by the user or if the user completes a purchase. </li>
                         </ul>
@@ -270,21 +270,21 @@
                     <li><strong>T12S-32</strong>: Return to Checkout Button</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 0.5 day</li>
+                          <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>: Functional</li>
                           <li>The Confirm Order page must have a “Return to Checkout” button that returns the user to the “Checkout” page.</li>
                       </ul>
                          <li><strong>T12S-33</strong>: Continue Shopping Button</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 0.5 day</li>
+                          <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>: Functional</li>
                           <li>The Confirm Order page must have a “Continue Shopping” button that returns the user to the “Main” page.</li>
                       </ul>
                             <li><strong>T12S-34</strong>: Cart Remaining The Same After Not Completing Order</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 0.25 day</li>
+                          <li><em>Effort</em>: 0.25 days</li>
                           <li><em>Functional/Non-functional</em>: Functional</li>
                           <li>The user’s cart must remain the same if they chose not to complete the order. </li>
                       </ul>
@@ -294,21 +294,21 @@
                   <li><strong>T12S-35</strong>Complete Order Page</li>
                   <ul>            
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The application must include a “Complete Order” page. </li>
                         </ul>
                    <li><strong>T12S-36</strong>: Receipt Display Information</li>
                         <ul>            
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li> The Complete Order page must display a receipt containing all order information present on the “Confirm Order” page. The receipt must also include the last four digits of the user’s credit card number, and the user’s shipping address.</li>
                         </ul>
                   <li><strong>T12S-37</strong>: SendGrid Receipt</li>
                         <ul>            
                           <li><em>Priority</em>: Needs To Have</li>
-                          <li><em>Effort</em>: 2 day</li>
+                          <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>: Non-functional</li>
                           <li> A receipt must be sent to the user. The receipt must be emailed to the user via SendGrid. </li>
                         </ul>
@@ -322,7 +322,7 @@
                   <li><strong>T12S-39</strong>OK Button</li>
                         <ul>            
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 0.5 day</li>
+                          <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li> There must be an “ok” button that empties the cart and allows the user to exit the receipt and return to the “main” screen.  </li>
                   </ul>
@@ -333,7 +333,7 @@
             <li><strong>T12S-40</strong>: Sales Report Admin Accesibility</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 0.25 day</li>
+                          <li><em>Effort</em>: 0.25 days</li>
                           <li><em>Functional/Non-functional</em>: Functional</li>
                           <li>The sales report must be accesible to admins.</li>
                       </ul>
@@ -365,14 +365,14 @@
             <li><strong>T12S-44</strong>: Database Updating Page Text Fields</li>
                 <ul>
                     <li><em>Priority</em>: Would Be Nice To Have</li>
-                    <li><em>Effort</em>: 3 day</li>
+                    <li><em>Effort</em>: 3 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The Database Updating Page must contain three text fields: name (limited to 15 characters), description (limited to 50 characters), and price (will separate any erroneous input from the enumerated price itself when submitted to the database). </li>
        </ul>  
       <li><strong>T12S-45</strong>: Database Updating Page Picture Selection</li>
                 <ul>
                     <li><em>Priority</em>: Would Be Nice To Have</li>
-                    <li><em>Effort</em>: 2 day</li>
+                    <li><em>Effort</em>: 2 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The Database Updating page must contain a field to select pictures to add to the submission.</li>               
        </ul>  
@@ -409,6 +409,7 @@
             </ul>
        </ul>  
 </ul>
+
 
 
 
