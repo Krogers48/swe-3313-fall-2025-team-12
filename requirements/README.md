@@ -6,18 +6,11 @@
             <li><strong>T12S-1</strong>: Self-Register</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 2 days</li>
+                    <li><em>Effort</em>: 3 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
-                    <li>Users must be able to create their own accounts.</li>
+                    <li>All users must have the ability to create their own accounts and login into them.</li>
                 </ul>
-            <li><strong>T12S-2</strong>: Login</li>
-                <ul>
-                    <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 1 day</li>
-                    <li><em>Functional/Non-functional</em>: Functional</li>
-                    <li>Users must be able to login to their accounts.</li>
-                </ul>
-            <li><strong>T12S-3</strong>: Unique Username and Password</li>
+            <li><strong>T12S-2</strong>: Unique Username and Password</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
                     <li><em>Effort</em>: 2 day</li>
@@ -27,31 +20,25 @@
     </ul>
       <li><strong>T12E-2</strong>: User Account Creation</li>
         <ul>
-            <li><strong>T12S-4</strong>: Creation Page</li>
+            <li><strong>T12S-3</strong>: Creation Page</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 2 days</li>
+                    <li><em>Effort</em>: 3 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
-                    <li>There must be a user account creation page.</li>
+                    <li>The application must include a user account creation screen.</li>
                 </ul>
-            <li><strong>T12S-5</strong>: Creation Page Fields</li>
+            <li><strong>T12S-4</strong>: Creation Page Fields</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Effort</em>: 0.5 day</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
-                    <li>The User Account Creation page must contain two fields: "Username" and "Password".</li>
+                    <li>The user account creation page must contain two fields, "Username" and "Password", and a "Create Account" button below the two fields.</li>
                 </ul>
-            <li><strong>T12S-6</strong>: Create Account Button</li>
-                <ul>
-                    <li><em>Priority</em>: Must Have</li>
-                    <li><em>Effort</em>: 2 day</li>
-                    <li><em>Functional/Non-functional</em>: Functional</li>
-                    <li>The User Account Creation page must contain a "Create Account" button below the first two fields.</li>
         </ul>
     </ul>
         <li><strong>T12E-3</strong>: Administrators</li>
         <ul>
-            <li><strong>T12S-1</strong>: Admin Appointment</li>
+            <li><strong>T12S-6</strong>: Admin Appointment</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
                     <li><em>Effort</em>: 0.5 days</li>
@@ -366,5 +353,6 @@
             </ul>
        </ul>  
 </ul>
+
 
 
