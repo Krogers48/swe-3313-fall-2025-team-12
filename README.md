@@ -39,6 +39,7 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   |	├── gantt-chart.png
 |   └──README.md
 ├──requirements/
+│   ├──use-case.png
 │   ├──use-case.md
 │   ├──decision-table-code-demo.EXT
 │   ├──decision-table-screenshot
