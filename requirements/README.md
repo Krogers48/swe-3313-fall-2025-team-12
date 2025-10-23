@@ -401,14 +401,14 @@
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>After entering the item, the page must be reloaded, all fields cleared, and page ready for another submission.</li>         
        </ul>  
-      <li><strong>T12S-50</strong>: Admins Access</li>
+      <li><strong>T12S-51</strong>: Admins Access</li>
                 <ul>
                     <li><em>Priority</em>: Would Be Nice To Have</li>
                     <li><em>Effort</em>: 0.5 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The data updating page must only be accessible to admins.</li>         
        </ul>  
-      <li><strong>T12S-51</strong>: Admin Permissions </li>
+      <li><strong>T12S-52</strong>: Admin Permissions </li>
                 <ul>
                     <li><em>Priority</em>: Would Be Nice To Have</li>
                     <li><em>Effort</em>: 1 day</li>
@@ -418,14 +418,14 @@
     </ul>
       <li><strong>T12E-14</strong>: UI Mockup</li>
        <ul>
-            <li><strong>T12S-52</strong>: High-fidelity mockup</li>
+            <li><strong>T12S-53</strong>: High-fidelity mockup</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
                     <li><em>Effort</em>: 7 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>There must be a high-fidelity mockup of all screens and the application flow before coding is started.</li>
                 </ul>
-            <li><strong>T12S-53</strong>: UI Mockup Final Product Translation</li>
+            <li><strong>T12S-54</strong>: UI Mockup Final Product Translation</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
                     <li><em>Effort</em>: 7 days</li>
