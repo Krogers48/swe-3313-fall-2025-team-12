@@ -69,7 +69,7 @@
         </ul>
       <li><strong>T12E-4</strong>: Admin Creation</li>
             <ul>
-            <li><strong>T12S-1</strong>: Instructions On Manually Converting To Admin User</li>
+            <li><strong>T12S-9</strong>: Instructions On Manually Converting To Admin User</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
@@ -78,58 +78,59 @@
                       </ul>
             </ul>
       <li><strong>T12E-5</strong>: Admin Creation UI</li>
-            <ui>
-            <li><strong>T12S-1</strong>: Accessibilty to Admins</li>
+            <ul>
+            <li><strong>T12S-10</strong>: Accessibilty to Admins</li>
                       <ul>
                           <li><em>Priority</em>: Needs to Have</li>
                           <li><em>Effort</em>: 0.5 day</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>Admins must have access to the Admin Creation UI after login.</li>
                       </ul>
-            <li><strong>T12S-1</strong>: Search Box</li>
+            <li><strong>T12S-11</strong>: Search Box</li>
                       <ul>
                           <li><em>Priority</em>: Needs to Have</li>
                           <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The Admin Creation UI must contain a search box that checks for a match between the admin's query and the usernames of existing user accounts.</li>
                       </ul>
-            <li><strong>T12S-1</strong>: List of Existing User Accounts</li>
+            <li><strong>T12S-12</strong>: List of Existing User Accounts</li>
                       <ul>
                           <li><em>Priority</em>: Needs to Have</li>
                           <li><em>Effort</em>: 3 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The Admin Creation UI must contain a list of all existing user accounts.</li>
                             <ul>
-                                  <li>    Each account in the list must have a button labeled “Convert to Admin” associated with it </li>
-                                        <li>Once “Convert to Admin” is clicked, a dialog box must appear that reads  “Do you wish to transform the account: {user account username} Into an admin account?” </li>
-                                          <li>There must be two options under this dialogue: ‘Yes’ and ‘No’ </li>
-                                          <li>If “No” is chosen, the dialogue box must be closed (functional) </li>
-                                          <li>If “Yes” is chosen, the admin must be prompted for their password (functional)</li>
-                                          <li>If the password is entered incorrectly, the password field must be cleared, and the admin must be informed that their password was incorrect (functional) </li>
-                                          <li>If the password is entered correctly, the user account must be transformed into an admin account, the dialogue box must be closed, and a new one must open that reads “The account {account username} is now an admin” with an “ok” button that the admin can click to close the dialogue box. (functional) </li>
+                                    <li>Each listed account must have an associated button labeled “Convert to Admin”.</li>
+                                    <li>Once “Convert to Admin” is clicked, a dialog box must appear that reads  “Do you wish to transform the account: {user account username} Into an admin account?” </li>
+                                    <li>Two options must exist under this dialogue: ‘Yes’ and ‘No’. </li>
+                                    <li>If “No” is chosen, the dialogue box must be closed. </li>
+                                    <li>If “Yes” is chosen, tha application must prompt the admin for their password.</li>
+                                    <li>If the password is entered incorrectly, the password field must clear, and the application must inform the admin that their password is incorrect.</li>
+                                    <li>If the password is entered correctly, the application must transform the user into an admin account. The dialogue box must close, and a new one must open that reads “The account {account username} is now an admin” with an “ok” button that the admin can click to close the dialogue box. </li>
             </ul>
       </ul>
       <li><strong>T12E-6</strong>: Login Page</li>
-            <li><strong>T12S-1</strong>Login Page</li>
+        <ul>
+            <li><strong>T12S-13</strong>Login Page</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 3 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
-                          <li>There must be a login page.</li>
+                          <li>The application must have a login page.</li>
                       </ul>
-            <li><strong>T12S-1</strong>Users and Admin Login Ability</li>
+            <li><strong>T12S-14</strong>Users and Admin Login Ability</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
-                          <li>The Login page must allow both users and admins to login. </li>
+                          <li>The login page must allow both users and admins to login. </li>
                       </ul>
-            <li><strong>T12S-1</strong>Login Fields</li>
+            <li><strong>T12S-15</strong>Login Fields and Button</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 1 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
-                          <li>The Login page must contain two fields: "Username" and "Password".</li>
+                          <li>The login page must contain two fields: "Username" and "Password". A button labeled "Login" must exist underneath the two fields.</li>
                       </ul>
       <li><strong>T12E-7</strong>: Main Screen</li>
       <li><strong>T12E-8</strong>: Items on the Main Screen</li>
@@ -347,6 +348,7 @@
             </ul>
        </ul>  
 </ul>
+
 
 
 
