@@ -118,7 +118,7 @@
 </ul>
       <li><strong>T12E-6</strong>: Login Page</li>
         <ul>
-            <li><strong>T12S-14</strong>Login Page</li>
+            <li><strong>T12S-14</strong>: Login Page</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 3 days</li>
@@ -180,21 +180,21 @@
               </ul>
       <li><strong>T12E-8</strong>: Items on the Main Screen</li>
             <ul>
-            <li><strong>T12S-22</strong>Main Screen Items Characteristics</li>
+            <li><strong>T12S-22</strong>: Main Screen Items Characteristics</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>Items Must have a short name, brief description, a picture (or pictures), a price, and a button that adds the item to the cart.</li>
                       </ul>
-            <li><strong>T12S-23</strong>Price Currency</li>
+            <li><strong>T12S-23</strong>: Price Currency</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li>The pieces of the items must be in U.S. dollars.</li>
                       </ul>
-            <li><strong>T12S-24</strong>Price Formatting</li>
+            <li><strong>T12S-24</strong>: Price Formatting</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
@@ -207,21 +207,21 @@
             </ul>
       <li><strong>T12E-9</strong>: Shopping Cart Page</li>
                   <ul>
-                  <li><strong>T12S-25</strong>Shopping Cart Page</li>
+                  <li><strong>T12S-25</strong>: Shopping Cart Page</li>
                         <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 3 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The application must include a shopping cart page.</li>
                       </ul>   
-                  <li><strong>T12S-26</strong>Shopping Cart Display List</li>
+                  <li><strong>T12S-26</strong>: Shopping Cart Display List</li>
                         <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The shopping cart page must display a list of every item in the user’s cart.</li>
                       </ul>  
-                  <li><strong>T12S-27</strong>Display List Item Removal</li>
+                  <li><strong>T12S-27</strong>: Display List Item Removal</li>
                     <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 1 day</li>
@@ -233,7 +233,7 @@
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>: Functional</li>
-                          <li></li> The shopping cart page must display the subtotal in US dollars, the subtotal is the total price of every item in the user’s cart at checkout.</li>
+                          <li>The shopping cart page must display the subtotal in US dollars, the subtotal is the total price of every item in the user’s cart at checkout.</li>
                       </ul>   
                   <li><strong>T12S-29</strong>: Subtotal Recalculation</li>
                     <ul>
@@ -297,7 +297,7 @@
               </ul>
       <li><strong>T12E-11</strong>: Complete Order Page</li>
             <ul>
-                  <li><strong>T12S-37</strong>Complete Order Page</li>
+                  <li><strong>T12S-37</strong>: Complete Order Page</li>
                   <ul>            
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 2 days</li>
