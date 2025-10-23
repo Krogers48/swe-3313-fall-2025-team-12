@@ -109,6 +109,7 @@
                                     <li>If the password is entered correctly, the application must transform the user into an admin account. The dialogue box must close, and a new one must open that reads “The account {account username} is now an admin” with an “ok” button that the admin can click to close the dialogue box. </li>
             </ul>
       </ul>
+</ul>
       <li><strong>T12E-6</strong>: Login Page</li>
         <ul>
             <li><strong>T12S-13</strong>Login Page</li>
@@ -118,21 +119,30 @@
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The application must have a login page.</li>
                       </ul>
-            <li><strong>T12S-14</strong>Users and Admin Login Ability</li>
+            <li><strong>T12S-14</strong>: Users and Admin Login Ability</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The login page must allow both users and admins to login. </li>
                       </ul>
-            <li><strong>T12S-15</strong>Login Fields and Button</li>
+            <li><strong>T12S-15</strong>: Login Fields and Button</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 1 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The login page must contain two fields: "Username" and "Password". A button labeled "Login" must exist underneath the two fields.</li>
                       </ul>
+              </ul>
       <li><strong>T12E-7</strong>: Main Screen</li>
+          <li><strong>T12S-15</strong>: Login Fields and Button</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 1 days</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The login page must contain two fields: "Username" and "Password". A button labeled "Login" must exist underneath the two fields.</li>
+                      </ul>
+              </ul>
       <li><strong>T12E-8</strong>: Items on the Main Screen</li>
             <ul>
             <li><strong>T12S-1</strong>Main Screen Items Characteristics</li>
@@ -194,7 +204,7 @@
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li></li> The shopping Cart page must display the subtotal in US dollars, the subtotal is the total price of every item in the user’s cart at checkout.</li>
                       </ul>   
-                  <li><strong>T12S-1</strong>: Shopping Cart Display List</li>
+                  <li><strong>T12S-1</strong>: Subtotal Recalculation</li>
                     <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 1 day</li>
@@ -217,6 +227,15 @@
                         </ul>
       </ul>   
       <li><strong>T12E-10</strong>: Confirm Order Page</li>
+            <ul>
+                  <li><strong>T12S-15</strong>: Confirm Order Page</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 1 days</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The login page must contain two fields: "Username" and "Password". A button labeled "Login" must exist underneath the two fields.</li>
+                      </ul>
+              </ul>
       <li><strong>T12E-11</strong>: Complete Order Page</li>
             <ul>
                   <li><strong>T12S-1</strong>Complete Order Page</li>
@@ -255,6 +274,7 @@
                           <li> There must be an “ok” button that empties the cart and allows the user to exit the receipt and return to the “main” screen.  </li>
                   </ul>
             </ul>
+      </ul>
       <li><strong>T12E-12</strong>: Sales Report</li>
             <ul>
             <li><strong>T12S-1</strong>Sales Report Admin Accesibility</li>
@@ -270,12 +290,14 @@
                           <li><em>Effort</em>: 1 day</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The sales report must show every purchased item and who purchased the items.</li>
+                      </ul>
             <li><strong>T12S-1</strong>Sales Report Items Clickability</li>
                       <ul>
                           <li><em>Priority</em>: Would Be Nice To Have</li>
                           <li><em>Effort</em>: 1 day</li>
                           <li><em>Functional/Non-functional</em>Fnctional</li>
                           <li>The items in the report must be clickable, and must redirect to the receipt associated with their purchase</li>
+                      </ul>
             <li><strong>T12S-1</strong>Sales Report CSV Export</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
@@ -283,7 +305,10 @@
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The sales report must have a button that exports the sales report to a CSV file.</li>
                       </ul>
+                  </ul>
+            </ul>
       <li><strong>T12E-13</strong>: Database Updating Page</li>
+            <ul>
             <li><strong>T12S-3</strong>: Database Updating Page Text Fields</li>
                 <ul>
                     <li><em>Priority</em>: Would Be Nice To Have</li>
@@ -331,6 +356,7 @@
             </ul>
        </ul>  
 </ul>
+
 
 
 
