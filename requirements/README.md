@@ -326,7 +326,7 @@
                           <li><em>Functional/Non-functional</em>: Functional</li>
                           <li>The application must create a "sale" from the user's purchase that lists relevant information such as what was purchased, the user_id of the user that purchased it, the subtotal, the tax, the shipping cost, the total cost, and the date the purchase was made. The sales report must have this information added to it.</li>
                         </ul>
-                  <li><strong>T12S-41</strong>OK Button</li>
+                  <li><strong>T12S-41</strong>: OK Button</li>
                         <ul>            
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
