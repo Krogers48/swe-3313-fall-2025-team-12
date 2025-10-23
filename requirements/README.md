@@ -79,26 +79,81 @@
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>Admin users must be able to open a page, enter information, choose a picture, and have information added to the database. </li>
           </ul>
+        </ul>
+      <li><strong>T12E-4</strong>: Admin Creation</li>
+            <ul>
+            <li><strong>T12S-1</strong>: Instructions On Manually Converting To Admin User</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 0.5 days</li>
+                          <li><em>Functional/Non-functional</em>:Non-functional</li>
+                          <li>There must be step-by-step instructions created for the admins on how to manually convert a user account into an admin account in the database.</li>
+                      </ul>
+            <li><strong>T12S-1</strong>: Easy To Understand Instructions</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 0.5 days</li>
+                          <li><em>Functional/Non-functional</em>:Non-functional</li>
+                          <li>The instructions must be understandable to the "not overly technical" admins.</li>
+                      </ul>
+      <li><strong>T12E-5</strong>: Admin Creation UI</li>
+            <ui>
+            <li><strong>T12S-1</strong>: Accessibilty to Admins</li>
+                      <ul>
+                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Effort</em>: 1 day</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The Admin Creation UI must be accessible to admins after login.</li>
+                      </ul>
+            <li><strong>T12S-1</strong>: Search Box</li>
+                      <ul>
+                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Effort</em>: 2 days</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The Admin Creation UI must contain a search box that checks for a match between the admin's query and the usernames of existing user accounts.</li>
+                      </ul>
+            <li><strong>T12S-1</strong>: List of Existing User Accounts</li>
+                      <ul>
+                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Effort</em>: 2 days</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The Admin Creation UI must contain a list of all existing user accounts.</li>
+                      </ul>
+      <li><strong>T12E-6</strong>: Login Page</li>
+      <li><strong>T12E-7</strong>: Main Screen</li>
+      <li><strong>T12E-8</strong>: Items on the Main Screen</li>
+      <li><strong>T12E-9</strong>: Shopping Cart Page</li>
+      <li><strong>T12E-10</strong>: Confirm Order Page</li>
+      <li><strong>T12E-11</strong>: Complete Order Page</li>
+      <li><strong>T12E-12</strong>: Sales Report</li>
+      <li><strong>T12E-13</strong>: Database Updating Page</li>
             <li><strong>T12S-3</strong>: Database Updating Page Text Fields</li>
                 <ul>
-                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Priority</em>: Would Be Nice To Have</li>
                     <li><em>Effort</em>: 1 day</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The Database Updating Page must contain three text fields: name (limited to 15 characters), description (limited to 50 characters), and price (will separate any erroneous input from the enumerated price itself when submitted to the database). </li>
        </ul>  
       <li><strong>T12S-3</strong>: Database Updating Page Picture Selection</li>
                 <ul>
-                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Priority</em>: Would Be Nice To Have</li>
                     <li><em>Effort</em>: 1 day</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The Database Updating page must contain a field to select pictures to add to the submission.</li>               
        </ul>  
       <li><strong>T12S-3</strong>: Add Item Button</li>
                 <ul>
-                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Priority</em>: Would Be Nice To Have</li>
                     <li><em>Effort</em>: 1 day</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
-                    <li>Once all fields are filled, the admin can hit an "Add Item" button.</li>         
+                    <li>Once all fields are filled, the admin can hit an "Add Item" button. The information must be entered into the database as a new item automatically once the "Add Item" button is pressed.</li>                          
+       </ul>  
+      <li><strong>T12S-3</strong>: Reload Fields After Submission</li>
+                <ul>
+                    <li><em>Priority</em>: Would Be Nice To Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>After entering the item, the page must be reloaded, all fields cleared, and page ready for another submission.</li>         
        </ul>  
     </ul>
       <li><strong>T12E-4</strong>: UI Mockup</li>
@@ -298,5 +353,6 @@
  
 
  
+
 
 
