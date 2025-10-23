@@ -34,7 +34,6 @@
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The user account creation page must contain two fields, "Username" and "Password", and a "Create Account" button below the two fields.</li>
                 </ul>
-        </ul>
             <li><strong>T12S-5</strong>: Password Storage</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
