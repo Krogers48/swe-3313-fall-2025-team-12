@@ -231,32 +231,25 @@
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 2 day</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
-                          <li>  There must be a “Complete Order” page. </li>
+                          <li>The application must include a “Complete Order” page. </li>
                         </ul>
-                   <li><strong>T12S-1</strong>Complete Order Page</li>
+                   <li><strong>T12S-1</strong>: Receipt Display Information</li>
                         <ul>            
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 2 day</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
-                          <li> The Complete Order page must display a receipt containing all order information present on the “Confirm Order” page.</li>
+                          <li> The Complete Order page must display a receipt containing all order information present on the “Confirm Order” page. The receipt must also include the last four digits of the user’s credit card number, and the user’s shipping address.</li>
                         </ul>
-                   <li><strong>T12S-1</strong>Complete Order Page</li>
-                        <ul>            
-                          <li><em>Priority</em>: Must Have</li>
-                          <li><em>Effort</em>: 2 day</li>
-                          <li><em>Functional/Non-functional</em>:Functional</li>
-                          <li> The receipt must also include the last four digits of the user’s credit card number, and the user’s shipping address (functional) </li>
-                        </ul>
-                   <li><strong>T12S-1</strong>Complete Order Page</li>
+                   <li><strong>T12S-1</strong>: Complete Order Page</li>
                         <ul>            
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 2 day</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li> The receipt must be emailed to the user (from my understanding, all this means is that there is a page showing the receipt to the user) (functional)  </li>
                         </ul>
-                  <li><strong>T12S-1</strong>Complete Order Page</li>
+                  <li><strong>T12S-1</strong>: SendGrid Receipt</li>
                         <ul>            
-                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Priority</em>: Needs To Have</li>
                           <li><em>Effort</em>: 2 day</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li> The receipt must be emailed to the user via SendGrid (Non-functional) </li>
@@ -277,7 +270,7 @@
                   </ul>
             </ul>
       <li><strong>T12E-12</strong>: Sales Report</li>
-            <ui>
+            <ul>
             <li><strong>T12S-1</strong>Sales Report Admin Accesibility</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
@@ -334,7 +327,7 @@
                     <li>After entering the item, the page must be reloaded, all fields cleared, and page ready for another submission.</li>         
        </ul>  
     </ul>
-      <li><strong>T12E-4</strong>: UI Mockup</li>
+      <li><strong>T12E-14</strong>: UI Mockup</li>
        <ul>
             <li><strong>T12S-1</strong>: High-fidelity mockup</li>
                 <ul>
@@ -352,6 +345,7 @@
             </ul>
        </ul>  
 </ul>
+
 
 
 
