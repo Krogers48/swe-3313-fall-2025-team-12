@@ -134,6 +134,7 @@
                       </ul>
       <li><strong>T12E-7</strong>: Main Screen</li>
       <li><strong>T12E-8</strong>: Items on the Main Screen</li>
+            <ul>
             <li><strong>T12S-1</strong>Main Screen Items Characteristics</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
@@ -160,7 +161,8 @@
                           <li><em>Effort</em>: 0.5 day</li>
                           <li><em>Functional/Non-functional</em>:Non-functional</li>
                           <li>The prices of items must have "$" before them.</li>
-                      </ul>   
+                      </ul> 
+            </ul>
       <li><strong>T12E-9</strong>: Shopping Cart Page</li>
                   <ul>
                   <li><strong>T12S-1</strong>Shopping Cart Page</li>
@@ -348,6 +350,7 @@
             </ul>
        </ul>  
 </ul>
+
 
 
 
