@@ -16,8 +16,8 @@
                     <li><em>Effort</em>: 2 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>All users must have a unique username and 6-character minimum password.</li>
+                </ul>
         </ul>
-    </ul>
       <li><strong>T12E-2</strong>: User Account Creation</li>
         <ul>
             <li><strong>T12S-3</strong>: Creation Page</li>
@@ -41,8 +41,8 @@
                     <li><em>Effort</em>: 1 day</li>
                     <li><em>Functional/Non-functional</em>: Non-functional</li>
                     <li>The database must store passwords as hashed values with salting.</li>
+                </ul>
         </ul>
-    </ul>
         <li><strong>T12E-3</strong>: Administrators</li>
         <ul>
             <li><strong>T12S-6</strong>: Admin Appointment</li>
@@ -58,21 +58,21 @@
                     <li><em>Effort</em>: 2 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>Admins must have the ability to generate a sales report. The report shows all items purchased and who purchased them.</li>
-            </ul>
+                </ul>
           <li><strong>T12S-8</strong>: Sales Report Export to CSV</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
                     <li><em>Effort</em>: 2 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The application must have the ability to export the sales report to a CSV file.</li>
-            </ul>
+                </ul>
             <li><strong>T12S-9</strong>: Add Inventory</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
                     <li><em>Effort</em>: 3 days</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>Admin users must be able to open a page, enter information, choose a picture, and have information added to the database. </li>
-          </ul>
+                </ul>
         </ul>
       <li><strong>T12E-4</strong>: Admin Creation</li>
             <ul>
