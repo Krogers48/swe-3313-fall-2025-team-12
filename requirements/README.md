@@ -371,7 +371,6 @@
                           <li>The sales report must have a button that exports the sales report to a CSV file.</li>
                       </ul>
                   </ul>
-            </ul>
       <li><strong>T12E-13</strong>: Database Updating Page</li>
             <ul>
             <li><strong>T12S-47</strong>: Database Updating Page Text Fields</li>
