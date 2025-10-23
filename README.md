@@ -35,8 +35,8 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   ├── technology-selection/
 │   │   └── README.md
 │   ├── gantt-chart/
-│   |	├── ganttproject.gan
-│   |	├── gantt-chart.png
+│   │	├── ganttproject.gan
+│   |	└── gantt-chart.png
 |   └──README.md
 ├──requirements/
 │   ├──use-case.md
@@ -44,7 +44,7 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   ├──decision-table-screenshot
 │   ├──decision-table-code-screenshot
 │   ├──decision-table.md
-│   ├──README.md
+│   └──README.md
 └── README.md
 ```
 
