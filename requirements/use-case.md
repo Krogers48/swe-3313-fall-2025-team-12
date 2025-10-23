@@ -1,1 +1,1 @@
-![Use Case Diagram](requirements/use-case.png)
+![Use Case Diagram](swe-3313-fall-2025-team-12/requirements/use-case.png)
