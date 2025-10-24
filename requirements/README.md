@@ -529,6 +529,7 @@
                       </ul>
                   </ul>
              </ul>
+      </ul>
 <h2>Version 3</h2>
       <li><strong>T12E-1</strong>: Admin Screen</li>
                    </ul>
