@@ -478,30 +478,31 @@
 <ul>
       <li><strong>T12E-1</strong>: Administrators</li>
       <ul>
-             <li><strong>T12S-2</strong>: Admin Creation UI</li>
+             <li><strong>T12S-1</strong>: Admin Creation UI</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
                     <li><em>Effort</em>: 2 day</li>
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The application must include a simple UI that allows for the creation of new admins.</li>           
             </ul>
-      <li><strong>T12E-3</strong>: Admin Creation UI</li>
+      </ul>
+      <li><strong>T12E-2</strong>: Admin Creation UI</li>
              <ul>
-            <li><strong>T12S-4</strong>: Accessibilty to Admins</li>
+            <li><strong>T12S-2</strong>: Accessibilty to Admins</li>
                       <ul>
                           <li><em>Priority</em>: Needs to Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>Admins must have access to the Admin Creation UI after login.</li>
                       </ul>
-            <li><strong>T12S-5</strong>: Search Box</li>
+            <li><strong>T12S-3</strong>: Search Box</li>
                       <ul>
                           <li><em>Priority</em>: Needs to Have</li>
                           <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The Admin Creation UI must contain a search box that checks for a match between the admin's query and the usernames of existing user accounts.</li>
                       </ul>
-            <li><strong>T12S-6</strong>: List of Existing User Accounts</li>
+            <li><strong>T12S-4</strong>: List of Existing User Accounts</li>
                       <ul>
                           <li><em>Priority</em>: Needs to Have</li>
                           <li><em>Effort</em>: 3 days</li>
@@ -517,16 +518,19 @@
                                     <li>If the password is entered correctly, the application must transform the user into an admin account. The dialogue box must close, and a new one must open that reads “The account {account username} is now an admin” with an “ok” button that the admin can click to close the dialogue box. </li>
             </ul>
       </ul>
-      <li><strong>T12E-7</strong>: Admin Screen</li>
+      <li><strong>T12E-3</strong>: Admin Screen</li>
       <ul>
-            <li><strong>T12S-8</strong>: Admin Creation UI Accesibility</li>
+            <li><strong>T12S-5</strong>: Admin Creation UI Accesibility</li>
                       <ul>
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>Admins must have the ability to access the Admin Creation UI from the screen..</li>
-                            
+                      </ul>
+                  </ul>
+             </ul>
 <h2>Version 3</h2>
+      <li><strong>T12E-1</strong>: Admin Screen</li>
                    </ul>
             <li><strong>T12S-1</strong>: Database Updating Page</li>
                 <ul>
