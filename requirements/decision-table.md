@@ -1,4 +1,5 @@
-![](./decision-table.png “Decision Table”)
+![](./decision-table.png) 
+
 [Demo code for decision table](./decision-table-code-demo.py)
 ![](./decision-table-code-demo-1.png)
 ![](./decision-table-code-demo-2.png)
