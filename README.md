@@ -42,8 +42,12 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   ├──use-case.png
 │   ├──use-case.md
 │   ├──decision-table-code-demo.py
-│   ├──decision-table-screenshot.png
-│   ├──decision-table-code-screenshot.png
+│   ├──decision-table-code-demo-1.png
+│   ├──decision-table-code-demo-2.png
+│   ├──decision-table-code-demo-3.png
+│   ├──decision-table-code-demo-4.png
+│   ├──decision-table-code-demo-5.png
+│   ├──decision-table.png
 │   ├──decision-table.md
 │   └──README.md
 └── README.md
