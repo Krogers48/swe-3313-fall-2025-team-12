@@ -1,0 +1,7 @@
+!(decision-table.png “Decision Table”)
+[Demo code for decision table](./decision-table-code-demo.py)
+!(decision-table-code-demo-1.png)
+!(decision-table-code-demo-2.png)
+!(decision-table-code-demo-3.png)
+!(decision-table-code-demo-4.png)
+!(decision-table-code-demo-5.png)
