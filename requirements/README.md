@@ -490,21 +490,21 @@
              <ul>
             <li><strong>T12S-2</strong>: Accessibilty to Admins</li>
                       <ul>
-                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>Admins must have access to the Admin Creation UI after login.</li>
                       </ul>
             <li><strong>T12S-3</strong>: Search Box</li>
                       <ul>
-                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 2 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The Admin Creation UI must contain a search box that checks for a match between the admin's query and the usernames of existing user accounts.</li>
                       </ul>
             <li><strong>T12S-4</strong>: List of Existing User Accounts</li>
                       <ul>
-                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 3 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
                           <li>The Admin Creation UI must contain a list of all existing user accounts.</li>
