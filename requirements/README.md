@@ -532,7 +532,7 @@
       </ul>
 <h2>Version 3</h2>
       <li><strong>T12E-1</strong>: Admin Screen</li>
-                   </ul>
+            <ul>
             <li><strong>T12S-1</strong>: Database Updating Page</li>
                 <ul>
                     <li><em>Priority</em>: Must Have</li>
