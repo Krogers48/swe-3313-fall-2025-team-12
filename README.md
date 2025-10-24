@@ -42,8 +42,12 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   ├──use-case.png
 │   ├──use-case.md
 │   ├──decision-table-code-demo.py
-│   ├──decision-table-screenshot.png
-│   ├──decision-table-code-screenshot.png
+│   ├──decision-table-code-demo-1.png
+│   ├──decision-table-code-demo-2.png
+│   ├──decision-table-code-demo-3.png
+│   ├──decision-table-code-demo-4.png
+│   ├──decision-table-code-demo-5.png
+│   ├──decision-table.png
 │   ├──decision-table.md
 │   └──README.md
 └── README.md
@@ -91,7 +95,7 @@ The Loom video introduction and explanation can be found [here](https://www.loom
 Our detailed requirements will be available in the [`/requirements'](./requirements) folder.   
 In the [README.md](./requirements/README.md) file of the '/requirements' folder, you will find the program requirements sorted into Versions, Epics, and Stories, allowing for an easy understanding of what we believe - based on our interview with you - you want the product to be. In this file, you can also see the priority, estimated effort, type, and description we gave all of the requirements, so you can understand how we are thinking about this application, and how long we expect it to take.   
 The [use case diagram](./requirements/use-case.md) provides helpful visuals that facilitate an easy understanding of the many systems and relationships in the application, as these systems and relationships may be difficult to understand for those of a non-technical background.   
-The [decision table](./requirements/decision.md) file contains a picture of the decision table, a link to the decision table code, and a screenshot of the code. The decision table provides a visual representation of the rules, conditions, and actions a user or admin can perform, including logging in, finding an item, purchasing an item, managing inventory, and viewing sales history repot.   
+The [decision table](./requirements/decision-table.md) file contains a picture of the decision table, a link to the decision table code, and a screenshot of the code. The decision table provides a visual representation of the rules, conditions, and actions a user or admin can perform, including logging in, finding an item, purchasing an item, managing inventory, and viewing sales history repot.   
 The loom video can be found [here](./requirements)   
 
 ---
