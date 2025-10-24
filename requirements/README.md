@@ -518,6 +518,7 @@
                                     <li>If the password is entered correctly, the application must transform the user into an admin account. The dialogue box must close, and a new one must open that reads “The account {account username} is now an admin” with an “ok” button that the admin can click to close the dialogue box. </li>
             </ul>
       </ul>
+</ul>
       <li><strong>T12E-3</strong>: Admin Screen</li>
       <ul>
             <li><strong>T12S-5</strong>: Admin Creation UI Accesibility</li>
@@ -531,6 +532,7 @@
              </ul>
       </ul>
 <h2>Version 3</h2>
+<ul>
       <li><strong>T12E-1</strong>: Admin Screen</li>
             <ul>
             <li><strong>T12S-1</strong>: Database Updating Page</li>
@@ -550,6 +552,7 @@
                     <li><em>Functional/Non-functional</em>: Functional</li>
                     <li>The Database Updating Page must contain three text fields: name (limited to 15 characters), description (limited to 50 characters), and price (will separate any erroneous input from the enumerated price itself when submitted to the database). </li>
        </ul>
+      </ul>
       <li><strong>T12E-3</strong>: Database Updating Page</li>
             <ul>
             <li><strong>T12S-3</strong>: Database Updating Page Text Fields</li>
