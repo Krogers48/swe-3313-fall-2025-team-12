@@ -474,8 +474,122 @@
        </ul>  
 </ul>
 
-
-
+<h2>Version 2</h2>
+<ul>
+      <li><strong>T12E-1</strong>: Administrators</li>
+      <ul>
+             <li><strong>T12S-2</strong>: Admin Creation UI</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 2 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>The application must include a simple UI that allows for the creation of new admins.</li>           
+            </ul>
+      <li><strong>T12E-3</strong>: Admin Creation UI</li>
+             <ul>
+            <li><strong>T12S-4</strong>: Accessibilty to Admins</li>
+                      <ul>
+                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Effort</em>: 0.5 days</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>Admins must have access to the Admin Creation UI after login.</li>
+                      </ul>
+            <li><strong>T12S-5</strong>: Search Box</li>
+                      <ul>
+                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Effort</em>: 2 days</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The Admin Creation UI must contain a search box that checks for a match between the admin's query and the usernames of existing user accounts.</li>
+                      </ul>
+            <li><strong>T12S-6</strong>: List of Existing User Accounts</li>
+                      <ul>
+                          <li><em>Priority</em>: Needs to Have</li>
+                          <li><em>Effort</em>: 3 days</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>The Admin Creation UI must contain a list of all existing user accounts.</li>
+                            <ul>
+                                    <li>Each listed account must have an associated button labeled “Convert to Admin”.</li>
+                                    <li>Once “Convert to Admin” is clicked, a dialog box must appear that reads  “Do you wish to transform the account: {user account username} Into an admin account?” </li>
+                                    <li>Two options must exist under this dialogue: ‘Yes’ and ‘No’. </li>
+                                    <li>If “No” is chosen, the dialogue box must be closed. </li>
+                                    <li>If “Yes” is chosen, tha application must prompt the admin for their password.</li>
+                                    <li>If the password is entered incorrectly, the password field must clear, and the application must inform the admin that their password is incorrect.</li>
+                                    <li>If the password is entered correctly, the application must transform the user into an admin account. The dialogue box must close, and a new one must open that reads “The account {account username} is now an admin” with an “ok” button that the admin can click to close the dialogue box. </li>
+            </ul>
+      </ul>
+      <li><strong>T12E-7</strong>: Admin Screen</li>
+      <ul>
+            <li><strong>T12S-8</strong>: Admin Creation UI Accesibility</li>
+                      <ul>
+                          <li><em>Priority</em>: Must Have</li>
+                          <li><em>Effort</em>: 0.5 days</li>
+                          <li><em>Functional/Non-functional</em>:Functional</li>
+                          <li>Admins must have the ability to access the Admin Creation UI from the screen..</li>
+                            
+<h2>Version 3</h2>
+                   </ul>
+            <li><strong>T12S-1</strong>: Database Updating Page</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>Admins must be able to enter the database updating page from the admin screen.</li>
+                </ul>
+            </ul>
+      <li><strong>T12E-2</strong>: Database Updating Page</li>
+            <ul>
+            <li><strong>T12S-2</strong>: Database Updating Page Text Fields</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 3 days</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>The Database Updating Page must contain three text fields: name (limited to 15 characters), description (limited to 50 characters), and price (will separate any erroneous input from the enumerated price itself when submitted to the database). </li>
+       </ul>
+      <li><strong>T12E-3</strong>: Database Updating Page</li>
+            <ul>
+            <li><strong>T12S-3</strong>: Database Updating Page Text Fields</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 3 days</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>The Database Updating Page must contain three text fields: name (limited to 15 characters), description (limited to 50 characters), and price (will separate any erroneous input from the enumerated price itself when submitted to the database). </li>
+       </ul>  
+      <li><strong>T12S-4</strong>: Database Updating Page Picture Selection</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 2 days</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>The Database Updating page must contain a field to select pictures to add to the submission.</li>               
+       </ul>  
+      <li><strong>T12S-5</strong>: Add Item Button</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 0.5 days</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>Once all fields are filled, the admin can hit an "Add Item" button. The information must be entered into the database as a new item automatically once the "Add Item" button is pressed.</li>                          
+       </ul>  
+      <li><strong>T12S-6</strong>: Reload Fields After Submission</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 0.5 days</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>After entering the item, the page must be reloaded, all fields cleared, and page ready for another submission.</li>         
+       </ul>  
+      <li><strong>T12S-7</strong>: Admins Access</li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 0.5 days</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>The data updating page must only be accessible to admins.</li>         
+       </ul>  
+      <li><strong>T12S-8</strong>: Admin Permissions </li>
+                <ul>
+                    <li><em>Priority</em>: Must Have</li>
+                    <li><em>Effort</em>: 1 day</li>
+                    <li><em>Functional/Non-functional</em>: Functional</li>
+                    <li>The database updating page must allow admins to add items, edit items, and delete items from inventory.</li>         
+       </ul>  
+      </ul>
 
 
 
