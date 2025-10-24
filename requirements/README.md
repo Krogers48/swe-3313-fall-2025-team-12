@@ -526,7 +526,7 @@
                           <li><em>Priority</em>: Must Have</li>
                           <li><em>Effort</em>: 0.5 days</li>
                           <li><em>Functional/Non-functional</em>:Functional</li>
-                          <li>Admins must have the ability to access the Admin Creation UI from the screen..</li>
+                          <li>Admins must have the ability to access the Admin Creation UI from the screen.</li>
                       </ul>
                   </ul>
              </ul>
