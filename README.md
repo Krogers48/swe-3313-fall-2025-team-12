@@ -114,4 +114,11 @@ The loom video can be found [here](https://www.loom.com/share/ce034118e641403899
 ## Interface Design
 
 [High Fidelity User Interface Design (Marvel)](https://marvelapp.com/prototype/g5ajhad)  
-The loom video can be found [here](https://www.loom.com/share/a42ee5435b564197ac905355b868e878)
+The loom video can be found [here](https://www.loom.com/share/a42ee5435b564197ac905355b868e878)   
+   
+---   
+   
+## Technical Design  
+  
+Introduction to technical design goes here  
+[Technical Design](./technical-design/README.md)
