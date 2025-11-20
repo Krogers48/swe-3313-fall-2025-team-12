@@ -74,6 +74,14 @@ Resources:
 ---  
   
 ## C. Data Storage Plan  
+We chose JSON as our data storage language    
+Why JSON? [(documentation can be found here)](https://www.json.org/json-en.html)  
+- Widely used in industry
+- Can be easily parsed into python
+- Very readable syntax that is reminicant of python
+- Based on javascript, so is highly compatible with HTML  
+  
+
   
 ---  
   
@@ -149,6 +157,7 @@ User ||--o{ Order : places
 Order --o{ OrderItem : contains
 Receipt ||--|{ Order: has 
 Inventory --o{ OrderItem : purchased
+  
 ---  
   
 ## E. Entity/Field Descriptions  
@@ -164,6 +173,28 @@ Inventory --o{ OrderItem : purchased
 ---  
   
 ## H. Authentication and Authorization Plan  
+Our method for identifying Admins will be very simple:
+- User objects will have boolean attribute **"isAdmin"**.
+- "isAdmin" will be true **only for user accounts that have been 
+transformed into an admin**.
+- Upon account creation or login, **a session will be created**.
+- The **"secret_key"** for the session will be a **randomly generated 20
+character string** made using f'os.urandom(20)'
+- Upon account creation, a variable **"isAdmin"** will be added to the 
+session and set to **false**.
+- Upon login, a variable **"isAdmin"** will be added with the value of
+either **true or false** to the user session, **depending on the "isAdmin"
+value of the account** that the user logged-in to. 
+- Events that lead to admin-only pages **will not open** the page **unless** 
+the user session **"isAdmin" variable is true**.
+- Events that execute admin-only functions (such as a RunSalesReport
+button being clicked) **only execute the function(s) when the user 
+session "isAdmin" variable is true**.
+
+For account authentication:
+- When an account is created, a new user object is added to the JSON 
+file with the unique username and password the user entered.
+- The password is stored as a hashed value
   
 ---  
   
