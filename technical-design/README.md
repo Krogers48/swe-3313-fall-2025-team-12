@@ -78,7 +78,77 @@ Resources:
 ---  
   
 ## D. Entity Relationship Diagram  
+  @startuml
+!theme blueprint
+
+entity "User" as User {
   
+UserID : INT <<PK>>--
+Username : VARCHAR
+PasswordHash : VARCHAR
+IsAdmin : BOOL
+}
+
+entity "InventoryItem" as Inventory {
+  
+ItemID : INT <<PK>>--
+Name : VARCHAR
+Price : DECIMAL
+Description : VARCHAR
+}
+
+entity "Cart" as Cart {
+  
+CartID : INT <<PK>>--
+UserID : INT <<FK>>
+}
+
+entity "CartItem" as CartItem {
+  
+CartID : INT <<FK>>
+ItemID : INT <<FK>>
+--
+Quantity : INT
+}
+
+entity "Order" as Order {
+  
+OrderID : INT <<PK>>--
+UserID : INT <<FK>>
+Subtotal : DECIMAL
+Total : DECIMAL
+OrderDate : DATE
+}
+
+entity "OrderItem" as OrderItem {
+  
+OrderID : INT <<FK>>
+ItemID : INT <<FK>>
+--
+PriceAtPurchase : DECIMAL
+}
+
+entity "Receipt" as Receipt{
+
+}
+
+entity "SalesReport" as SalesReport {
+
+}
+
+' ===========================
+' Relationships (Crow's Foot)
+' ===========================
+
+User ||--o{ Cart : owns 
+Cart ||--o{ CartItem : contains
+Inventory ||--o{ CartItem : added_to_cart
+SalesReport ||-o{ Inventory : contains
+
+User ||--o{ Order : places
+Order --o{ OrderItem : contains
+Receipt ||--|{ Order: has 
+Inventory --o{ OrderItem : purchased
 ---  
   
 ## E. Entity/Field Descriptions  
