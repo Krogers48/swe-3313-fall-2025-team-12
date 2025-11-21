@@ -212,7 +212,7 @@ UserAccount
 
 - Keep functions small and focused.
 
-- Use clear variable names — avoid single-letter names.
+- Use clear variable names avoid single-letter names.
 
 - Split large features into modules (routes/, models/, etc.).
 
@@ -224,7 +224,7 @@ Flask Style Guidelines
 
 - Each route should handle one job.
 
-- Keep database logic in models/helpers — not in routes.
+- Keep database logic in models/helpers - not in routes.
 
 - Use Jinja templates, not raw HTML inside Python.
 
@@ -233,7 +233,7 @@ show_main_page(), convert_to_admin(), process_checkout()
 
 HTML Style Guidelines
 
-- Use semantic HTML (<main>, <section>, <footer>).
+- Use semantic HTML "(<main>, <section>, <footer>)".
 
 - Indent properly and keep structure clean.
 
