@@ -96,7 +96,8 @@
 ---  
   
 ## D. Entity Relationship Diagram
-  @startuml
+```
+@startuml
 !theme blueprint
 
 entity "User" as User {
@@ -181,7 +182,7 @@ Order --o{ OrderItem : contains
 Receipt ||--|{ Order: has 
 InventoryItem --o{ OrderItem : purchased
 Inventory ||-|{ InventoryItem : contains
-  
+```
 ---  
   
 ## E. Entity/Field Descriptions  
