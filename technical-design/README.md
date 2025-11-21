@@ -183,7 +183,7 @@ Inventory ||-|{ InventoryItem : contains
 ```
 ---  
 
-<img title="ERD" alt="Entity Relationship Diagram" src="assets/entityrelationshipdiagram.png">
+<img title="Entity Relationship Diagram" alt="Entity Relationship Diagram" src="assets/entityrelationshipdiagram.png">
 
 ## E. Entity/Field Descriptions  
   
