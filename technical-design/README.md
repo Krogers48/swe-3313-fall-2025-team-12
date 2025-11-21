@@ -12,7 +12,7 @@
 ### [I. Coding Style Guide](#CSG)
 ### [Presentation](#Presentation)
   
-## <a name="ImpLangs"></a> A. Implementation Languages  
+## <a id="ImpLangs"></a> A. Implementation Languages  
 ### What did we choose and why?
 - Python [(documentation can be found here)](https://docs.python.org/3.13/)
     - Widely used
@@ -49,7 +49,7 @@
 
 ---  
   
-## <a name="ImpFrames"></a> B. Implementation Frameworks  
+## <a id="ImpFrames"></a> B. Implementation Frameworks  
 ### What did we choose and why?
 - Flask [(documentation can be found here)](https://flask.palletsprojects.com/en/stable/)
     - Widely used
@@ -84,7 +84,7 @@
   
 ---  
   
-## <a name="DataStrg"></a> C. Data Storage Plan  
+## <a id="DataStrg"></a> C. Data Storage Plan  
 ### We chose JSON as our data storage language    
 #### Why JSON? [(documentation can be found here)](https://www.json.org/json-en.html)  
 - Widely used in industry
@@ -106,7 +106,7 @@
   
 ---  
   
-## <a name="ERD"></a> D. Entity Relationship Diagram 
+## <a id="ERD"></a> D. Entity Relationship Diagram 
 ```
 @startuml
 !theme blueprint
@@ -196,19 +196,19 @@ Inventory ||-|{ InventoryItem : contains
 
 <img title="Entity Relationship Diagram" alt="Entity Relationship Diagram" src="assets/entity-relationship-diagram.png">
 
-## <a name="E/FD"></a> E. Entity/Field Descriptions  
+## <a id="E/FD"></a> E. Entity/Field Descriptions  
   
 ---  
   
-## <a name="DataExs"></a> F. Data Examples  
+## <a id="DataExs"></a> F. Data Examples  
   
 ---  
   
-## <a name="DBSeedData"></a> G. Database Seed Data  
+## <a id="DBSeedData"></a> G. Database Seed Data  
   
 ---  
   
-## <a name="AuthandAuth"></a> H. Authentication and Authorization Plan  
+## <a id="AuthandAuth"></a> H. Authentication and Authorization Plan  
 ### Our method for identifying Admins will be quite simple:
 - User objects will have a Boolean attribute **"isAdmin"**.
 - "isAdmin" will be true **only for user accounts that have been 
@@ -251,7 +251,7 @@ into **sha256_crypt.verify(password, hashed_pw)**
 
 <img title="ERD" alt="Entity Relationship Diagram" src="assets/databaseseeddata.png">
   
-## <a name="CSG"></a> I. Coding Style Guide 
+## <a id="CSG"></a> I. Coding Style Guide 
 
 ### Python Style Guidelines
 
