@@ -184,7 +184,9 @@ InventoryItem --o{ OrderItem : purchased
 Inventory ||-|{ InventoryItem : contains
 ```
 ---  
-  
+
+<img title="ERD" alt="Entity Relationship Diagram" src="assets/entityrelationshipdiagram.png">
+
 ## E. Entity/Field Descriptions  
   
 ---  
@@ -237,6 +239,8 @@ into **sha256_crypt.verify(password, hashed_pw)**
 **type="password"** so that the passwords are disguised while being entered.
   
 ---  
+
+<img title="ERD" alt="Entity Relationship Diagram" src="assets/databaseseeddata.png">
   
 ## I. Coding Style Guide  
 
