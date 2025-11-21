@@ -115,8 +115,19 @@ entity "User" as User {
   
 UserID : INT <<PK>>--
 Username : VARCHAR
-PasswordHash : VARCHAR
+Password : VARCHAR
 IsAdmin : BOOL
+Phone: INT <<PK>>--
+
+}
+
+entity "Address" as Address {
+
+Street : VARCHAR 
+City : VARCHAR
+State : VARCHAR
+ZipCode: INT <<PK>>--
+
 }
 
 entity "InventoryItem" as InventoryItem {
@@ -125,21 +136,17 @@ ItemID : INT <<PK>>--
 Name : VARCHAR
 Price : DECIMAL
 Description : VARCHAR
+Image: VARCHAR
+
 }
 
 entity "Cart" as Cart {
   
 CartID : INT <<PK>>--
 UserID : INT <<FK>>
+
 }
 
-entity "CartItem" as CartItem {
-  
-CartID : INT <<FK>>
-ItemID : INT <<FK>>
---
-Quantity : INT
-}
 
 entity "Order" as Order {
   
@@ -148,14 +155,6 @@ UserID : INT <<FK>>
 Subtotal : DECIMAL
 Total : DECIMAL
 OrderDate : DATE
-}
-
-entity "OrderItem" as OrderItem {
-  
-OrderID : INT <<FK>>
-ItemID : INT <<FK>>
---
-PriceAtPurchase : DECIMAL
 }
 
 entity "Receipt" as Receipt{
@@ -182,21 +181,20 @@ ShippingTime : INT <<FK>>
 ' Relationships (Crow's Foot)
 ' ===========================
 
-User ||--o{ Cart : owns 
-Cart ||--o{ CartItem : contains
-InventoryItem ||--o{ CartItem : added_to_cart
-SalesReport ||-o{ InventoryItem : contains
+User ||--|| Cart : owns 
+Cart ||--o{ InventoryItem : contains
+SalesReport ||-o{ Order : contains
 Shipping ||-o{ Order : includes
+User||--|| Address : has 
 
 User ||--o{ Order : places
-Order --o{ OrderItem : contains
-Receipt ||--|{ Order: has 
-InventoryItem --o{ OrderItem : purchased
+Order ||--|{ InventoryItem : contains
+Receipt ||--|| Order: has 
 Inventory ||-|{ InventoryItem : contains
 ```
 ---  
 
-<img title="ERD" alt="Entity Relationship Diagram" src="assets/entityrelationshipdiagram.png">
+<img title="Entity Relationship Diagram" alt="Entity Relationship Diagram" src="assets/entity-relationship-diagram.png">
 
 ## <a name="E/FD"></a> E. Entity/Field Descriptions  
   
