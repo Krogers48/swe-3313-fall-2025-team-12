@@ -80,6 +80,16 @@
 - Can be easily parsed into python
 - Very readable syntax that is reminiscent of python
 - Based on JavaScript, so is highly compatible with HTML  
+
+### How will we store our data?
+- We will have a database.json file in the same directory as the rest of the program
+- database.json will contain all data for this project
+- We will use the JSON module for parsing JSON data from our database into python
+    - ex: with open("database.json", 'r') as f:  
+  database = **json.load(f)**
+- We will use the JSON module for updating values in our database
+    - ex: with open("database.json", 'w') as f:  
+  **json.dump(database, f, indent=4)**
   
 
   
@@ -173,14 +183,14 @@ Inventory --o{ OrderItem : purchased
 ---  
   
 ## H. Authentication and Authorization Plan  
-### Our method for identifying Admins will be very simple:
+### Our method for identifying Admins will be quite simple:
 - User objects will have a Boolean attribute **"isAdmin"**.
 - "isAdmin" will be true **only for user accounts that have been 
 transformed into an admin**.
 - Upon account creation or login, **a session will be created** using
 the flask session functionality.
 - The **"secret_key"** for the session will be a **randomly generated string**,
-for this we will use secrets.token_hex() from the secrets module
+for this we will use secrets.token_hex() from the [secrets module](https://docs.python.org/3/library/secrets.html).
 - Upon account creation, a key **"isAdmin"** will be added to the 
 session and set to **false**.
 - Upon login, a key **"isAdmin"** will be added to the session with the value of
@@ -195,8 +205,10 @@ session "isAdmin" variable is true**.
 ### For account authentication:
 - **When an account is created**, a new user object is added to the JSON 
 file with the password and unique username the user entered.
-- **The password is stored as a hashed value**. For this we will use the **Passlib
-library** and the hash functionality, **specifically with sha256_crypt**.
+- **The password is stored as a hashed value**. For this we will use the **[Passlib
+library](https://passlib.readthedocs.io/en/stable/#getting-started)** and the 
+hash functionality, **specifically with 
+[sha256_crypt](https://passlib.readthedocs.io/en/stable/lib/passlib.hash.sha256_crypt.html)**.
 - The new user object will be created with **hashed_pw as the password value**,
 which will be defined like so: **"hashed_pw = sha256_crypt.hash(password)"**
 where "password" is the password entered by the user.
@@ -205,7 +217,7 @@ password of the user object whose username matches the one entered.
 - **The system will verify that the correct password was entered** by passing
 the hashed password associated with the user object, and the entered password
 into **sha256_crypt.verify(password, hashed_pw)**
-- If the .verify() returns true, **the user is logged in to the account**.
+- If the .verify() returns true, **the user is logged into the account**.
 - As a small security measure; **any password fields** in HTML forms should be of
 **type="password"** so that the passwords are disguised while being entered.
   
@@ -225,7 +237,7 @@ UserAccount
 
 - Keep functions small and focused.
 
-- Use clear variable names avoid single-letter names.
+- Use clear variable names & avoid single-letter names.
 
 - Split large features into modules (routes/, models/, etc.).
 
@@ -248,7 +260,7 @@ show_main_page(), convert_to_admin(), process_checkout()
 
 - Use semantic HTML (`<main>`, `<section>`, `<footer>`).
 
-- Indent properly and keep structure clean.
+- Indent properly and keep the structure clean.
 
 - Avoid inline styles.
 
