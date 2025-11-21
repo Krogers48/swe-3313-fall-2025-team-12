@@ -205,7 +205,7 @@ Inventory ||-|{ InventoryItem : contains
   
 ## <a id="DataExs"></a> F. Data Examples  
 
-<img title="Data Examples" alt="Data Examples" src="assets/Entity-Data-Examples.png">
+<img title="Data Examples" alt="Data Examples" src="assets/Data-Examples.png">
 
   
 ---  
