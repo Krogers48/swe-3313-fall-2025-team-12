@@ -107,7 +107,7 @@ PasswordHash : VARCHAR
 IsAdmin : BOOL
 }
 
-entity "InventoryItem" as Inventory {
+entity "InventoryItem" as InventoryItem {
   
 ItemID : INT <<PK>>--
 Name : VARCHAR
@@ -154,19 +154,33 @@ entity "SalesReport" as SalesReport {
 
 }
 
+entity "Inventory" as Inventory {
+
+} 
+
+entity "Shipping" as Shipping {
+
+ShippingType : VARCHAR
+ShippingCost : DECIMAL 
+ShippingTime : INT <<FK>>
+
+}
+
 ' ===========================
 ' Relationships (Crow's Foot)
 ' ===========================
 
 User ||--o{ Cart : owns 
 Cart ||--o{ CartItem : contains
-Inventory ||--o{ CartItem : added_to_cart
-SalesReport ||-o{ Inventory : contains
+InventoryItem ||--o{ CartItem : added_to_cart
+SalesReport ||-o{ InventoryItem : contains
+Shipping ||-o{ Order : includes
 
 User ||--o{ Order : places
 Order --o{ OrderItem : contains
 Receipt ||--|{ Order: has 
-Inventory --o{ OrderItem : purchased
+InventoryItem --o{ OrderItem : purchased
+Inventory ||-|{ InventoryItem : contains
   
 ---  
   
