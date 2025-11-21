@@ -146,14 +146,6 @@ Total : DECIMAL
 OrderDate : DATE
 }
 
-entity "OrderItem" as OrderItem {
-  
-OrderID : INT <<FK>>
-ItemID : INT <<FK>>
---
-PriceAtPurchase : DECIMAL
-}
-
 entity "Receipt" as Receipt{
 
 }
@@ -185,9 +177,8 @@ Shipping ||-o{ Order : includes
 User||--|| Address : has 
 
 User ||--o{ Order : places
-Order --o{ OrderItem : contains
+Order ||--|{ InventoryItem : contains
 Receipt ||--|| Order: has 
-InventoryItem --o{ OrderItem : purchased
 Inventory ||-|{ InventoryItem : contains
 ```
 ---  
