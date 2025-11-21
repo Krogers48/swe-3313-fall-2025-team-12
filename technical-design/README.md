@@ -1,7 +1,18 @@
 # Technical Design  
   
+## Table of Contents
+### [A. Implementation Languages](#ImpLangs)
+### [B. Implementation Frameworks](#ImpFrames)
+### [C. Data Storage Plan](#DataStrg)
+### [D. Entity Relationship Diagram](#ERD)
+### [E. Entity/Field Descriptions](#E/FD)
+### [F. Data Examples](#DataExs)
+### [G. Database Seed Data](#DBSeedData)
+### [H. Authentication and Authorization Plan](#AuthandAuth)
+### [I. Coding Style Guide](#CSG)
+### [Presentation](#Presentation)
   
-## A. Implementation Languages  
+## <a name="ImpLangs"></a> A. Implementation Languages  
 ### What did we choose and why?
 - Python [(documentation can be found here)](https://docs.python.org/3.13/)
     - Widely used
@@ -38,7 +49,7 @@
 
 ---  
   
-## B. Implementation Framework(s)  
+## <a name="ImpFrames"></a> B. Implementation Frameworks  
 ### What did we choose and why?
 - Flask [(documentation can be found here)](https://flask.palletsprojects.com/en/stable/)
     - Widely used
@@ -73,7 +84,7 @@
   
 ---  
   
-## C. Data Storage Plan  
+## <a name="DataStrg"></a> C. Data Storage Plan  
 ### We chose JSON as our data storage language    
 #### Why JSON? [(documentation can be found here)](https://www.json.org/json-en.html)  
 - Widely used in industry
@@ -95,7 +106,7 @@
   
 ---  
   
-## D. Entity Relationship Diagram
+## <a name="ERD"></a> D. Entity Relationship Diagram 
 ```
 @startuml
 !theme blueprint
@@ -187,19 +198,19 @@ Inventory ||-|{ InventoryItem : contains
 
 <img title="ERD" alt="Entity Relationship Diagram" src="assets/entityrelationshipdiagram.png">
 
-## E. Entity/Field Descriptions  
+## <a name="E/FD"></a> E. Entity/Field Descriptions  
   
 ---  
   
-## F. Data Examples  
+## <a name="DataExs"></a> F. Data Examples  
   
 ---  
   
-## G. Database Seed Data  
+## <a name="DBSeedData"></a> G. Database Seed Data  
   
 ---  
   
-## H. Authentication and Authorization Plan  
+## <a name="AuthandAuth"></a> H. Authentication and Authorization Plan  
 ### Our method for identifying Admins will be quite simple:
 - User objects will have a Boolean attribute **"isAdmin"**.
 - "isAdmin" will be true **only for user accounts that have been 
@@ -242,7 +253,7 @@ into **sha256_crypt.verify(password, hashed_pw)**
 
 <img title="ERD" alt="Entity Relationship Diagram" src="assets/databaseseeddata.png">
   
-## I. Coding Style Guide  
+## <a name="CSG"></a> I. Coding Style Guide 
 
 ### Python Style Guidelines
 
@@ -307,4 +318,4 @@ show_main_page(), convert_to_admin(), process_checkout()
   
 ---  
   
-## Technical Design Presentation
+## <a id="Presentation"></a> Technical Design Presentation

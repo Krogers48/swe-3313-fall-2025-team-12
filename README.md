@@ -50,6 +50,11 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   ├──decision-table.png
 │   ├──decision-table.md
 │   └──README.md
+├──technical-design/
+│   ├── assets/
+│   │   ├── databaseseeddata.png
+│   │   └── entityrelationshipdiagram.png
+│   └──README.md
 └── README.md
 ```
 
@@ -120,5 +125,11 @@ The loom video can be found [here](https://www.loom.com/share/a42ee5435b564197ac
    
 ## Technical Design  
   
-Introduction to technical design goes here  
+Here you can find all the technical details about the project including:  
+- Our entity relationship diagram
+- Example data
+- Which technologies we will use and why
+- How we will handle authentication & authorization
+- Our coding style guide
+- And more.  
 [Technical Design](./technical-design/README.md)
