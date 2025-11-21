@@ -233,7 +233,7 @@ show_main_page(), convert_to_admin(), process_checkout()
 
 HTML Style Guidelines
 
-- Use semantic HTML ("<main>", "<section>", "<footer>").
+- Use semantic HTML (`<main>`, `<section>`, `<footer>`).
 
 - Indent properly and keep structure clean.
 
