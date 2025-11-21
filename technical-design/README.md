@@ -125,6 +125,7 @@ ItemID : INT <<PK>>--
 Name : VARCHAR
 Price : DECIMAL
 Description : VARCHAR
+Image: VARCHAR
 
 }
 
