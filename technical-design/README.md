@@ -199,6 +199,67 @@ file with the unique username and password the user entered.
 ---  
   
 ## I. Coding Style Guide  
+
+Python Style Guidelines
+
+- Use snake_case for variables and functions
+load_inventory_data()
+
+- Use PascalCase for classes
+UserAccount
+
+- Follow PEP 8: 4 spaces, no tabs.
+
+- Keep functions small and focused.
+
+- Use clear variable names — avoid single-letter names.
+
+- Split large features into modules (routes/, models/, etc.).
+
+- Only add comments when needed. Clean code > heavy commenting.
+
+- Official Python style guide: https://peps.python.org/pep-0008/
+
+Flask Style Guidelines
+
+- Each route should handle one job.
+
+- Keep database logic in models/helpers — not in routes.
+
+- Use Jinja templates, not raw HTML inside Python.
+
+Route names should clearly describe the action:
+show_main_page(), convert_to_admin(), process_checkout()
+
+HTML Style Guidelines
+
+- Use semantic HTML (<main>, <section>, <footer>).
+
+- Indent properly and keep structure clean.
+
+- Avoid inline styles.
+
+- Use meaningful class names.
+
+Bootstrap Style Guidelines
+
+- Use Bootstrap’s grid system (row, col) for all layouts.
+
+- Make use of Bootstrap components (cards, navbars, buttons) whenever possible for quicker and more consistent UI creation.
+
+- Let Bootstrap handle responsiveness — avoid hardcoded sizes.
+
+- Keep UI consistent by reusing Bootstrap classes.
+
+Version Control Guidelines
+
+- Write descriptive commit messages.
+
+- Never commit API keys or credentials.
+
+- Use feature branches, then merge into main after review.
+
+- Keep pull requests small for easy review.
   
 ---  
   
