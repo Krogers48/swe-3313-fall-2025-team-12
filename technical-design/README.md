@@ -239,4 +239,5 @@ show_main_page(), convert_to_admin(), process_checkout()
   
 ---  
   
-## <a id="presentation"></a> Technical Design Presentation
+## <a id="presentation"></a> Technical Design Presentation  
+### Here is our [Technical Design Presentation](Link Goes Here)
