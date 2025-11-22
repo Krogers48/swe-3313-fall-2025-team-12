@@ -197,15 +197,24 @@ Inventory ||-|{ InventoryItem : contains
 <img title="Entity Relationship Diagram" alt="Entity Relationship Diagram" src="assets/entity-relationship-diagram.png">
 
 ## <a id="efd"></a> E. Entity/Field Descriptions 
+
+<img title="Entity/Field Descriptions" alt="Entity/Field Descriptions" src="assets/Entity-Field-Descriptions.png">
+
   
 ---  
   
 ## <a id="dataexs"></a> F. Data Examples  
+
+<img title="Data Examples" alt="Data Examples" src="assets/Data-Examples.png">
+
   
 ---  
   
 ## <a id="dbsd"></a> G. Database Seed Data  
   
+
+<img title="Database Seed Data" alt="Database Seed Data" src="assets/database-seed-data.png">
+
 ---  
   
 ## <a id="aanda"></a> H. Authentication and Authorization Plan  
