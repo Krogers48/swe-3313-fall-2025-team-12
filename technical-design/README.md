@@ -238,4 +238,6 @@ show_main_page(), convert_to_admin(), process_checkout()
 ---  
   
 ## <a id="presentation"></a> Technical Design Presentation  
-### Here is our [Technical Design Presentation](Link Goes Here)
+### Here is our [Technical Design Presentation](https://www.loom.com/share/88cfa5f6cecd4249a0aae438b53d8376)
+
+
