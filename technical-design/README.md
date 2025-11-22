@@ -1,18 +1,18 @@
 # Technical Design  
   
 ## Table of Contents
-### [A. Implementation Languages](#ImpLangs)
-### [B. Implementation Frameworks](#ImpFrames)
-### [C. Data Storage Plan](#DataStrg)
-### [D. Entity Relationship Diagram](#ERD)
-### [E. Entity/Field Descriptions](#E/FD)
-### [F. Data Examples](#DataExs)
-### [G. Database Seed Data](#DBSeedData)
-### [H. Authentication and Authorization Plan](#AuthandAuth)
-### [I. Coding Style Guide](#CSG)
-### [Presentation](#Presentation)
+### [A. Implementation Languages](#implementation-languages)
+### [B. Implementation Frameworks](#impframes)
+### [C. Data Storage Plan](#datastrg)
+### [D. Entity Relationship Diagram](#erd)
+### [E. Entity/Field Descriptions](#efd)
+### [F. Data Examples](#dataexs)
+### [G. Database Seed Data](#dbsd)
+### [H. Authentication and Authorization Plan](#aanda)
+### [I. Coding Style Guide](#csg)
+### [Technical Design Presentation](#presentation)
   
-## <a id="ImpLangs"></a> A. Implementation Languages  
+## <a id="implementation-languages"></a> A. Implementation Languages 
 ### What did we choose and why?
 - Python [(documentation can be found here)](https://docs.python.org/3.13/)
     - Widely used
@@ -49,7 +49,7 @@
 
 ---  
   
-## <a id="ImpFrames"></a> B. Implementation Frameworks  
+## <a id="impframes"></a> B. Implementation Frameworks  
 ### What did we choose and why?
 - Flask [(documentation can be found here)](https://flask.palletsprojects.com/en/stable/)
     - Widely used
@@ -84,7 +84,7 @@
   
 ---  
   
-## <a id="DataStrg"></a> C. Data Storage Plan  
+## <a id="datastrg"></a> C. Data Storage Plan  
 ### We chose JSON as our data storage language    
 #### Why JSON? [(documentation can be found here)](https://www.json.org/json-en.html)  
 - Widely used in industry
@@ -106,7 +106,7 @@
   
 ---  
   
-## <a id="ERD"></a> D. Entity Relationship Diagram 
+## <a id="erd"></a> D. Entity Relationship Diagram 
 ```
 @startuml
 !theme blueprint
@@ -196,19 +196,19 @@ Inventory ||-|{ InventoryItem : contains
 
 <img title="Entity Relationship Diagram" alt="Entity Relationship Diagram" src="assets/entity-relationship-diagram.png">
 
-## <a id="E/FD"></a> E. Entity/Field Descriptions  
+## <a id="efd"></a> E. Entity/Field Descriptions 
   
 ---  
   
-## <a id="DataExs"></a> F. Data Examples  
+## <a id="dataexs"></a> F. Data Examples  
   
 ---  
   
-## <a id="DBSeedData"></a> G. Database Seed Data  
+## <a id="dbsd"></a> G. Database Seed Data  
   
 ---  
   
-## <a id="AuthandAuth"></a> H. Authentication and Authorization Plan  
+## <a id="aanda"></a> H. Authentication and Authorization Plan  
 ### Our method for identifying Admins will be quite simple:
 - User objects will have a Boolean attribute **"isAdmin"**.
 - "isAdmin" will be true **only for user accounts that have been 
@@ -251,7 +251,7 @@ into **sha256_crypt.verify(password, hashed_pw)**
 
 <img title="ERD" alt="Entity Relationship Diagram" src="assets/databaseseeddata.png">
   
-## <a id="CSG"></a> I. Coding Style Guide 
+## <a id="csg"></a> I. Coding Style Guide 
 
 ### Python Style Guidelines
 
@@ -316,4 +316,4 @@ show_main_page(), convert_to_admin(), process_checkout()
   
 ---  
   
-## <a id="Presentation"></a> Technical Design Presentation
+## <a id="presentation"></a> Technical Design Presentation
