@@ -1,7 +1,7 @@
 # Technical Design  
   
 ## Table of Contents
-### [A. Implementation Languages](#implementation-languages)
+### [A. Implementation Languages](#implangs)
 ### [B. Implementation Frameworks](#impframes)
 ### [C. Data Storage Plan](#datastrg)
 ### [D. Entity Relationship Diagram](#erd)
@@ -12,7 +12,7 @@
 ### [I. Coding Style Guide](#csg)
 ### [Technical Design Presentation](#presentation)
   
-## <a id="implementation-languages"></a> A. Implementation Languages 
+## <a id="implangs"></a> A. Implementation Languages 
 ### What did we choose and why?
 - Python [(documentation can be found here)](https://docs.python.org/3.13/)
     - Widely used
@@ -106,93 +106,7 @@
   
 ---  
   
-## <a id="erd"></a> D. Entity Relationship Diagram 
-```
-@startuml
-!theme blueprint
-
-entity "User" as User {
-  
-UserID : INT <<PK>>--
-Username : VARCHAR
-Password : VARCHAR
-IsAdmin : BOOL
-Phone: INT <<PK>>--
-
-}
-
-entity "Address" as Address {
-
-Street : VARCHAR 
-City : VARCHAR
-State : VARCHAR
-ZipCode: INT <<PK>>--
-
-}
-
-entity "InventoryItem" as InventoryItem {
-  
-ItemID : INT <<PK>>--
-Name : VARCHAR
-Price : DECIMAL
-Description : VARCHAR
-Image: VARCHAR
-
-}
-
-entity "Cart" as Cart {
-  
-CartID : INT <<PK>>--
-UserID : INT <<FK>>
-
-}
-
-
-entity "Order" as Order {
-  
-OrderID : INT <<PK>>--
-UserID : INT <<FK>>
-Subtotal : DECIMAL
-Total : DECIMAL
-OrderDate : DATE
-}
-
-entity "Receipt" as Receipt{
-
-}
-
-entity "SalesReport" as SalesReport {
-
-}
-
-entity "Inventory" as Inventory {
-
-} 
-
-entity "Shipping" as Shipping {
-
-ShippingType : VARCHAR
-ShippingCost : DECIMAL 
-ShippingTime : INT <<FK>>
-
-}
-
-' ===========================
-' Relationships (Crow's Foot)
-' ===========================
-
-User ||--|| Cart : owns 
-Cart ||--o{ InventoryItem : contains
-SalesReport ||-o{ Order : contains
-Shipping ||-o{ Order : includes
-User||--|| Address : has 
-
-User ||--o{ Order : places
-Order ||--|{ InventoryItem : contains
-Receipt ||--|| Order: has 
-Inventory ||-|{ InventoryItem : contains
-```
----  
+## <a id="erd"></a> D. Entity Relationship Diagram
 
 <img title="Entity Relationship Diagram" alt="Entity Relationship Diagram" src="assets/entity-relationship-diagram.png">
 
