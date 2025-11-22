@@ -170,9 +170,7 @@ into **sha256_crypt.verify(password, hashed_pw)**
 - As a small security measure; **any password fields** in HTML forms should be of
 **type="password"** so that the passwords are disguised while being entered.
   
----  
-
-<img title="ERD" alt="Entity Relationship Diagram" src="assets/databaseseeddata.png">
+---
   
 ## <a id="csg"></a> I. Coding Style Guide 
 
