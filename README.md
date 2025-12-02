@@ -132,4 +132,10 @@ Here you can find all the technical details about the project including:
 - How we will handle authentication & authorization
 - Our coding style guide
 - And more.  
-[Technical Design](./technical-design/README.md)
+[Technical Design](./technical-design/README.md)   
+   
+---   
+   
+## Implementation   
+   
+Our implementation can be found [here](./implementation/README.md).
