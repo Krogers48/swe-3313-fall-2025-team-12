@@ -5,35 +5,61 @@ Main Page
 {% endblock %}
 
 {% block filling %}
-<body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link {{state}}" aria-disabled="{{is_disabled}}" href="admin">Admin Page</a>
-                        </li>
-                        <li class="navbar-brand">
-                            <a class="navbar-brand" href="main"><img src="{{url_for('static', filename='cb_logo_50px.png')}}" alt="Circuit Breakers Logo"></a>
-                        </li>
-                    </ul>
-                    <form action="search" class="d-flex" role="search">
-                        <input name="search" class="form-control me-2" type="search" placeholder="Search TI mmWave Radars" aria-label="Search"/>
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"><img src="{{url_for('static', filename='user_icon.png')}}" height="50px" width="50px" alt="User Icon"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="cart"><img scr="" alt="Shopping Cart Icon"></a>
-                        </li>
-                    </ul>
+<body style="background-color: #5F8CF0;">
+    <div class="container" style="margin-top: 5%; margin-bottom: 5%;">
+
+        <!-- Top header / greeting -->
+        <div class="rounded mb-4" style="background-color: #fcfcfc; padding: 20px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h2>Welcome to Circuit Breakers</h2>
+                    {% if username %}
+                        <p class="text-muted mb-0">Logged in as {{ username }}</p>
+                    {% endif %}
+                </div>
+                <div>
+                    <a href="{{ url_for('cart') }}" class="btn btn-outline-primary me-2">
+                        Cart ({{ cart_count }})
+                    </a>
+                    <!-- Optional: keep a link to the dedicated shop page -->
+                    <a href="{{ url_for('shop') }}" class="btn btn-outline-secondary">
+                        Open Shop Page
+                    </a>
                 </div>
             </div>
-        </nav>
+        </div>
 
+        <!-- Embedded shop section on the main page -->
+        <div class="rounded" style="background-color: #fcfcfc; padding: 20px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3>Available Radar Inventory</h3>
+            </div>
+
+            <div class="row g-4">
+                {% for item in inventory %}
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{{ item.img }}" class="card-img-top" alt="{{ item.name }}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text small" style="white-space: pre-line;">
+                                {{ item.description }}
+                            </p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">${{ "%.2f"|format(item.cost) }}</span>
+                                <form method="post" action="{{ url_for('add_to_cart', item_id=item.item_id) }}">
+                                    <button type="submit" class="btn btn-primary btn-sm">
+                                        Add to Cart
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
     </div>
 </body>
 {% endblock %}

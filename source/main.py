@@ -19,6 +19,42 @@ app = Flask(__name__)
 app.config["DEBUG"] = True
 app.secret_key = secret_key
 
+# --- Shopping cart configuration ---
+
+TAX_RATE = 0.07       # 7% sales tax (change if needed)
+SHIPPING_FLAT = 0.00  # flat shipping for now; can tweak later
+
+
+def load_database():
+    """Load the entire database.json file."""
+    with open("database.json", "r") as f:
+        return json.load(f)
+
+
+def get_inventory():
+    """Return the list of inventory items from the database."""
+    db = load_database()
+    return db.get("inventory", [])
+
+
+def get_cart():
+    """
+    Get the cart from the session.
+
+    Structure:
+    session['cart'] = {
+        "1": {"item_id": 1, "name": "...", "price": 176.53, "quantity": 2, "img": "..."},
+        ...
+    }
+    """
+    return session.get("cart", {})
+
+
+def save_cart(cart):
+    """Save the cart back into the session."""
+    session["cart"] = cart
+
+
 # Used this to populate the database and test hashing
 # with open("database.json", 'r') as f:
 #     database = json.load(f)
@@ -79,8 +115,6 @@ app.secret_key = secret_key
 #     users.append(user.copy())
 #
 #     database["users"] = users
-#
-#
 #
 #     inventory = []
 #
@@ -198,8 +232,6 @@ app.secret_key = secret_key
 #     orders_inventory_items.append(orders_inventory_item.copy())
 #     database["orders_inventory_items"] = orders_inventory_items
 #
-#
-#
 # with open("database.json", 'w') as f:
 #     json.dump(database, f, indent=4)
 #
@@ -208,12 +240,13 @@ app.secret_key = secret_key
 #     users = database["users"]
 #     for i in range(len(users)):
 #         user_one = database["users"][i]
-#         print(f"\n\n{user_one["username"]}\n")
-#         print(f"Is the password \'password\'? {sha256_crypt.verify("password", user_one["password"])}")
-#         print(f"Is the password \'admin123!\'? {sha256_crypt.verify("admin123!", user_one["password"])}")
-#         print(f"Is the password \'Admin123!\'? {sha256_crypt.verify("Admin123!", user_one["password"])}")
-#         print(f"Is the password \'strngp@55w0rd\'? {sha256_crypt.verify("strngp@55w0rd", user_one["password"])}")
-#         print(f"Is the password \'un6355@ble\'? {sha256_crypt.verify("un6355@ble", user_one["password"])}")
+#         print(f"\n\n{user_one['username']}\n")
+#         print(f"Is the password 'password'? {sha256_crypt.verify('password', user_one['password'])}")
+#         print(f"Is the password 'admin123!'? {sha256_crypt.verify('admin123!', user_one['password'])}")
+#         print(f"Is the password 'Admin123!'? {sha256_crypt.verify('Admin123!', user_one['password'])}")
+#         print(f"Is the password 'strngp@55w0rd'? {sha256_crypt.verify('strngp@55w0rd', user_one['password'])}")
+#         print(f"Is the password 'un6355@ble'? {sha256_crypt.verify('un6355@ble', user_one['password'])}")
+
 
 # function that creates the user, mostly just to de-clutter code
 def create_user(first_name, last_name, users, username, password):
@@ -229,10 +262,12 @@ def create_user(first_name, last_name, users, username, password):
     new_user['phone'] = ""
     return new_user
 
+
 # default route, redirects to login
 @app.route('/')
 def beginning():
     return redirect(url_for('login'))
+
 
 # login
 @app.route('/login', methods=["GET", "POST"])
@@ -281,6 +316,7 @@ def login():
         # all other methods simply render the login page with the standard message
         return render_template('login.html', message="Great to See You Again!", msg_color="light-grey")
 
+
 # registration
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
@@ -295,17 +331,17 @@ def registration():
                 if user['username'] == username:
                     # Re-renders registration page with the "Username already registered"
                     # error message
-                    return render_template('registration.html', message="Username already registered", msg_color = "red")
+                    return render_template('registration.html', message="Username already registered", msg_color="red")
             if len(password) < 6:
                 # Re-renders registration page with the "Password must be at least six characters long"
                 # error message if the password is under six characters
-                return render_template('registration.html', message="Password must be at least six characters long", msg_color = "red")
+                return render_template('registration.html', message="Password must be at least six characters long", msg_color="red")
 
             # Grabs the first and last names
             first_name = request.form.get('first_name').strip()
             last_name = request.form.get('last_name').strip()
 
-            # Creates a new user with the creat_user() function
+            # Creates a new user with the create_user() function
             new_user = create_user(first_name, last_name, users, username, password)
 
             # adding new user to database
@@ -330,23 +366,163 @@ def registration():
         return redirect(url_for('main'))
 
     else:
-        return render_template('registration.html', message="Welcome to Circuit Breakers!", msg_color = "light-grey")
+        return render_template('registration.html', message="Welcome to Circuit Breakers!", msg_color="light-grey")
+
 
 @app.route('/main', methods=["GET", "POST"])
 def main():
-    if request.method == "POST":
-        return render_template('main.html', is_admin=session["is_admin"], first_name=session["first_name"], is_disabled=is_disabled, state=state)
+    # Load inventory and cart so the main page can show the shop section
+    inventory = get_inventory()
+    cart = get_cart()
+    cart_count = sum(item["quantity"] for item in cart.values())
+
+    if session['is_admin']:
+        is_disabled = "false"
+        state = "active"
     else:
-        if session['is_admin']:
-            is_disabled = "false"
-            state = "active"
-        else:
-            is_disabled = "true"
-            state = "disabled"
-        return render_template('main.html', is_admin=session["is_admin"], first_name=session["first_name"], is_disabled=is_disabled, state=state)
+        is_disabled = "true"
+        state = "disabled"
+
+    if request.method == "POST":
+        return render_template(
+            'main.html',
+            is_admin=session["is_admin"],
+            first_name=session["first_name"],
+            is_disabled=is_disabled,
+            state=state)
+    else:
+        return render_template(
+            'main.html',
+            is_admin=session["is_admin"],
+            first_name=session["first_name"],
+            username=session["username"],
+            is_disabled=is_disabled,
+            state=state,
+            inventory=inventory,
+            cart_count=cart_count,
+        )
+
+
+
 def search():
     return render_template('main.html', is_admin=session["is_admin"], first_name=session["first_name"], is_disabled=(not session["is_admin"]))
 
 @app.route('/admin', methods=["GET", "POST"])
 def admin():
     return render_template('admin.html', is_admin=session["is_admin"])
+
+
+# --- Shop / Cart routes ---
+
+def shop():
+    """
+    Display inventory items with 'Add to Cart' buttons.
+    """
+    inventory = get_inventory()
+    cart = get_cart()
+    cart_count = sum(item["quantity"] for item in cart.values())
+
+    return render_template(
+        "shop.html",
+        inventory=inventory,
+        cart_count=cart_count,
+        username=session.get("username"),  # optional
+    )
+
+
+@app.route("/add_to_cart/<int:item_id>", methods=["POST"])
+def add_to_cart(item_id):
+    """
+    Add a single item to the cart by item_id.
+    """
+    inventory = get_inventory()
+    cart = get_cart()
+
+    # Find the item in inventory
+    item = next((i for i in inventory if i["item_id"] == item_id), None)
+    if item is None:
+        # If item_id invalid, just go back to the shop
+        return redirect(url_for("shop"))
+
+    key = str(item_id)
+
+    if key in cart:
+        cart[key]["quantity"] += 1
+    else:
+        cart[key] = {
+            "item_id": item["item_id"],
+            "name": item["name"],
+            "price": float(item["cost"]),
+            "quantity": 1,
+            "img": item["img"],
+        }
+
+    save_cart(cart)
+
+    # Redirect back to the page they were on, or the shop
+    return redirect(request.referrer or url_for("shop"))
+
+
+@app.route("/cart", methods=["GET", "POST"])
+def cart():
+    """
+    Show the shopping cart and allow quantity updates / removals.
+
+    - GET: display cart
+    - POST: process quantity changes and removals
+    """
+    cart = get_cart()
+
+    if request.method == "POST":
+        # Update quantities / removals
+        for key, item in list(cart.items()):
+            qty_str = request.form.get(f"qty_{key}")
+            remove = request.form.get(f"remove_{key}")
+
+            if remove:
+                del cart[key]
+                continue
+
+            if qty_str is not None:
+                try:
+                    qty = int(qty_str)
+                    if qty <= 0:
+                        del cart[key]
+                    else:
+                        item["quantity"] = qty
+                except ValueError:
+                    # Ignore bad input and keep old quantity
+                    pass
+
+        save_cart(cart)
+
+    # Build a list for the template and calculate totals
+    items = []
+    for key, item in cart.items():
+        line_total = item["price"] * item["quantity"]
+        temp = item.copy()
+        temp["key"] = key        # used for form field names
+        temp["line_total"] = line_total
+        items.append(temp)
+
+    subtotal = sum(i["line_total"] for i in items)
+    tax = round(subtotal * TAX_RATE, 2)
+    shipping = SHIPPING_FLAT if items else 0.0
+    total = round(subtotal + tax + shipping, 2)
+    cart_count = sum(i["quantity"] for i in items)
+
+    return render_template(
+        "cart.html",
+        items=items,
+        subtotal=subtotal,
+        tax=tax,
+        shipping=shipping,
+        total=total,
+        cart_count=cart_count,
+        username=session.get("username"),
+    )
+
+
+# Optional: if you want to run with `python main.py`
+if __name__ == "__main__":
+    app.run()
