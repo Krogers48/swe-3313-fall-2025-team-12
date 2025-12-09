@@ -387,8 +387,6 @@ def main():
 
 # --- Shop / Cart routes ---
 
-
-@app.route("/shop", methods=["GET"])
 def shop():
     """
     Display inventory items with 'Add to Cart' buttons.
