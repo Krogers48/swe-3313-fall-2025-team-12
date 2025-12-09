@@ -84,24 +84,35 @@ User002 / un6355@ble (Customer)
 
 ---  
   
-## Troubleshooting  
-- If Flask is missing, reinstall dependencies:
-pip install -r source/requirements.txt
+## Troubleshooting	
+
+- If dependencies are missing, install them again:
+  pip install -r source/requirements.txt
 
 - If the virtual environment will not activate on Mac/Linux:
-chmod +x env/bin/activate
-source env/bin/activate
+  chmod +x env/bin/activate
+  source env/bin/activate
 
-- If modules cannot be found, confirm you are inside the source directory before running the app.
+- If modules cannot be found, make sure you are inside the "source" directory before starting the app.
 
 - If port 5000 is already in use:
+  Mac/Linux:
+    lsof -i :5000
+    kill <PID>
+  Windows:
+    netstat -ano | findstr :5000
+    taskkill /PID <PID> /F
 
-Mac/Linux:
-lsof -i :5000
-kill <PID>
+- If the application cannot read or write database.json:
+  - Make sure the file is not opened in another editor or program.
+  - Make sure the JSON is valid. Use a validator such as https://jsonlint.com/.
+  - Ensure the app is started from inside the "source" directory so the relative file path works correctly.
 
-Windows:
-netstat -ano | findstr :5000
-taskkill /PID <PID> /F
+- If changes to the inventory or orders do not save:
+  - Confirm the app has write permissions to the project directory.
+  - Ensure you are not running the app from a read-only folder.
+  - Make sure the virtual environment is active so Flask uses the correct working directory.
 
-- If changes to database.json do not save, make sure the application was started from inside the source directory.
+- If the application crashes after editing the JSON file:
+  - Restore the original database.json from version control.
+  - Verify that all brackets {} and arrays [] are correctly matched.
