@@ -1,0 +1,127 @@
+{
+    "users": [
+        {
+            "user_id": 1,
+            "first_name": "Jerry",
+            "last_name": "Seinfeld",
+            "username": "admin",
+            "password": "$5$rounds=535000$3u10UXuICktTR4bx$PdaDlUIVzbPlJlgU4nDXEy0ngmAqWr6P5Qo2dL5Byp7",
+            "is_admin": true,
+            "address": {
+                "street": "123 Apple Street",
+                "city": "New York",
+                "state": "NY",
+                "zip": "12345"
+            },
+            "phone": "4405786974"
+        },
+        {
+            "user_id": 2,
+            "first_name": "John",
+            "last_name": "Badon",
+            "username": "User001",
+            "password": "$5$rounds=535000$1/jU4qWRMpij68S3$TO5sq/QqapGeIBKBPFCzBjEbSbMvqU644PdvsOEmAX2",
+            "is_admin": false,
+            "address": {
+                "street": "1 Main Street",
+                "city": "Newark",
+                "state": "NJ",
+                "zip": "54321"
+            },
+            "phone": "6784568871"
+        },
+        {
+            "user_id": 3,
+            "first_name": "Chase",
+            "last_name": "McCoy",
+            "username": "User002",
+            "password": "$5$rounds=535000$yztA1.3.sJ82HJfE$hEYTT8PMw9w7RaOmnmA7h342Wpn5lXFSqUknFnQ1c.C",
+            "is_admin": false,
+            "address": {
+                "street": "55 Oak Tree Lane",
+                "city": "Nowhere",
+                "state": "OK",
+                "zip": "82945"
+            },
+            "phone": "918456735"
+        }
+    ],
+    "inventory": [
+        {
+            "item_id": 1,
+            "name": "IWRL6432AOP",
+            "description": "Category: Industrial\n                                      Op Temp (\u00b0C): -40 to 105\n                                      Pin Count: 101\n                                      Package Area (mm^2): 73.03",
+            "cost": 176.53,
+            "img": "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/iwrl6432aopevm-angled.png"
+        },
+        {
+            "item_id": 2,
+            "name": "AWR2944P",
+            "description": "Category: Automotive\n                                          Op Temp (\u00b0C): -40 to 140\n                                          Pin Count: 266\n                                          Package Area (mm^2): 1728.00",
+            "cost": 1122.17,
+            "img": "https://www.mouser.com/images/texasinstruments/hd/AWR2944PEVM_SPL.jpg"
+        },
+        {
+            "item_id": 3,
+            "name": "AWRL6844",
+            "description": "Category: Automotive\n                                              Op Temp (\u00b0C): -40 to 140\n                                              Pin Count: 207\n                                              Package Area (mm^2): 82.81",
+            "cost": 299.0,
+            "img": "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/awrl6844evm-angled.png"
+        },
+        {
+            "item_id": 4,
+            "name": "AWR2544",
+            "description": "Category: Automotive\n                                                  Op Temp (\u00b0C): -40 to 140\n                                                  Pin Count: 248\n                                                  Package Area (mm^2): 148.8",
+            "cost": 661.45,
+            "img": "https://www.mouser.co.il/images/texasinstruments/hd/AWR2544LOPEVM_SPL.JPG"
+        },
+        {
+            "item_id": 5,
+            "name": "IWRL1432",
+            "description": "Category: Industrial\n                                                      Op Temp (\u00b0C): -40 to 105\n                                                      Pin Count: 102\n                                                      Package Area (mm^2): 41.60",
+            "cost": 337.36,
+            "img": "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/iwrl1432boost-bsd-angled.png"
+        },
+        {
+            "item_id": 6,
+            "name": "AWRL1432",
+            "description": "Category: Automotive\n                                                          Op Temp (\u00b0C): -40 to 125\n                                                          Pin Count: 102\n                                                          Package Area (mm^2): 41.60",
+            "cost": 481.38,
+            "img": "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/awrl1432boost-bsd-angled.png"
+        }
+    ],
+    "orders": [
+        {
+            "order_id": 1,
+            "purchaser_id": 2,
+            "date": "8/8/2025",
+            "sub_total": 673.53,
+            "tax": 40.41,
+            "shipping": 19.0,
+            "total": 732.94
+        },
+        {
+            "order_id": 2,
+            "purchaser_id": 3,
+            "date": "9/21/2025",
+            "sub_total": 176.53,
+            "tax": 10.59,
+            "shipping": 29.0,
+            "total": 216.12
+        }
+    ],
+    "orders_inventory_items": [
+        {
+            "order_id": 1,
+            "item_id": 7
+        },
+        {
+            "order_id": 1,
+            "item_id": 8
+        },
+        {
+            "order_id": 2,
+            "item_id": 9
+        }
+    ]
+}

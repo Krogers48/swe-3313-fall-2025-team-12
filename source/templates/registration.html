@@ -1,0 +1,36 @@
+{% extends 'skeleton.html' %}
+
+{% block title %}
+Registration Page
+{% endblock %}
+
+{% block filling %}
+<body style="background-color: #5F8CF0;">
+    <div class="container">
+        <div class="rounded" style="background-color: #fcfcfc; margin-top: -260px; margin-left: -162px; width: 324px; height: 500; position: fixed; top: 50%; left: 50%;">
+            <div style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; text-align: center;">
+                <img src="{{url_for('static', filename='cb_logo_100px.png')}}" alt="Circuit Breakers Logo">
+                <h2 style="margin-top: 10px;">Create an Account</h2>
+                <p style="color: {{msg_color}}; text-align:center;">{{message}}</p>
+                <form action="registration" method="POST">
+
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <input type="text" class="form-control" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <input type="password" class="form-control" name="password" placeholder="Password (6 character minimum)"required>
+                    </div>
+                    <button style="margin-bottom: 10px" class="btn btn-primary" type="submit">Register</button>
+                    <p>Have an account? <a href="login">Log-in here.</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
