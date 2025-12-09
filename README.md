@@ -43,6 +43,7 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   └── README.md
 │
 ├── requirements/
+│   ├── README.md
 │   ├── use-case.md
 │   ├── use-case.png
 │   ├── decision-table.md
@@ -53,7 +54,6 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   ├── decision-table-code-demo-3.png
 │   ├── decision-table-code-demo-4.png
 │   ├── decision-table-code-demo-5.png
-│   └── README.md
 │
 ├── technical-design/
 │   ├── assets/
@@ -70,23 +70,22 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   ├── .gitignore
 │   │
 │   ├── static/
-│   │   ├── cb_logo_50px.png
 │   │   ├── cb_logo_100px.png
 │   │   ├── cb_logo_150px.png
 │   │   ├── cb_logo_250px.png
+│   │   ├── cb_logo_50px.png
 │   │   ├── cb_logo_big_boarder.jpg
 │   │   ├── user_icon.png
-│   │   └── user_icon.png:Zone.Identifier   (Windows metadata file)
+│   │   └── user_icon.png:Zone.Identifier
 │   │
-│   ├── templates/
-│   │   ├── skeleton.html
-│   │   ├── login.html
-│   │   ├── registration.html
-│   │   ├── main.html
-│   │   ├── cart.html
-│   │   ├── admin.html
-│   │   └── test.html
-│   │   (shop.html was deleted)
+│   └── templates/
+│       ├── admin.html
+│       ├── cart.html
+│       ├── login.html
+│       ├── main.html
+│       ├── registration.html
+│       ├── skeleton.html
+│       └── test.html
 │
 └── README.md
 ```
