@@ -334,4 +334,19 @@ def registration():
 
 @app.route('/main', methods=["GET", "POST"])
 def main():
-    return render_template('main.html', is_admin=session["is_admin"], username=session["username"])
+    if request.method == "POST":
+        return render_template('main.html', is_admin=session["is_admin"], first_name=session["first_name"], is_disabled=is_disabled, state=state)
+    else:
+        if session['is_admin']:
+            is_disabled = "false"
+            state = "active"
+        else:
+            is_disabled = "true"
+            state = "disabled"
+        return render_template('main.html', is_admin=session["is_admin"], first_name=session["first_name"], is_disabled=is_disabled, state=state)
+def search():
+    return render_template('main.html', is_admin=session["is_admin"], first_name=session["first_name"], is_disabled=(not session["is_admin"]))
+
+@app.route('/admin', methods=["GET", "POST"])
+def admin():
+    return render_template('admin.html', is_admin=session["is_admin"])

@@ -5,5 +5,35 @@ Main Page
 {% endblock %}
 
 {% block filling %}
-<h1>Main Page</h1>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {{state}}" aria-disabled="{{is_disabled}}" href="admin">Admin Page</a>
+                        </li>
+                        <li class="navbar-brand">
+                            <a class="navbar-brand" href="main"><img src="{{url_for('static', filename='cb_logo_50px.png')}}" alt="Circuit Breakers Logo"></a>
+                        </li>
+                    </ul>
+                    <form action="search" class="d-flex" role="search">
+                        <input name="search" class="form-control me-2" type="search" placeholder="Search TI mmWave Radars" aria-label="Search"/>
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><img src="{{url_for('static', filename='user_icon.png')}}" height="50px" width="50px" alt="User Icon"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cart"><img scr="" alt="Shopping Cart Icon"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</body>
 {% endblock %}
