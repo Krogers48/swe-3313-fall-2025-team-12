@@ -5,5 +5,61 @@ Main Page
 {% endblock %}
 
 {% block filling %}
-<h1>Main Page</h1>
+<body style="background-color: #5F8CF0;">
+    <div class="container" style="margin-top: 5%; margin-bottom: 5%;">
+
+        <!-- Top header / greeting -->
+        <div class="rounded mb-4" style="background-color: #fcfcfc; padding: 20px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h2>Welcome to Circuit Breakers</h2>
+                    {% if username %}
+                        <p class="text-muted mb-0">Logged in as {{ username }}</p>
+                    {% endif %}
+                </div>
+                <div>
+                    <a href="{{ url_for('cart') }}" class="btn btn-outline-primary me-2">
+                        Cart ({{ cart_count }})
+                    </a>
+                    <!-- Optional: keep a link to the dedicated shop page -->
+                    <a href="{{ url_for('shop') }}" class="btn btn-outline-secondary">
+                        Open Shop Page
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Embedded shop section on the main page -->
+        <div class="rounded" style="background-color: #fcfcfc; padding: 20px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3>Available Radar Inventory</h3>
+            </div>
+
+            <div class="row g-4">
+                {% for item in inventory %}
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{{ item.img }}" class="card-img-top" alt="{{ item.name }}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text small" style="white-space: pre-line;">
+                                {{ item.description }}
+                            </p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">${{ "%.2f"|format(item.cost) }}</span>
+                                <form method="post" action="{{ url_for('add_to_cart', item_id=item.item_id) }}">
+                                    <button type="submit" class="btn btn-primary btn-sm">
+                                        Add to Cart
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</body>
 {% endblock %}
