@@ -1,0 +1,128 @@
+{% extends 'skeleton.html' %}
+
+{% block title %}
+Shopping Cart
+{% endblock %}
+
+{% block filling %}
+<body style="background-color: #5F8CF0;">
+    <div class="container" style="margin-top: 5%; margin-bottom: 5%;">
+        <div class="rounded" style="background-color: #fcfcfc; padding: 20px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Your Cart</h2>
+                <div>
+                    <a href="{{ url_for('shop') }}" class="btn btn-outline-secondary me-2">
+                        Continue Shopping
+                    </a>
+                    <span class="btn btn-outline-primary disabled">
+                        Cart ({{ cart_count }})
+                    </span>
+                </div>
+            </div>
+
+            {% if not items %}
+                <div class="alert alert-info">
+                    Your cart is currently empty.
+                </div>
+                <a href="{{ url_for('shop') }}" class="btn btn-primary">
+                    Browse Inventory
+                </a>
+            {% else %}
+                <form method="post" action="{{ url_for('cart') }}">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col" class="text-end">Price</th>
+                                    <th scope="col" class="text-center">Quantity</th>
+                                    <th scope="col" class="text-end">Line Total</th>
+                                    <th scope="col" class="text-center">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in items %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="{{ item.img }}" alt="{{ item.name }}" style="width: 60px; height: auto; margin-right: 10px;">
+                                            <div>
+                                                <strong>{{ item.name }}</strong><br>
+                                                <small class="text-muted">ID: {{ item.item_id }}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-end">
+                                        ${{ "%.2f"|format(item.price) }}
+                                    </td>
+                                    <td class="text-center" style="max-width: 90px;">
+                                        <input type="number"
+                                               class="form-control form-control-sm text-center"
+                                               name="qty_{{ item.key }}"
+                                               min="1"
+                                               value="{{ item.quantity }}">
+                                    </td>
+                                    <td class="text-end">
+                                        ${{ "%.2f"|format(item.line_total) }}
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="checkbox"
+                                               name="remove_{{ item.key }}"
+                                               aria-label="Remove {{ item.name }} from cart">
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <a href="{{ url_for('shop') }}" class="btn btn-outline-secondary">
+                                &larr; Continue Shopping
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card ms-md-auto" style="max-width: 320px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Order Summary</h5>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Subtotal</span>
+                                        <strong>${{ "%.2f"|format(subtotal) }}</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Tax</span>
+                                        <strong>${{ "%.2f"|format(tax) }}</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Shipping</span>
+                                        <strong>${{ "%.2f"|format(shipping) }}</strong>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Total</span>
+                                        <strong>${{ "%.2f"|format(total) }}</strong>
+                                    </div>
+                                    <div class="mt-3 d-grid gap-2">
+                                        <button type="submit" class="btn btn-outline-primary">
+                                            Update Cart
+                                        </button>
+                                    </div>
+                                    <div class="mt-2 d-grid gap-2">
+                                        <button type="button" class="btn btn-success" disabled>
+                                            Checkout (placeholder)
+                                        </button>
+                                        <small class="text-muted">
+                                            Later you can hook this to write an order into <code>database.json</code>.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+{% endblock %}
