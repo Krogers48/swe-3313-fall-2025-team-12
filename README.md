@@ -23,6 +23,9 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 **Project Folder Structure:**  
 ```
 /
+├── implementation/
+│   └── README.md
+│
 ├── project-plan/
 │   ├── resumes/
 │   │   ├── aashni-patel-resume.md
@@ -35,26 +38,56 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   ├── technology-selection/
 │   │   └── README.md
 │   ├── gantt-chart/
-│   │	├── ganttproject.gan
-│   |	└── gantt-chart.png
-|   └──README.md
-├──requirements/
-│   ├──use-case.png
-│   ├──use-case.md
-│   ├──decision-table-code-demo.py
-│   ├──decision-table-code-demo-1.png
-│   ├──decision-table-code-demo-2.png
-│   ├──decision-table-code-demo-3.png
-│   ├──decision-table-code-demo-4.png
-│   ├──decision-table-code-demo-5.png
-│   ├──decision-table.png
-│   ├──decision-table.md
-│   └──README.md
-├──technical-design/
+│   │   ├── ganttproject.gan
+│   │   └── gantt-chart.png
+│   └── README.md
+│
+├── requirements/
+│   ├── use-case.md
+│   ├── use-case.png
+│   ├── decision-table.md
+│   ├── decision-table.png
+│   ├── decision-table-code-demo.py
+│   ├── decision-table-code-demo-1.png
+│   ├── decision-table-code-demo-2.png
+│   ├── decision-table-code-demo-3.png
+│   ├── decision-table-code-demo-4.png
+│   ├── decision-table-code-demo-5.png
+│   └── README.md
+│
+├── technical-design/
 │   ├── assets/
-│   │   ├── databaseseeddata.png
-│   │   └── entityrelationshipdiagram.png
-│   └──README.md
+│   │   ├── Data-Examples.png
+│   │   ├── Entity-Field-Descriptions.png
+│   │   ├── database-seed-data.png
+│   │   └── entity-relationship-diagram.png
+│   └── README.md
+│
+├── source/
+│   ├── main.py
+│   ├── database.json
+│   ├── requirements.txt
+│   ├── .gitignore
+│   │
+│   ├── static/
+│   │   ├── cb_logo_50px.png
+│   │   ├── cb_logo_100px.png
+│   │   ├── cb_logo_150px.png
+│   │   ├── cb_logo_250px.png
+│   │   ├── cb_logo_big_boarder.jpg
+│   │   ├── user_icon.png
+│   │   └── user_icon.png:Zone.Identifier   (Windows metadata file)
+│   │
+│   ├── templates/
+│   │   ├── skeleton.html
+│   │   ├── login.html
+│   │   ├── registration.html
+│   │   ├── main.html
+│   │   ├── cart.html
+│   │   ├── admin.html
+│   │   └── test.html
+│   │   (shop.html was deleted)
+│
 └── README.md
 ```
 
