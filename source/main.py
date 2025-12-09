@@ -371,7 +371,18 @@ def registration():
 
 @app.route('/main', methods=["GET", "POST"])
 def main():
-    return render_template('main.html', is_admin=session["is_admin"], username=session["username"])
+    # Load inventory and cart so the main page can show the shop section
+    inventory = get_inventory()
+    cart = get_cart()
+    cart_count = sum(item["quantity"] for item in cart.values())
+
+    return render_template(
+        'main.html',
+        is_admin=session["is_admin"],
+        username=session["username"],
+        inventory=inventory,
+        cart_count=cart_count,
+    )
 
 
 # --- Shop / Cart routes ---
