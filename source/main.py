@@ -63,6 +63,7 @@ def get_available_inventory():
     Items that appear in orders_inventory_items are considered sold and
     are not returned here.
     """
+    cart = get_cart()
     inventory = get_inventory()
     db = load_database()
     order_items = db.get("orders_inventory_items", [])
@@ -72,6 +73,10 @@ def get_available_inventory():
         for order_item in order_items:
             if item["item_id"] == order_item["item_id"]:
                 # FIX: must be assignment, not comparison
+                available = False
+                break
+        for cart_item in cart:
+            if item["item_id"] == cart.get(cart_item).get("item_id"):
                 available = False
                 break
         if available:
