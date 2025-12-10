@@ -5,5 +5,207 @@ Admin Screen
 {% endblock %}
 
 {% block filling %}
-<h1>Hello Admin!</h1>
+<body style="background-color: #5F8CF0;">
+    <div class="container" style="margin-top: 5%; margin-bottom: 5%;">
+
+        <!-- Header / Nav -->
+        <div class="rounded mb-4" style="background-color: #fcfcfc; padding: 20px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h2>Admin Dashboard</h2>
+                    {% if username %}
+                        <p class="text-muted mb-0">Logged in as {{ username }} (Admin)</p>
+                    {% endif %}
+                </div>
+                <div class="d-flex gap-2">
+                    <!-- Go to user shopper screen -->
+                    <a href="{{ url_for('main') }}" class="btn btn-outline-primary">
+                        Go to Shopper View
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sales Report + Export -->
+        <div class="rounded mb-4" style="background-color: #fcfcfc; padding: 20px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 id="sales-report">Sales Report</h4>
+                <!-- Export UI (hook to a Flask route later, e.g. export_sales) -->
+                <a href="{{ url_for('export_sales') }}" class="btn btn-outline-success">
+    		Export Sales (CSV)
+		</a>
+
+            </div>
+
+            {% if orders is defined and orders %}
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">Order ID</th>
+                                <th scope="col">Purchaser</th>
+                                <th scope="col">Date</th>
+                                <th scope="col" class="text-end">Subtotal</th>
+                                <th scope="col" class="text-end">Tax</th>
+                                <th scope="col" class="text-end">Shipping</th>
+                                <th scope="col" class="text-end">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{ order.order_id }}</td>
+                                <td>
+                                    {% if order.purchaser_username is defined %}
+                                        {{ order.purchaser_username }}
+                                    {% else %}
+                                        User #{{ order.purchaser_id }}
+                                    {% endif %}
+                                </td>
+                                <td>{{ order.date }}</td>
+                                <td class="text-end">${{ "%.2f"|format(order.sub_total) }}</td>
+                                <td class="text-end">${{ "%.2f"|format(order.tax) }}</td>
+                                <td class="text-end">${{ "%.2f"|format(order.shipping) }}</td>
+                                <td class="text-end"><strong>${{ "%.2f"|format(order.total) }}</strong></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info mb-0">
+                    No sales have been recorded yet.
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="row g-4">
+            <!-- User Management -->
+            <div class="col-lg-6">
+                <div class="rounded h-100" style="background-color: #fcfcfc; padding: 20px;">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 id="user-management">User Management</h4>
+                    </div>
+
+                    {% if users is defined and users %}
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col" class="text-center">Role</th>
+                                        <th scope="col" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for user in users %}
+                                    <tr>
+                                        <td>{{ user.username }}</td>
+                                        <td>{{ user.first_name }} {{ user.last_name }}</td>
+                                        <td class="text-center">
+                                            {% if user.is_admin %}
+                                                <span class="badge bg-success">Admin</span>
+                                            {% else %}
+                                                <span class="badge bg-secondary">Customer</span>
+                                            {% endif %}
+                                        </td>
+                                        <td class="text-center">
+                                            {% if not user.is_admin %}
+                                                <!-- Hook this to a Flask POST route later (e.g. /admin/make_admin/<id>) -->
+                                                <button type="button" class="btn btn-sm btn-outline-primary">
+                                                    Make Admin
+                                                </button>
+                                            {% else %}
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" disabled>
+                                                    Already Admin
+                                                </button>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info mb-0">
+                            No users loaded. Later, pass a <code>users</code> list from your Flask admin route.
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Inventory Management -->
+            <div class="col-lg-6">
+                <div class="rounded h-100" style="background-color: #fcfcfc; padding: 20px;">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 id="inventory-management">Inventory Management</h4>
+                    </div>
+
+                    <!-- Current inventory list -->
+                    {% if inventory is defined and inventory %}
+                        <div class="table-responsive mb-3" style="max-height: 260px; overflow-y: auto;">
+                            <table class="table align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col" class="text-end">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in inventory %}
+                                    <tr>
+                                        <td>{{ item.item_id }}</td>
+                                        <td>{{ item.name }}</td>
+                                        <td class="text-end">
+                                            ${{ "%.2f"|format(item.cost) }}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            No inventory loaded. Later, pass an <code>inventory</code> list from your Flask admin route.
+                        </div>
+                    {% endif %}
+
+                    <!-- Add inventory item form (UI only for now) -->
+                    <h5 class="mt-3">Add New Inventory Item</h5>
+                    <!-- Hook this form to a POST route later, e.g. /admin/inventory/add -->
+                    <form method="post" action="#" class="row g-2">
+                        <div class="col-12">
+                            <label class="form-label">Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Part name/code">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Description</label>
+                            <textarea name="description" class="form-control" rows="2"
+                                      placeholder="Short description (category, temp, pins, package area, etc.)"></textarea>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Price (USD)</label>
+                            <input type="number" name="cost" class="form-control" step="0.01" min="0">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Image URL</label>
+                            <input type="url" name="img" class="form-control" placeholder="https://...">
+                        </div>
+                        <div class="col-12 mt-2">
+                            <button type="button" class="btn btn-primary">
+                                Save Item (placeholder)
+                            </button>
+                            <small class="text-muted ms-2">
+                                Later, connect this form to a Flask route that updates <code>database.json</code>.
+                            </small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
 {% endblock %}
