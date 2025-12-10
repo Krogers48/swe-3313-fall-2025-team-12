@@ -5,115 +5,95 @@ Shopping Cart
 {% endblock %}
 
 {% block filling %}
-<body style="background-color: #5F8CF0;">
-    <main class="container my-5">
-        <section class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="card shadow-lg">
-                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                        <h2 class="mb-0">Your Cart</h2>
-                        <div>
-                            <a href="{{ url_for('main') }}" class="btn btn-outline-light btn-sm">
-                                Back to Main
+<main class="container my-5" style="background-color: #5F8CF0;">
+    <section class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h2 class="mb-0">Shopping Cart</h2>
+                    <span>Items in cart: {{ cart_count }}</span>
+                </div>
+                <div class="card-body">
+                    {% if items %}
+                        <p class="text-muted">
+                            You can have only one of each item in your cart.
+                        </p>
+
+                        <!-- Cart items -->
+                        <ul class="list-group mb-4">
+                            {% for item in items %}
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        {% if item.img %}
+                                            <img src="{{ item.img }}" alt="{{ item.name }}"
+                                                 style="max-width: 60px; max-height: 60px; object-fit: contain;"
+                                                 class="me-3">
+                                        {% endif %}
+                                        <div>
+                                            <strong>{{ item.name }}</strong><br>
+                                            <small>ID: {{ item.item_id }}</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-3">
+                                            ${{ '%.2f'|format(item.line_total) }}
+                                        </span>
+
+                                        <!-- Remove item form -->
+                                        <form method="post" class="mb-0">
+                                            <input type="hidden" name="remove_{{ item.key }}" value="1">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                Remove
+                                            </button>
+                                        </form>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <!-- Totals -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Subtotal</span>
+                                        <strong>${{ '%.2f'|format(subtotal) }}</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Tax</span>
+                                        <strong>${{ '%.2f'|format(tax) }}</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Shipping</span>
+                                        <strong>${{ '%.2f'|format(shipping) }}</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total</span>
+                                        <strong>${{ '%.2f'|format(total) }}</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ url_for('main') }}" class="btn btn-outline-secondary">
+                                Continue Shopping
+                            </a>
+                            <a href="{{ url_for('checkout') }}" class="btn btn-primary">
+                                Proceed to Checkout
                             </a>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        {% if items %}
-                            <form method="post">
-                                <div class="table-responsive">
-                                    <table class="table align-middle">
-                                        <thead>
-                                            <tr>
-                                                <th>Item</th>
-                                                <th>Price</th>
-                                                <th style="width: 120px;">Quantity</th>
-                                                <th>Line Total</th>
-                                                <th>Remove</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {% for item in items %}
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            {% if item.img %}
-                                                                <img src="{{ item.img }}" alt="{{ item.name }}"
-                                                                     style="width: 64px; height: auto; margin-right: 12px;">
-                                                            {% endif %}
-                                                            <div>
-                                                                <strong>{{ item.name }}</strong><br>
-                                                                <small>Item ID: {{ item.item_id }}</small>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>${{ '%.2f'|format(item.price) }}</td>
-                                                    <td>
-                                                        <input type="number"
-                                                               class="form-control form-control-sm"
-                                                               name="qty_{{ item.key }}"
-                                                               min="0"
-                                                               value="{{ item.quantity }}">
-                                                    </td>
-                                                    <td>${{ '%.2f'|format(item.line_total) }}</td>
-                                                    <td class="text-center">
-                                                        <input type="checkbox" name="remove_{{ item.key }}">
-                                                    </td>
-                                                </tr>
-                                            {% endfor %}
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <div class="row mt-3">
-                                    <div class="col-md-6">
-                                        <button type="submit" class="btn btn-outline-primary">
-                                            Update Cart
-                                        </button>
-                                        <a href="{{ url_for('main') }}" class="btn btn-link">
-                                            Continue Shopping
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="list-group">
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Subtotal</span>
-                                                <strong>${{ '%.2f'|format(subtotal) }}</strong>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Tax</span>
-                                                <strong>${{ '%.2f'|format(tax) }}</strong>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Shipping</span>
-                                                <strong>${{ '%.2f'|format(shipping) }}</strong>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Total</span>
-                                                <strong>${{ '%.2f'|format(total) }}</strong>
-                                            </li>
-                                        </ul>
-                                        <a href="{{ url_for('checkout') }}"
-                                           class="btn btn-success w-100 mt-3">
-                                            Proceed to Checkout
-                                        </a>
-                                        <small class="text-muted d-block mt-2">
-                                            Checkout will save your address info to the database and
-                                            create your order with an on-screen (emailed) receipt.
-                                        </small>
-                                    </div>
-                                </div>
-                            </form>
-                        {% else %}
-                            <p>Your cart is currently empty.</p>
-                            <a href="{{ url_for('main') }}" class="btn btn-primary">
-                                Browse Inventory
-                            </a>
-                        {% endif %}
-                    </div>
+                    {% else %}
+                        <p>Your cart is currently empty.</p>
+                        <a href="{{ url_for('main') }}" class="btn btn-primary">
+                            Browse Inventory
+                        </a>
+                    {% endif %}
                 </div>
             </div>
-        </section>
-    </main>
-</body>
+        </div>
+    </section>
+</main>
 {% endblock %}

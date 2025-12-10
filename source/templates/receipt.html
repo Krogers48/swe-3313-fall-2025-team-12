@@ -19,6 +19,7 @@ Receipt
                             {{ purchaser.first_name if purchaser else username }}!
                         </p>
 
+                        <!-- Order + payment summary -->
                         <h5>Order Details</h5>
                         <ul class="list-group mb-3">
                             <li class="list-group-item d-flex justify-content-between">
@@ -47,6 +48,30 @@ Receipt
                             </li>
                         </ul>
 
+                        <!-- Shipping address -->
+                        <h5>Shipping Address</h5>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item">
+                                {{ shipping_address.street if shipping_address.street else '' }}<br>
+                                {{ shipping_address.city if shipping_address.city else '' }},
+                                {{ shipping_address.state if shipping_address.state else '' }}
+                                {{ shipping_address.zip if shipping_address.zip else '' }}
+                            </li>
+                        </ul>
+
+                        <!-- Payment info -->
+                        <h5>Payment Method</h5>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item">
+                                {% if card_last4 %}
+                                    Card ending in <strong>{{ card_last4 }}</strong>
+                                {% else %}
+                                    Card (last four digits unavailable)
+                                {% endif %}
+                            </li>
+                        </ul>
+
+                        <!-- Items purchased -->
                         <h5>Items Purchased</h5>
                         {% if items %}
                             <ul class="list-group mb-3">
@@ -62,8 +87,9 @@ Receipt
                         {% endif %}
 
                         <div class="alert alert-info">
-                            A copy of this receipt has been <strong>emailed (simulation)</strong>
-                            to the contact information on your account.
+                            A copy of this receipt has been
+                            <strong>emailed (simulation/real via Gmail app password)</strong>
+                            to the address you provided at checkout.
                         </div>
 
                         <div class="d-flex justify-content-between mt-4">
