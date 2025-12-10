@@ -26,22 +26,19 @@ SHIPPING_FLAT = 0.00  # flat shipping for now; can tweak later
 
 
 def load_database():
-    # Load the entire database.json file.
+    """Load the entire database.json file."""
     with open("database.json", "r") as f:
         return json.load(f)
 
-<<<<<<< HEAD
 
 def save_database(db):
-    # Write the entire database back to database.json.
+    """Write the entire database back to database.json."""
     with open("database.json", "w") as f:
         json.dump(db, f, indent=4)
 
 
-=======
->>>>>>> 8893c839907a0748dfe40051e9c0eceafd742af5
 def get_inventory():
-    # Return the list of inventory items from the database.
+    """Return the list of inventory items from the database, sorted by cost descending."""
     db = load_database()
     unsorted_inv = db.get("inventory", [])
     sorted_inv = []
@@ -53,13 +50,19 @@ def get_inventory():
                 if item["cost"] > sorted_item["cost"]:
                     sorted_inv.insert(sorted_inv.index(sorted_item), item)
                     break
-                elif len(sorted_inv)-1 == sorted_inv.index(sorted_item):
+                elif len(sorted_inv) - 1 == sorted_inv.index(sorted_item):
                     sorted_inv.append(item)
                     break
     return sorted_inv
 
+
 def get_available_inventory():
-    """Return the list of available inventory items from the database."""
+    """
+    Return the list of available inventory items from the database.
+
+    Items that appear in orders_inventory_items are considered sold and
+    are not returned here.
+    """
     inventory = get_inventory()
     db = load_database()
     order_items = db.get("orders_inventory_items", [])
@@ -68,7 +71,8 @@ def get_available_inventory():
         available = True
         for order_item in order_items:
             if item["item_id"] == order_item["item_id"]:
-                available == False
+                # FIX: must be assignment, not comparison
+                available = False
                 break
         if available:
             available_inv.append(item)
@@ -77,16 +81,19 @@ def get_available_inventory():
 
 
 def get_cart():
-    # Get the cart from the session.
-    # session['cart'] = {
-    #   "1": {"item_id": 1, "name": "...", "price": 176.53, "quantity": 2, "img": "..."},
-    #   ...
-    # }
+    """
+    Get the cart from the session.
+
+    session['cart'] = {
+        "1": {"item_id": 1, "name": "...", "price": 176.53, "quantity": 1, "img": "..."},
+        ...
+    }
+    """
     return session.get("cart", {})
 
 
 def save_cart(cart):
-    # Save the cart back into the session.
+    """Save the cart back into the session."""
     session["cart"] = cart
 
 
@@ -103,6 +110,7 @@ def create_user(first_name, last_name, users, username, password):
     new_user['address'] = {}
     new_user['phone'] = ""
     return new_user
+
 
 def send_receipt_email(to_email, order, items, purchaser_name, shipping_address, card_last4):
     print("DEBUG: send_receipt_email() called")
@@ -125,7 +133,7 @@ def send_receipt_email(to_email, order, items, purchaser_name, shipping_address,
     lines = []
     lines.append(f"Hello {purchaser_name},")
     lines.append("")
-    lines.append(f"Thank you for your purchase from Circuit Breakers!")
+    lines.append("Thank you for your purchase from Circuit Breakers!")
     lines.append("")
     lines.append(f"Order ID: {order['order_id']}")
     lines.append(f"Order Date: {order['date']}")
@@ -150,7 +158,7 @@ def send_receipt_email(to_email, order, items, purchaser_name, shipping_address,
     lines.append("Items Purchased:")
     if items:
         for item in items:
-            # No '(x1)' anymore, just show name and price
+            # One of each item; just show name + price
             line_price = f"{item['price']:.2f}"
             lines.append(f"  - {item['name']}  ${line_price}")
     else:
@@ -181,7 +189,6 @@ def send_receipt_email(to_email, order, items, purchaser_name, shipping_address,
     print(f"DEBUG: Receipt email sent successfully to {to_email}")
 
 
-
 # default route, redirects to login
 @app.route('/')
 def beginning():
@@ -210,8 +217,7 @@ def login():
         if not sha256_crypt.verify(password, match['password']):
             return render_template('login.html', message="Incorrect password.", msg_color="red")
 
-        # if the username is valid and the password is correct, the user
-        # gets logged in by adding some account values to the session
+        # log user in
         session['is_admin'] = match['is_admin']
         session['user_id'] = match['user_id']
         session['first_name'] = match['first_name']
@@ -222,7 +228,6 @@ def login():
         return redirect(url_for('main'))
 
     else:
-        # all other methods simply render the login page with the standard message
         return render_template('login.html', message="Great to See You Again!", msg_color="light-grey")
 
 
@@ -236,7 +241,6 @@ def registration():
         users = db.get('users', [])
 
         for user in users:
-            # here we check if the username is already taken
             if user['username'] == username:
                 return render_template('registration.html', message="Username already registered", msg_color="red")
 
@@ -289,7 +293,7 @@ def main():
         state = "disabled"
         is_visible = "hidden"
 
-<<<<<<< HEAD
+    # Always render main; any_results=True by default
     return render_template(
         'main.html',
         is_admin=session.get("is_admin", False),
@@ -300,53 +304,17 @@ def main():
         inventory=inventory,
         cart_count=cart_count,
         is_visible=is_visible,
+        any_results=True,
     )
-=======
-    if request.method == "POST":
-        return render_template(
-            'main.html',
-            is_admin=session["is_admin"],
-            first_name=session["first_name"],
-            username=session["username"],
-            is_disabled=is_disabled,
-            state=state,
-            inventory=inventory,
-            cart_count=cart_count,
-            is_visible=is_visible,
-            any_results=True,
-        )
-    else:
-        return render_template(
-            'main.html',
-            is_admin=session["is_admin"],
-            first_name=session["first_name"],
-            username=session["username"],
-            is_disabled=is_disabled,
-            state=state,
-            inventory=inventory,
-            cart_count=cart_count,
-            is_visible=is_visible,
-            any_results=True,
-        )
 
->>>>>>> 8893c839907a0748dfe40051e9c0eceafd742af5
 
 @app.route('/search', methods=["GET", "POST"])
 def search():
-<<<<<<< HEAD
-    # This function is not currently mapped to a route
-    return render_template(
-        'main.html',
-        is_admin=session.get("is_admin", False),
-        first_name=session.get("first_name", ""),
-        is_disabled=(not session.get("is_admin", False))
-    )
-=======
     inventory = get_available_inventory()
     cart = get_cart()
     cart_count = sum(item["quantity"] for item in cart.values())
 
-    if session['is_admin']:
+    if session.get('is_admin'):
         is_disabled = "false"
         state = "active"
         is_visible = "visible"
@@ -356,53 +324,47 @@ def search():
         is_visible = "hidden"
 
     if request.method == "POST":
-        query = request.form.get('query').strip()
-        query = query.lower()
-        query_list = query.split()
+        raw_query = request.form.get('query', '').strip()
+        query_lower = raw_query.lower()
+        query_list = query_lower.split()
 
         search_results = []
-        for query in query_list:
+        for q in query_list:
             for item in inventory:
-                if query in item["name"].lower() or query in item["description"].lower():
-                    if query_list.index(query) == 0:
+                if q in item["name"].lower() or q in item["description"].lower():
+                    if item not in search_results:
                         search_results.append(item)
-                elif item in search_results:
-                    search_results.remove(item)
 
-        if search_results != []:
-            any_results = True
-        else:
-            any_results = False
+        any_results = bool(search_results)
 
         return render_template(
             'main.html',
-            is_admin=session["is_admin"],
-            first_name=session["first_name"],
-            username=session["username"],
+            is_admin=session.get("is_admin", False),
+            first_name=session.get("first_name", ""),
+            username=session.get("username", ""),
             is_disabled=is_disabled,
             state=state,
-            inventory=search_results,
+            inventory=search_results if any_results else [],
             cart_count=cart_count,
             is_visible=is_visible,
             any_results=any_results,
             search=True,
-            query=request.form.get('query').strip(),
+            query=raw_query,
         )
 
-    else:
-        return render_template(
-            'main.html',
-            is_admin=session["is_admin"],
-            first_name=session["first_name"],
-            username=session["username"],
-            is_disabled=is_disabled,
-            state=state,
-            inventory=inventory,
-            cart_count=cart_count,
-            is_visible=is_visible,
-            any_results=True,
-        )
->>>>>>> 8893c839907a0748dfe40051e9c0eceafd742af5
+    # GET: just show normal inventory
+    return render_template(
+        'main.html',
+        is_admin=session.get("is_admin", False),
+        first_name=session.get("first_name", ""),
+        username=session.get("username", ""),
+        is_disabled=is_disabled,
+        state=state,
+        inventory=inventory,
+        cart_count=cart_count,
+        is_visible=is_visible,
+        any_results=True,
+    )
 
 
 @app.route('/admin', methods=["GET"])
@@ -516,7 +478,12 @@ def export_sales():
 
 @app.route("/add_to_cart/<int:item_id>", methods=["POST"])
 def add_to_cart(item_id):
-    # Add a single item to the cart by item_id.
+    """
+    Add a single item to the cart by item_id.
+
+    NOTE: You can only have ONE of each item in the cart.
+    If the item is already in the cart, we do NOT increment quantity.
+    """
     inventory = get_inventory()
     cart = get_cart()
 
@@ -528,9 +495,7 @@ def add_to_cart(item_id):
 
     key = str(item_id)
 
-    if key in cart:
-        cart[key]["quantity"] += 1
-    else:
+    if key not in cart:
         cart[key] = {
             "item_id": item["item_id"],
             "name": item["name"],
@@ -538,6 +503,7 @@ def add_to_cart(item_id):
             "quantity": 1,
             "img": item["img"],
         }
+    # else: already there, keep quantity at 1
 
     save_cart(cart)
 
@@ -547,29 +513,17 @@ def add_to_cart(item_id):
 
 @app.route("/cart", methods=["GET", "POST"])
 def cart():
-    # Show the shopping cart and allow quantity updates / removals.
+    # Show the shopping cart and allow removals.
     cart = get_cart()
 
     if request.method == "POST":
-        # Update quantities / removals
+        # Update removals (quantities are effectively locked at 1 in the UI)
         for key, item in list(cart.items()):
-            qty_str = request.form.get(f"qty_{key}")
             remove = request.form.get(f"remove_{key}")
 
             if remove:
                 del cart[key]
                 continue
-
-            if qty_str is not None:
-                try:
-                    qty = int(qty_str)
-                    if qty <= 0:
-                        del cart[key]
-                    else:
-                        item["quantity"] = qty
-                except ValueError:
-                    # Ignore bad input and keep old quantity
-                    pass
 
         save_cart(cart)
 
@@ -602,7 +556,6 @@ def cart():
 
 @app.route("/checkout", methods=["GET", "POST"])
 def checkout():
-    # This should always print when you visit /checkout
     print("DEBUG: entered /checkout, method =", request.method)
 
     cart = get_cart()
@@ -649,14 +602,25 @@ def checkout():
         email_input = request.form.get("email", "").strip()
         print("DEBUG: email_input from form =", repr(email_input))
 
+        # Card number for last 4
+        card_number_raw = request.form.get("card_number", "").strip()
+        card_number = card_number_raw.replace(" ", "")
+        if len(card_number) >= 4 and card_number[-4:].isdigit():
+            card_last4 = card_number[-4:]
+        else:
+            card_last4 = ""
+
+        # Build shipping address dict (for receipt + email)
+        shipping_address = {
+            "street": street,
+            "city": city,
+            "state": state,
+            "zip": zip_code,
+        }
+
         # Save updated address + phone into DB (email is NOT saved in DB)
         if current_user is not None:
-            current_user["address"] = {
-                "street": street,
-                "city": city,
-                "state": state,
-                "zip": zip_code,
-            }
+            current_user["address"] = shipping_address
             current_user["phone"] = phone_input
 
         # Save updated users list
@@ -706,6 +670,10 @@ def checkout():
         # store checkout email ONLY in the session for the receipt
         session["checkout_email"] = email_input
 
+        # store shipping + card last4 for receipt page
+        session["last_order_address"] = shipping_address
+        session["last_order_card_last4"] = card_last4
+
         # Try to send a real email (Gmail via app password)
         if email_input:
             purchaser_name = (
@@ -716,7 +684,14 @@ def checkout():
 
             print("DEBUG: calling send_receipt_email for", email_input)
             try:
-                send_receipt_email(email_input, order, items, purchaser_name)
+                send_receipt_email(
+                    email_input,
+                    order,
+                    items,
+                    purchaser_name,
+                    shipping_address,
+                    card_last4,
+                )
             except Exception as e:
                 print("ERROR: send_receipt_email failed:", repr(e))
         else:
@@ -773,6 +748,7 @@ def receipt():
         shipping_address=shipping_address,
         card_last4=card_last4,
     )
+
 
 # Optional: if you want to run with `python main.py`
 if __name__ == "__main__":
