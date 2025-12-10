@@ -30,6 +30,7 @@ def load_database():
     with open("database.json", "r") as f:
         return json.load(f)
 
+<<<<<<< HEAD
 
 def save_database(db):
     # Write the entire database back to database.json.
@@ -37,10 +38,42 @@ def save_database(db):
         json.dump(db, f, indent=4)
 
 
+=======
+>>>>>>> 8893c839907a0748dfe40051e9c0eceafd742af5
 def get_inventory():
     # Return the list of inventory items from the database.
     db = load_database()
-    return db.get("inventory", [])
+    unsorted_inv = db.get("inventory", [])
+    sorted_inv = []
+    for item in unsorted_inv:
+        if sorted_inv == []:
+            sorted_inv.append(item)
+        else:
+            for sorted_item in sorted_inv:
+                if item["cost"] > sorted_item["cost"]:
+                    sorted_inv.insert(sorted_inv.index(sorted_item), item)
+                    break
+                elif len(sorted_inv)-1 == sorted_inv.index(sorted_item):
+                    sorted_inv.append(item)
+                    break
+    return sorted_inv
+
+def get_available_inventory():
+    """Return the list of available inventory items from the database."""
+    inventory = get_inventory()
+    db = load_database()
+    order_items = db.get("orders_inventory_items", [])
+    available_inv = []
+    for item in inventory:
+        available = True
+        for order_item in order_items:
+            if item["item_id"] == order_item["item_id"]:
+                available == False
+                break
+        if available:
+            available_inv.append(item)
+
+    return available_inv
 
 
 def get_cart():
@@ -243,7 +276,7 @@ def registration():
 @app.route('/main', methods=["GET", "POST"])
 def main():
     # Load inventory and cart so the main page can show the shop section
-    inventory = get_inventory()
+    inventory = get_available_inventory()
     cart = get_cart()
     cart_count = sum(item["quantity"] for item in cart.values())
 
@@ -256,6 +289,7 @@ def main():
         state = "disabled"
         is_visible = "hidden"
 
+<<<<<<< HEAD
     return render_template(
         'main.html',
         is_admin=session.get("is_admin", False),
@@ -267,9 +301,39 @@ def main():
         cart_count=cart_count,
         is_visible=is_visible,
     )
+=======
+    if request.method == "POST":
+        return render_template(
+            'main.html',
+            is_admin=session["is_admin"],
+            first_name=session["first_name"],
+            username=session["username"],
+            is_disabled=is_disabled,
+            state=state,
+            inventory=inventory,
+            cart_count=cart_count,
+            is_visible=is_visible,
+            any_results=True,
+        )
+    else:
+        return render_template(
+            'main.html',
+            is_admin=session["is_admin"],
+            first_name=session["first_name"],
+            username=session["username"],
+            is_disabled=is_disabled,
+            state=state,
+            inventory=inventory,
+            cart_count=cart_count,
+            is_visible=is_visible,
+            any_results=True,
+        )
 
+>>>>>>> 8893c839907a0748dfe40051e9c0eceafd742af5
 
+@app.route('/search', methods=["GET", "POST"])
 def search():
+<<<<<<< HEAD
     # This function is not currently mapped to a route
     return render_template(
         'main.html',
@@ -277,6 +341,68 @@ def search():
         first_name=session.get("first_name", ""),
         is_disabled=(not session.get("is_admin", False))
     )
+=======
+    inventory = get_available_inventory()
+    cart = get_cart()
+    cart_count = sum(item["quantity"] for item in cart.values())
+
+    if session['is_admin']:
+        is_disabled = "false"
+        state = "active"
+        is_visible = "visible"
+    else:
+        is_disabled = "true"
+        state = "disabled"
+        is_visible = "hidden"
+
+    if request.method == "POST":
+        query = request.form.get('query').strip()
+        query = query.lower()
+        query_list = query.split()
+
+        search_results = []
+        for query in query_list:
+            for item in inventory:
+                if query in item["name"].lower() or query in item["description"].lower():
+                    if query_list.index(query) == 0:
+                        search_results.append(item)
+                elif item in search_results:
+                    search_results.remove(item)
+
+        if search_results != []:
+            any_results = True
+        else:
+            any_results = False
+
+        return render_template(
+            'main.html',
+            is_admin=session["is_admin"],
+            first_name=session["first_name"],
+            username=session["username"],
+            is_disabled=is_disabled,
+            state=state,
+            inventory=search_results,
+            cart_count=cart_count,
+            is_visible=is_visible,
+            any_results=any_results,
+            search=True,
+            query=request.form.get('query').strip(),
+        )
+
+    else:
+        return render_template(
+            'main.html',
+            is_admin=session["is_admin"],
+            first_name=session["first_name"],
+            username=session["username"],
+            is_disabled=is_disabled,
+            state=state,
+            inventory=inventory,
+            cart_count=cart_count,
+            is_visible=is_visible,
+            any_results=True,
+        )
+>>>>>>> 8893c839907a0748dfe40051e9c0eceafd742af5
 
 
 @app.route('/admin', methods=["GET"])
