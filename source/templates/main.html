@@ -9,20 +9,33 @@ Main Page
     <div class="container" style="margin-top: 5%; margin-bottom: 5%;">
 
         <!-- Top header / greeting -->
-        <div class="rounded mb-4" style="background-color: #fcfcfc; padding: 20px;">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h2>Welcome to Circuit Breakers</h2>
-                    {% if username %}
-                        <p class="text-muted mb-0">Logged in as {{ username }}</p>
-                    {% endif %}
+        <div style="rounded mb-4 background-color: #fcfcfc; padding-bottom: 20px;">
+            <nav class="navbar navbar-expand-md rounded" style="background-color: #fcfcfc;">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li style="visibility: {{is_visible}};" class="nav-item">
+                                <a class="nav-link {{state}}" aria-disabled="{{is_disabled}}" href="admin"><button class="btn btn-dark">Admin Page</button></a>
+                            </li>
+                            <li class="navbar-brand">
+                                <a class="navbar-brand" href="main"><img src="{{url_for('static', filename='cb_logo_50px.png')}}" alt="Circuit Breakers Logo"></a>
+                            </li>
+                        </ul>
+                        <form action="search" class="d-flex" role="search">
+                            <input name="search" class="form-control me-2" type="search" placeholder="Search TI mmWave Radars" aria-label="Search"/>
+                            <button class="btn btn-outline-info" type="submit">Search</button>
+                        </form>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><img src="{{url_for('static', filename='user_icon.png')}}" height="50px" width="50px" alt="User Icon"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="cart"><img src="{{url_for('static', filename='shopping_cart_icon.png')}}" height="50px" width="50px" alt="Shopping Cart Icon"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <a href="{{ url_for('cart') }}" class="btn btn-outline-primary me-2">
-                        Cart ({{ cart_count }})
-                    </a>
-                </div>
-            </div>
+            </nav>
         </div>
 
         <!-- Embedded shop section on the main page -->
