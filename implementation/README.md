@@ -16,12 +16,53 @@ python --version
 - Create a virtual environment:
 python3 -m venv env
 
+Email Receipt:
+- The application can send real email receipts using a Gmail account.
+- This is optional: if email is not configured, the application will still work and show an on-screen receipt.
+- We used the Gmail account: codebreakers.co@gmail.com with a Gmail App Password (not the normal account password).
+
+- To enable email sending, set these environment variables before running the app:
+
+  - SMTP_SERVER = smtp.gmail.com
+  - SMTP_PORT   = 587
+  - SMTP_USER   = codebreakers.co@gmail.com
+  - SMTP_PASSWORD = <Gmail App Password>
+  - SMTP_FROM   = codebreakers.co@gmail.com
+
+- On Windows PowerShell, example:
+
+  - $env:SMTP_SERVER="smtp.gmail.com"
+  - $env:SMTP_PORT="587"
+  - $env:SMTP_USER="codebreakers.co@gmail.com"
+  - $env:SMTP_PASSWORD="qlxi hcvi byfv mpam"
+  - $env:SMTP_FROM="codebreakers.co@gmail.com"
+
+- After setting these, start the app normally:
+
+  - cd source
+  - env\Scripts\activate
+  - python main.py
+
+- When you complete Checkout with a valid email address, the application will:
+  - Create an order,
+  - Show an on-screen receipt,
+  - Attempt to send an email receipt to the email entered at checkout (including order details, shipping address, and last four digits of the card).
+
 - Activate the virtual environment:
 Windows: env\Scripts\activate
 Mac/Linux: source env/bin/activate
 
+(if Flask error)
+
 - Install required dependencies:
-pip install -r source/requirements.txt
+python -m pip install flask
+pip install flask passlib
+
+- Run:
+python main.py
+
+- Open:
+http://127.0.0.1:5000/
 
 - No additional tools or IDEs are required. A basic terminal is enough.
 ---  

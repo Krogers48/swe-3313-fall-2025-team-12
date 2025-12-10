@@ -5,79 +5,100 @@ Receipt
 {% endblock %}
 
 {% block filling %}
-<body style="background-color: #5F8CF0;">
-    <main class="container my-5">
-        <section class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="card shadow-lg">
-                    <div class="card-header bg-success text-white">
-                        <h2 class="mb-0">Order Receipt</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="lead">
-                            Thank you for your purchase,
-                            {{ purchaser.first_name if purchaser else username }}!
-                        </p>
+<main class="container my-5" style="background-color: #5F8CF0;">
+    <section class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-success text-white">
+                    <h2 class="mb-0">Order Receipt</h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Thank you for your purchase,
+                        {{ purchaser.first_name if purchaser else username }}!
+                    </p>
 
-                        <h5>Order Details</h5>
+                    <h5>Order Details</h5>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Order ID</span>
+                            <strong>{{ order.order_id }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Order Date</span>
+                            <strong>{{ order.date }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Subtotal</span>
+                            <strong>${{ '%.2f'|format(order.sub_total) }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Tax</span>
+                            <strong>${{ '%.2f'|format(order.tax) }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Shipping</span>
+                            <strong>${{ '%.2f'|format(order.shipping) }}</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total</span>
+                            <strong>${{ '%.2f'|format(order.total) }}</strong>
+                        </li>
+                    </ul>
+
+                    <h5>Shipping Address</h5>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item">
+                            {% if shipping_address %}
+                                {{ shipping_address.street }}<br>
+                                {{ shipping_address.city }}, {{ shipping_address.state }} {{ shipping_address.zip }}
+                            {% else %}
+                                (No shipping address on file)
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                    <h5>Payment</h5>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item">
+                            {% if card_last4 %}
+                                Card ending in <strong>{{ card_last4 }}</strong>
+                            {% else %}
+                                Card information not available.
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                    <h5>Items Purchased</h5>
+                    {% if items %}
                         <ul class="list-group mb-3">
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Order ID</span>
-                                <strong>{{ order.order_id }}</strong>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Order Date</span>
-                                <strong>{{ order.date }}</strong>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Subtotal</span>
-                                <strong>${{ '%.2f'|format(order.sub_total) }}</strong>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Tax</span>
-                                <strong>${{ '%.2f'|format(order.tax) }}</strong>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Shipping</span>
-                                <strong>${{ '%.2f'|format(order.shipping) }}</strong>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Total</span>
-                                <strong>${{ '%.2f'|format(order.total) }}</strong>
-                            </li>
+                            {% for item in items %}
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>{{ item.name }} (ID: {{ item.item_id }})</span>
+                                    <span>${{ '%.2f'|format(item.price) }}</span>
+                                </li>
+                            {% endfor %}
                         </ul>
+                    {% else %}
+                        <p>No items found for this order.</p>
+                    {% endif %}
 
-                        <h5>Items Purchased</h5>
-                        {% if items %}
-                            <ul class="list-group mb-3">
-                                {% for item in items %}
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <span>{{ item.name }} (ID: {{ item.item_id }})</span>
-                                        <span>${{ '%.2f'|format(item.cost) }}</span>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        {% else %}
-                            <p>No items found for this order.</p>
-                        {% endif %}
+                    <div class="alert alert-info">
+                        A copy of this receipt has been <strong>emailed (simulation / live if SMTP is configured)</strong>
+                        to your provided email address.
+                    </div>
 
-                        <div class="alert alert-info">
-                            A copy of this receipt has been <strong>emailed (simulation)</strong>
-                            to the contact information on your account.
-                        </div>
-
-                        <div class="d-flex justify-content-between mt-4">
-                            <a href="{{ url_for('main') }}" class="btn btn-outline-secondary">
-                                Back to Main
-                            </a>
-                            <a href="{{ url_for('cart') }}" class="btn btn-primary">
-                                Continue Shopping
-                            </a>
-                        </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{{ url_for('main') }}" class="btn btn-outline-secondary">
+                            Back to Main
+                        </a>
+                        <a href="{{ url_for('cart') }}" class="btn btn-primary">
+                            Continue Shopping
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-</body>
+        </div>
+    </section>
+</main>
 {% endblock %}
