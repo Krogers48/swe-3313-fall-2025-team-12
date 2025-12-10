@@ -379,17 +379,24 @@ def main():
     if session['is_admin']:
         is_disabled = "false"
         state = "active"
+        is_visible = "visible"
     else:
         is_disabled = "true"
         state = "disabled"
+        is_visible = "hidden"
 
     if request.method == "POST":
         return render_template(
             'main.html',
             is_admin=session["is_admin"],
             first_name=session["first_name"],
+            username=session["username"],
             is_disabled=is_disabled,
-            state=state)
+            state=state,
+            inventory=inventory,
+            cart_count=cart_count,
+            is_visible=is_visible,
+        )
     else:
         return render_template(
             'main.html',
@@ -400,6 +407,7 @@ def main():
             state=state,
             inventory=inventory,
             cart_count=cart_count,
+            is_visible=is_visible,
         )
 
 
