@@ -204,6 +204,7 @@ def beginning():
 @app.route('/logout', methods=["GET"])
 def logout():
     """Clear session and redirect to login."""
+    # AI assistance: troubleshooting session clearing
     session.clear()
     return redirect(url_for('login'))
 
@@ -577,7 +578,7 @@ def make_admin(user_id):
     db = load_database()
     users = db.get("users", [])
 
-    # Verify admin's password
+    # Verify admin's password (AI assistance: troubleshooting password verification logic)
     admin_user = next((u for u in users if u["user_id"] == session.get("user_id")), None)
     if not admin_user or not sha256_crypt.verify(admin_password, admin_user["password"]):
         return jsonify({"success": False, "error": "Incorrect password"}), 401
@@ -753,7 +754,7 @@ def delete_inventory_item(item_id):
     inventory = db.get("inventory", [])
     order_items = db.get("orders_inventory_items", [])
 
-    # Check if item is already sold
+    # Check if item is already sold (AI assistance: bug fix for sold item validation)
     is_sold = any(oi.get("item_id") == item_id for oi in order_items)
     if is_sold:
         return jsonify({"success": False, "error": "Cannot delete item that has been sold"}), 400
