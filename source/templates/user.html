@@ -1,0 +1,80 @@
+{% extends 'skeleton.html' %}
+
+{% block title %}
+User Settings
+{% endblock %}
+
+{% block filling %}
+<body style="background-color:#5F8CF0;">
+    <main class="container my-5">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">
+                <h2>User Settings</h2>
+            </div>
+            <div class="card-body">
+
+                {% if updated %}
+                <div class="alert alert-success">
+                    Your information has been updated successfully.
+                </div>
+                {% endif %}
+
+                <form method="post">
+                    <h4>Personal Information</h4>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="first_name"
+                                   value="{{ user.first_name }}">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="last_name"
+                                   value="{{ user.last_name }}">
+                        </div>
+                    </div>
+
+                    <h4>Address</h4>
+                    <div class="mb-3">
+                        <label class="form-label">Street</label>
+                        <input type="text" class="form-control" name="street"
+                               value="{{ user.address.street }}">
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label">City</label>
+                            <input type="text" class="form-control" name="city"
+                                   value="{{ user.address.city }}">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">State</label>
+                            <input type="text" class="form-control" name="state"
+                                   value="{{ user.address.state }}">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">ZIP</label>
+                            <input type="text" class="form-control" name="zip"
+                                   value="{{ user.address.zip }}">
+                        </div>
+                    </div>
+
+                    <h4>Phone</h4>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="phone"
+                               value="{{ user.phone }}">
+                    </div>
+
+                    <h4>Change Password (optional)</h4>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="new_password"
+                               placeholder="Enter new password">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                    <a href="{{ url_for('main') }}" class="btn btn-secondary">Back to Main</a>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+{% endblock %}

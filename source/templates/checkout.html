@@ -1,0 +1,139 @@
+{% extends 'skeleton.html' %}
+
+{% block title %}
+Checkout
+{% endblock %}
+
+{% block filling %}
+<main class="container my-5" style="background-color: #5F8CF0;">
+    <section class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h2 class="mb-0">Checkout</h2>
+                    <span>Signed in as: {{ username }}</span>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Order summary -->
+                        <div class="col-md-5 mb-4">
+                            <h4>Order Summary</h4>
+                            <hr>
+                            {% if items %}
+                                <ul class="list-group mb-3">
+                                    {% for item in items %}
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <strong>{{ item.name }}</strong><br>
+                                                <small>Qty: {{ item.quantity }}</small>
+                                            </div>
+                                            <span>${{ '%.2f'|format(item.line_total) }}</span>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Subtotal</span>
+                                        <strong>${{ '%.2f'|format(subtotal) }}</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Tax</span>
+                                        <strong>${{ '%.2f'|format(tax) }}</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Shipping</span>
+                                        <strong>${{ '%.2f'|format(shipping) }}</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total</span>
+                                        <strong>${{ '%.2f'|format(total) }}</strong>
+                                    </li>
+                                </ul>
+                            {% else %}
+                                <p>Your cart is empty.</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Address & payment form -->
+                        <div class="col-md-7">
+                            <h4>Shipping & Contact</h4>
+                            <hr>
+                            <form method="post" action="{{ url_for('checkout') }}">
+                                <div class="mb-3">
+                                    <label for="street" class="form-label">Street</label>
+                                    <input type="text" class="form-control" id="street" name="street"
+                                           value="{{ address.street if address else '' }}" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city" name="city"
+                                               value="{{ address.city if address else '' }}" required>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="state" class="form-label">State</label>
+                                        <input type="text" class="form-control" id="state" name="state"
+                                               value="{{ address.state if address else '' }}" required>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="zip" class="form-label">ZIP</label>
+                                        <input type="text" class="form-control" id="zip" name="zip"
+                                               value="{{ address.zip if address else '' }}" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="text" class="form-control" id="phone" name="phone"
+                                           value="{{ phone }}" required>
+                                </div>
+
+                                <h4 class="mt-4">Payment (Simulation)</h4>
+                                <hr>
+                                <div class="mb-3">
+                                    <label for="card_number" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="card_number" name="card_number"
+                                           placeholder="4111 1111 1111 1111">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="exp" class="form-label">Expiration</label>
+                                        <input type="text" class="form-control" id="exp" name="exp"
+                                               placeholder="MM/YY">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="cvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cvv" name="cvv"
+                                               placeholder="123">
+                                    </div>
+                                </div>
+
+                                <h4 class="mt-4">Email for Receipt</h4>
+                                <hr>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email (required for receipt)</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                           placeholder="you@example.com" required>
+                                </div>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <a href="{{ url_for('cart') }}" class="btn btn-outline-secondary">
+                                        Back to Cart
+                                    </a>
+                                    <button type="submit" class="btn btn-primary">
+                                        Place Order
+                                    </button>
+                                </div>
+                                <small class="text-muted d-block mt-2">
+                                    When you place your order, we will save your updated address information
+                                    and show an on-screen receipt (and attempt to send an email receipt).
+                                </small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

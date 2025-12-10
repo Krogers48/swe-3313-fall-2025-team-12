@@ -15,22 +15,36 @@ Main Page
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li style="visibility: {{is_visible}};" class="nav-item">
-                                <a class="nav-link {{state}}" aria-disabled="{{is_disabled}}" href="admin"><button class="btn btn-dark">Admin Page</button></a>
+                                <a class="nav-link {{state}}" aria-disabled="{{is_disabled}}" href="admin">
+                                    <button class="btn btn-dark">Admin Page</button>
+                                </a>
                             </li>
                             <li class="navbar-brand">
-                                <a class="navbar-brand" href="main"><img src="{{url_for('static', filename='cb_logo_50px.png')}}" alt="Circuit Breakers Logo"></a>
+                                <a class="navbar-brand" href="main">
+                                    <img src="{{url_for('static', filename='cb_logo_50px.png')}}" alt="Circuit Breakers Logo">
+                                </a>
                             </li>
                         </ul>
+
                         <form action="search" class="d-flex" role="search" method="POST">
-                            <input name="query" class="form-control me-2" type="search" placeholder="Search TI mmWave Radars" aria-label="Search"/>
+                            <input name="query" class="form-control me-2" type="search"
+                                   placeholder="Search TI mmWave Radars" aria-label="Search"/>
                             <button class="btn btn-outline-info" type="submit">Search</button>
                         </form>
+
+                        <!-- RIGHT SIDE: user + cart icons -->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#"><img src="{{url_for('static', filename='user_icon.png')}}" height="50px" width="50px" alt="User Icon"></a>
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('user_settings') }}">
+                                    <img src="{{url_for('static', filename='user_icon.png')}}"
+                                         height="50px" width="50px" alt="User Icon">
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="cart"><img src="{{url_for('static', filename='shopping_cart_icon.png')}}" height="50px" width="50px" alt="Shopping Cart Icon"></a>
+                                <a class="nav-link active" aria-current="page" href="cart">
+                                    <img src="{{url_for('static', filename='shopping_cart_icon.png')}}"
+                                         height="50px" width="50px" alt="Shopping Cart Icon">
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -54,32 +68,30 @@ Main Page
                 {% endif %}
             </div>
 
-
-
             <div class="row g-4">
-                    {% for item in inventory %}
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <img src="{{ item.img }}" class="card-img-top" alt="{{ item.name }}">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">{{ item.name }}</h5>
-                                <p class="card-text small" style="white-space: pre-line;">
-                                    {{ item.description }}
-                                </p>
-                                <div class="mt-auto d-flex justify-content-between align-items-center">
-                                    <span class="fw-bold">
-                                        ${{ "%.2f"|format(item.cost) }}
-                                    </span>
-                                    <form method="post" action="{{ url_for('add_to_cart', item_id=item.item_id) }}">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            Add to Cart
-                                        </button>
-                                    </form>
-                                </div>
+                {% for item in inventory %}
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{{ item.img }}" class="card-img-top" alt="{{ item.name }}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text small" style="white-space: pre-line;">
+                                {{ item.description }}
+                            </p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">
+                                    ${{ "%.2f"|format(item.cost) }}
+                                </span>
+                                <form method="post" action="{{ url_for('add_to_cart', item_id=item.item_id) }}">
+                                    <button type="submit" class="btn btn-primary btn-sm">
+                                        Add to Cart
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                {% endfor %}
             </div>
 
         </div>

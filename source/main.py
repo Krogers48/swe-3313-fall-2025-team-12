@@ -543,6 +543,236 @@ def export_sales():
     )
 
 
+@app.route("/admin/make_admin/<int:user_id>", methods=["POST"])
+def make_admin(user_id):
+    """Convert a user to admin after password verification."""
+    if not session.get("is_admin"):
+        return jsonify({"success": False, "error": "Unauthorized"}), 403
+
+    admin_password = request.form.get("admin_password", "").strip()
+    if not admin_password:
+        return jsonify({"success": False, "error": "Password required"}), 400
+
+    db = load_database()
+    users = db.get("users", [])
+
+    # Verify admin's password
+    admin_user = next((u for u in users if u["user_id"] == session.get("user_id")), None)
+    if not admin_user or not sha256_crypt.verify(admin_password, admin_user["password"]):
+        return jsonify({"success": False, "error": "Incorrect password"}), 401
+
+    # Find and update the target user
+    target_user = next((u for u in users if u["user_id"] == user_id), None)
+    if not target_user:
+        return jsonify({"success": False, "error": "User not found"}), 404
+
+    if target_user["is_admin"]:
+        return jsonify({"success": False, "error": "User is already an admin"}), 400
+
+    target_user["is_admin"] = True
+    db["users"] = users
+    save_database(db)
+
+    return jsonify({"success": True, "username": target_user["username"]})
+
+
+@app.route("/admin/inventory/add", methods=["POST"])
+def add_inventory_item():
+    """Add a new inventory item."""
+    if not session.get("is_admin"):
+        return redirect(url_for("main"))
+
+    name = request.form.get("name", "").strip()
+    description = request.form.get("description", "").strip()
+    cost_str = request.form.get("cost", "").strip()
+    img = request.form.get("img", "").strip()
+
+    db = load_database()
+    users = db.get("users", [])
+    inventory = db.get("inventory", [])
+    orders = db.get("orders", [])
+
+    # Attach purchaser_username to each order for display
+    for order in orders:
+        purchaser = next((u for u in users if u["user_id"] == order["purchaser_id"]), None)
+        order["purchaser_username"] = purchaser["username"] if purchaser else "Unknown"
+
+    # Validation per requirements: name max 15 chars, description max 50 chars
+    if not name or len(name) > 15:
+        return render_template(
+            "admin.html",
+            is_admin=True,
+            username=session.get("username"),
+            users=users,
+            inventory=inventory,
+            orders=orders,
+            error="Name is required and must be 15 characters or less.",
+        )
+
+    if not description or len(description) > 50:
+        return render_template(
+            "admin.html",
+            is_admin=True,
+            username=session.get("username"),
+            users=users,
+            inventory=inventory,
+            orders=orders,
+            error="Description is required and must be 50 characters or less.",
+        )
+
+    try:
+        cost = float(cost_str)
+        if cost < 0:
+            raise ValueError("Cost must be non-negative")
+    except (ValueError, TypeError):
+        return render_template(
+            "admin.html",
+            is_admin=True,
+            username=session.get("username"),
+            users=users,
+            inventory=inventory,
+            orders=orders,
+            error="Invalid price. Please enter a valid number.",
+        )
+
+    inventory = db.get("inventory", [])
+
+    # Generate new item_id
+    if inventory:
+        next_id = max(item.get("item_id", 0) for item in inventory) + 1
+    else:
+        next_id = 1
+
+    new_item = {
+        "item_id": next_id,
+        "name": name,
+        "description": description,
+        "cost": cost,
+        "img": img if img else "",
+    }
+
+    inventory.append(new_item)
+    db["inventory"] = inventory
+    save_database(db)
+
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin/inventory/edit/<int:item_id>", methods=["GET", "POST"])
+def edit_inventory_item(item_id):
+    """Edit an existing inventory item."""
+    if not session.get("is_admin"):
+        return redirect(url_for("main"))
+
+    db = load_database()
+    inventory = db.get("inventory", [])
+
+    item = next((i for i in inventory if i["item_id"] == item_id), None)
+    if not item:
+        return redirect(url_for("admin"))
+
+    if request.method == "POST":
+        name = request.form.get("name", "").strip()
+        description = request.form.get("description", "").strip()
+        cost_str = request.form.get("cost", "").strip()
+        img = request.form.get("img", "").strip()
+
+        # Validation
+        if not name or len(name) > 15:
+            return render_template(
+                "admin_edit_item.html",
+                item=item,
+                error="Name is required and must be 15 characters or less.",
+            )
+
+        if not description or len(description) > 50:
+            return render_template(
+                "admin_edit_item.html",
+                item=item,
+                error="Description is required and must be 50 characters or less.",
+            )
+
+        try:
+            cost = float(cost_str)
+            if cost < 0:
+                raise ValueError("Cost must be non-negative")
+        except (ValueError, TypeError):
+            return render_template(
+                "admin_edit_item.html",
+                item=item,
+                error="Invalid price. Please enter a valid number.",
+            )
+
+        # Update item
+        item["name"] = name
+        item["description"] = description
+        item["cost"] = cost
+        item["img"] = img if img else ""
+
+        db["inventory"] = inventory
+        save_database(db)
+
+        return redirect(url_for("admin"))
+
+    # GET: show edit form
+    return render_template(
+        "admin_edit_item.html",
+        item=item,
+        error=None,
+    )
+
+
+@app.route("/admin/inventory/delete/<int:item_id>", methods=["POST"])
+def delete_inventory_item(item_id):
+    """Delete an inventory item (only if not sold)."""
+    if not session.get("is_admin"):
+        return jsonify({"success": False, "error": "Unauthorized"}), 403
+
+    db = load_database()
+    inventory = db.get("inventory", [])
+    order_items = db.get("orders_inventory_items", [])
+
+    # Check if item is already sold
+    is_sold = any(oi.get("item_id") == item_id for oi in order_items)
+    if is_sold:
+        return jsonify({"success": False, "error": "Cannot delete item that has been sold"}), 400
+
+    # Remove item
+    inventory = [i for i in inventory if i["item_id"] != item_id]
+    db["inventory"] = inventory
+    save_database(db)
+
+    return jsonify({"success": True})
+
+
+@app.route("/admin/create_admin", methods=["GET", "POST"])
+def admin_create_ui():
+    """Admin Creation UI with search functionality."""
+    if not session.get("is_admin"):
+        return redirect(url_for("main"))
+
+    db = load_database()
+    users = db.get("users", [])
+
+    search_query = ""
+    filtered_users = users
+
+    if request.method == "POST":
+        search_query = request.form.get("search_query", "").strip().lower()
+        if search_query:
+            filtered_users = [
+                u for u in users
+                if search_query in u.get("username", "").lower()
+            ]
+
+    return render_template(
+        "admin_create.html",
+        username=session.get("username"),
+        users=filtered_users,
+        search_query=search_query,
+    )
+
+
 # --- Cart / Checkout routes ---
 
 
