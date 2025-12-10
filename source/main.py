@@ -330,6 +330,19 @@ def search():
 
     if request.method == "POST":
         raw_query = request.form.get('query', '').strip()
+        if raw_query == "":
+            return render_template(
+                'main.html',
+                is_admin=session.get("is_admin", False),
+                first_name=session.get("first_name", ""),
+                username=session.get("username", ""),
+                is_disabled=is_disabled,
+                state=state,
+                inventory=inventory,
+                cart_count=cart_count,
+                is_visible=is_visible,
+                any_results=True,
+            )
         query_lower = raw_query.lower()
         query_list = query_lower.split()
 
