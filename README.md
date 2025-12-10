@@ -175,4 +175,11 @@ Here you can find all the technical details about the project including:
    
 ## Implementation   
    
-Our implementation can be found [here](./implementation/README.md).
+Our implementation can be found [here](./implementation/README.md).   
+   
+---   
+   
+## Final Presentation   
+   
+[Final Presentation Part One: Compiling From a Fresh Directory and demonstrating Email](https://www.loom.com/share/2e9547d5deff4fed985268cbc583ca75)   
+[Final Presentation Part Two: Comparing Implementation to Mockup](https://www.loom.com/share/496bf7f489bb425da7611437ca2b322f)
