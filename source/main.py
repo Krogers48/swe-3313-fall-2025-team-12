@@ -529,29 +529,6 @@ def cart():
         cart_count=cart_count,
         username=session.get("username"),
     )
-@app.route("/admin")
-def admin():
-    if not session.get("is_admin"):
-        return redirect(url_for("main"))
-
-    db = load_database()
-
-    users = db.get("users", [])
-    inventory = db.get("inventory", [])
-    orders = db.get("orders", [])
-
-    # Attach usernames to orders for display
-    for order in orders:
-        purchaser = next((u for u in users if u["user_id"] == order["purchaser_id"]), None)
-        order["purchaser_username"] = purchaser["username"] if purchaser else "Unknown"
-
-    return render_template(
-        "admin.html",
-        username=session.get("username"),
-        users=users,
-        inventory=inventory,
-        orders=orders,
-    )
 
 
 
