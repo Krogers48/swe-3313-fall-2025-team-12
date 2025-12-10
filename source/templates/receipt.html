@@ -96,9 +96,14 @@ Receipt
                             <a href="{{ url_for('main') }}" class="btn btn-outline-secondary">
                                 Back to Main
                             </a>
-                            <a href="{{ url_for('cart') }}" class="btn btn-primary">
-                                Continue Shopping
-                            </a>
+                            <div>
+                                <a href="{{ url_for('cart') }}" class="btn btn-primary">
+                                    Continue Shopping
+                                </a>
+                                <a href="{{ url_for('logout') }}" class="btn btn-outline-danger ms-2">
+                                    Logout
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

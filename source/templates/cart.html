@@ -81,9 +81,14 @@ Shopping Cart
                             <a href="{{ url_for('main') }}" class="btn btn-outline-secondary">
                                 Continue Shopping
                             </a>
-                            <a href="{{ url_for('checkout') }}" class="btn btn-primary">
-                                Proceed to Checkout
-                            </a>
+                            <div>
+                                <a href="{{ url_for('checkout') }}" class="btn btn-primary">
+                                    Proceed to Checkout
+                                </a>
+                                <a href="{{ url_for('logout') }}" class="btn btn-outline-danger ms-2">
+                                    Logout
+                                </a>
+                            </div>
                         </div>
                     {% else %}
                         <p>Your cart is currently empty.</p>

@@ -75,17 +75,22 @@ Our store will specialize in selling **TI mmWave Radars**, each as a unique, one
 │   │   ├── cb_logo_250px.png
 │   │   ├── cb_logo_50px.png
 │   │   ├── cb_logo_big_boarder.jpg
-│   │   ├── user_icon.png
-│   │   └── user_icon.png:Zone.Identifier
+│   │   ├── shopping_cart_icon.png
+│   │   └── user_icon.png
 │   │
 │   └── templates/
 │       ├── admin.html
+│       ├── admin_create.html
+│       ├── admin_edit_item.html
 │       ├── cart.html
+│       ├── checkout.html
 │       ├── login.html
 │       ├── main.html
+│       ├── receipt.html
 │       ├── registration.html
 │       ├── skeleton.html
-│       └── test.html
+│       ├── test.html
+│       └── user.html
 │
 └── README.md
 ```
