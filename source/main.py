@@ -366,6 +366,71 @@ def search():
         any_results=True,
     )
 
+@app.route("/user", methods=["GET", "POST"])
+def user_settings():
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+
+    db = load_database()
+    users = db.get("users", [])
+    user_id = session.get("user_id")
+
+    current_user = next((u for u in users if u["user_id"] == user_id), None)
+
+    if not current_user:
+        return redirect(url_for("main"))
+
+    if request.method == "POST":
+        # Get updated fields
+        first = request.form.get("first_name", "").strip()
+        last = request.form.get("last_name", "").strip()
+        street = request.form.get("street", "").strip()
+        city = request.form.get("city", "").strip()
+        state = request.form.get("state", "").strip()
+        zipcode = request.form.get("zip", "").strip()
+        phone = request.form.get("phone", "").strip()
+
+        # Optional password change
+        new_pw = request.form.get("new_password", "").strip()
+        if new_pw:
+            current_user["password"] = sha256_crypt.hash(new_pw)
+
+        # Update user
+        current_user["first_name"] = first
+        current_user["last_name"] = last
+        current_user["phone"] = phone
+        current_user["address"] = {
+            "street": street,
+            "city": city,
+            "state": state,
+            "zip": zipcode
+        }
+
+        # Save DB
+        db["users"] = users
+        save_database(db)
+
+        # Update session
+        session["first_name"] = first
+        session["address"] = current_user["address"]
+        session["phone"] = phone
+
+        return render_template(
+            "user.html",
+            username=session.get("username"),
+            first_name=first,
+            updated=True,
+            user=current_user,
+        )
+
+    return render_template(
+        "user.html",
+        username=session.get("username"),
+        first_name=session.get("first_name"),
+        user=current_user,
+        updated=False
+    )
+
 
 @app.route('/admin', methods=["GET"])
 def admin():
