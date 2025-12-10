@@ -31,9 +31,10 @@ Admin Screen
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 id="sales-report">Sales Report</h4>
                 <!-- Export UI (hook to a Flask route later, e.g. export_sales) -->
-                <button type="button" class="btn btn-outline-success">
-                    Export Sales (CSV)
-                </button>
+                <a href="{{ url_for('export_sales') }}" class="btn btn-outline-success">
+    		Export Sales (CSV)
+		</a>
+
             </div>
 
             {% if orders is defined and orders %}
