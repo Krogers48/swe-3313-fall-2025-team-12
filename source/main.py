@@ -200,6 +200,14 @@ def beginning():
     return redirect(url_for('login'))
 
 
+# logout
+@app.route('/logout', methods=["GET"])
+def logout():
+    """Clear session and redirect to login."""
+    session.clear()
+    return redirect(url_for('login'))
+
+
 # login
 @app.route('/login', methods=["GET", "POST"])
 def login():

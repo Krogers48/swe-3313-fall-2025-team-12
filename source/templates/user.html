@@ -70,8 +70,15 @@ User Settings
                                placeholder="Enter new password">
                     </div>
 
-                    <button type="submit" class="btn btn-success">Save Changes</button>
-                    <a href="{{ url_for('main') }}" class="btn btn-secondary">Back to Main</a>
+                    <div class="d-flex justify-content-between mt-4">
+                        <div>
+                            <button type="submit" class="btn btn-success">Save Changes</button>
+                            <a href="{{ url_for('main') }}" class="btn btn-secondary">Back to Main</a>
+                        </div>
+                        <div>
+                            <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">Logout</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
