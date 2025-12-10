@@ -5,7 +5,7 @@
             "first_name": "Jerry",
             "last_name": "Seinfeld",
             "username": "admin",
-            "password": "$5$rounds=535000$3u10UXuICktTR4bx$PdaDlUIVzbPlJlgU4nDXEy0ngmAqWr6P5Qo2dL5Byp7",
+            "password": "$5$rounds=535000$//QInHxPB8t39Kws$IRIti83MkgIGzOydnJ..OAldbLEPyss07/2w4F.1/Z6",
             "is_admin": true,
             "address": {
                 "street": "123 Apple Street",
@@ -20,7 +20,7 @@
             "first_name": "John",
             "last_name": "Badon",
             "username": "User001",
-            "password": "$5$rounds=535000$1/jU4qWRMpij68S3$TO5sq/QqapGeIBKBPFCzBjEbSbMvqU644PdvsOEmAX2",
+            "password": "$5$rounds=535000$VMCdKpjBSuSliYZI$o04fpi9lsib3l0W0PtgqOWKwsFuVM1Z0kxNnatvGeB7",
             "is_admin": false,
             "address": {
                 "street": "1 Main Street",
@@ -35,7 +35,7 @@
             "first_name": "Chase",
             "last_name": "McCoy",
             "username": "User002",
-            "password": "$5$rounds=535000$yztA1.3.sJ82HJfE$hEYTT8PMw9w7RaOmnmA7h342Wpn5lXFSqUknFnQ1c.C",
+            "password": "$5$rounds=535000$3fNz/32o4Simc4a3$3uEdYZ.PRNPPI.LmJ4G90iqyvTkeLr1fMMNmdGLJDQ6",
             "is_admin": false,
             "address": {
                 "street": "55 Oak Tree Lane",
@@ -88,6 +88,20 @@
             "description": "Category: Automotive\n                                                          Op Temp (\u00b0C): -40 to 125\n                                                          Pin Count: 102\n                                                          Package Area (mm^2): 41.60",
             "cost": 481.38,
             "img": "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/awrl1432boost-bsd-angled.png"
+        },
+        {
+            "item_id": 7,
+            "name": "IWRL6432W",
+            "description": "Category: Industrial\n                                                              Op Temp (\u00b0C): -40 to 105\n                                                              Pin Count: 111\n                                                              Package Area (mm^2): 22.36",
+            "cost": 8.69,
+            "img": "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/iwrl6844evm-bottom.png:large"
+        },
+        {
+            "item_id": 8,
+            "name": "AWR2944EVM",
+            "description": "Category: Automotive\n                                                                  Op Temp (\u00b0C): -40 to 140\n                                                                  Pin Count: 120\n                                                                  Package Area (mm^2): 37.25",
+            "cost": 599.0,
+            "img": "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/iwrl6844evm-bottom.png:large"
         }
     ],
     "orders": [
@@ -95,19 +109,19 @@
             "order_id": 1,
             "purchaser_id": 2,
             "date": "8/8/2025",
-            "sub_total": 673.53,
-            "tax": 40.41,
+            "sub_total": 8.69,
+            "tax": 0.52,
             "shipping": 19.0,
-            "total": 732.94
+            "total": 28.21
         },
         {
             "order_id": 2,
             "purchaser_id": 3,
             "date": "9/21/2025",
-            "sub_total": 176.53,
-            "tax": 10.59,
+            "sub_total": 599.0,
+            "tax": 35.94,
             "shipping": 29.0,
-            "total": 216.12
+            "total": 663.94
         }
     ],
     "orders_inventory_items": [
@@ -116,12 +130,8 @@
             "item_id": 7
         },
         {
-            "order_id": 1,
-            "item_id": 8
-        },
-        {
             "order_id": 2,
-            "item_id": 9
+            "item_id": 8
         }
     ]
 }

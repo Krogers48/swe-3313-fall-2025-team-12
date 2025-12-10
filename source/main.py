@@ -85,6 +85,7 @@ def save_cart(cart):
 
 
 # Used this to populate the database and test hashing
+
 # with open("database.json", 'r') as f:
 #     database = json.load(f)
 #
@@ -215,6 +216,31 @@ def save_cart(cart):
 #     inventory_item["img"] = ("https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/awrl1432boost-bsd-angled.png")
 #
 #     inventory.append(inventory_item.copy())
+#
+#     inventory_item["item_id"] = 7
+#     inventory_item["name"] = "IWRL6432W"
+#     inventory_item["description"] = ("Category: Industrial\n \
+#                                                              Op Temp (°C): -40 to 105\n \
+#                                                              Pin Count: 111\n \
+#                                                              Package Area (mm^2): 22.36")
+#     inventory_item["cost"] = float("{:.2f}".format(8.69))
+#     inventory_item["img"] = (
+#         "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/iwrl6844evm-bottom.png:large")
+#
+#     inventory.append(inventory_item.copy())
+#
+#     inventory_item["item_id"] = 8
+#     inventory_item["name"] = "AWR2944EVM"
+#     inventory_item["description"] = ("Category: Automotive\n \
+#                                                                  Op Temp (°C): -40 to 140\n \
+#                                                                  Pin Count: 120\n \
+#                                                                  Package Area (mm^2): 37.25")
+#     inventory_item["cost"] = float("{:.2f}".format(599.00))
+#     inventory_item["img"] = (
+#         "https://www.ti.com/content/dam/ticom/images/products/ic/radar/evm-board/iwrl6844evm-bottom.png:large")
+#
+#     inventory.append(inventory_item.copy())
+#
 #     database["inventory"] = inventory
 #
 #     orders = []
@@ -224,20 +250,20 @@ def save_cart(cart):
 #     order["order_id"] = 1
 #     order["purchaser_id"] = 2
 #     order["date"] = "8/8/2025"
-#     order["sub_total"] = float("{:.2f}".format(673.53))
-#     order["tax"] = float("{:.2f}".format(40.41))
+#     order["sub_total"] = float("{:.2f}".format(8.69))
+#     order["tax"] = float("{:.2f}".format(0.52))
 #     order["shipping"] = float("{:.2f}".format(19.00))
-#     order["total"] = float("{:.2f}".format(732.94))
+#     order["total"] = float("{:.2f}".format(28.21))
 #
 #     orders.append(order.copy())
 #
 #     order["order_id"] = 2
 #     order["purchaser_id"] = 3
 #     order["date"] = "9/21/2025"
-#     order["sub_total"] = float("{:.2f}".format(176.53))
-#     order["tax"] = float("{:.2f}".format(10.59))
+#     order["sub_total"] = float("{:.2f}".format(599.00))
+#     order["tax"] = float("{:.2f}".format(35.94))
 #     order["shipping"] = float("{:.2f}".format(29.00))
-#     order["total"] = float("{:.2f}".format(216.12))
+#     order["total"] = float("{:.2f}".format(663.94))
 #
 #     orders.append(order.copy())
 #     database["orders"] = orders
@@ -250,15 +276,11 @@ def save_cart(cart):
 #
 #     orders_inventory_items.append(orders_inventory_item.copy())
 #
-#     orders_inventory_item["order_id"] = 1
+#     orders_inventory_item["order_id"] = 2
 #     orders_inventory_item["item_id"] = 8
 #
 #     orders_inventory_items.append(orders_inventory_item.copy())
 #
-#     orders_inventory_item["order_id"] = 2
-#     orders_inventory_item["item_id"] = 9
-#
-#     orders_inventory_items.append(orders_inventory_item.copy())
 #     database["orders_inventory_items"] = orders_inventory_items
 #
 # with open("database.json", 'w') as f:
@@ -278,6 +300,7 @@ def save_cart(cart):
 
 
 # function that creates the user, mostly just to de-clutter code
+
 def create_user(first_name, last_name, users, username, password):
     new_user = {}
     new_user['user_id'] = users[-1]['user_id'] + 1
